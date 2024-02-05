@@ -1,0 +1,1179 @@
+<html lang="ja" class=""><head><script type="text/javascript" async="" src="https://analytics.tiktok.com/i18n/pixel/static/main.MTc3MGUxMzJiMA.js" data-id="CFUMSRJC77U30697CL5G"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel?advertiser_id=00006051&amp;f=1&amp;fm=4&amp;sfp=&amp;su=2&amp;site_url=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;referer=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;sua=eyJhcmNoaXRlY3R1cmUiOiIiLCJiaXRuZXNzIjoiIiwibW9kZWwiOiIiLCJtb2JpbGUiOmZhbHNlLCJwbGF0Zm9ybSI6Im1hY09TIiwicGxhdGZvcm1WZXJzaW9uIjoiIiwiZnVsbFZlcnNpb25MaXN0IjpbXX0%3D"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel?advertiser_id=00006051&amp;su=2&amp;site_url=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;referer=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;sua=eyJhcmNoaXRlY3R1cmUiOiIiLCJiaXRuZXNzIjoiIiwibW9kZWwiOiIiLCJtb2JpbGUiOmZhbHNlLCJwbGF0Zm9ybSI6Im1hY09TIiwicGxhdGZvcm1WZXJzaW9uIjoiIiwiZnVsbFZlcnNpb25MaXN0IjpbXX0%3D"></script><script async="" src="https://am.yahoo.co.jp/rt/?p=VBLV2PX8G0&amp;label=&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;rref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1705500159.153944&amp;pvid=g87glwsww0hlrhurcc2&amp;su=1ae2d81b-49d4-4545-8180-e9dab121321f&amp;_impl=ytag"></script><script async="" src="https://am.yahoo.co.jp/rt/?p=KF3MEJH1SI&amp;label=&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;rref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1705500158.785621&amp;pvid=g87glwsww0hlrhurcc2&amp;su=1ae2d81b-49d4-4545-8180-e9dab121321f&amp;_impl=ytag"></script><script async="" src="https://am.yahoo.co.jp/rt/?p=MBZDT6KS3B&amp;label=&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;rref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1705500158.424324&amp;pvid=g87glwsww0hlrhurcc2&amp;su=1ae2d81b-49d4-4545-8180-e9dab121321f&amp;_impl=ytag"></script><script async="" src="https://am.yahoo.co.jp/rt/?p=6QMLO5ZF5E&amp;label=&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;rref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1705500158.8159678&amp;pvid=g87glwsww0hlrhurcc2&amp;su=1ae2d81b-49d4-4545-8180-e9dab121321f&amp;_impl=ytag"></script><script async="" src="https://am.yahoo.co.jp/rt/?p=0G6PU35CN4&amp;label=&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;rref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;pt=&amp;item=&amp;cat=&amp;price=&amp;quantity=&amp;r=1705500158.403932&amp;pvid=g87glwsww0hlrhurcc2&amp;su=1ae2d81b-49d4-4545-8180-e9dab121321f&amp;_impl=ytag"></script><script async="" src="//cdn.smartnews-ads.com/i/pixel.js"></script><script type="text/javascript" async="" src="https://analytics.tiktok.com/i18n/pixel/events.js?sdkid=CFUMSRJC77U30697CL5G&amp;lib=ttq"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script charset="utf-8" async="" src="https://cd.ladsp.com/script/pixel2.js"></script><script async="" src="https://static.ads-twitter.com/uwt.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script src="https://connect.facebook.net/signals/config/1709551029355725?v=2.9.140&amp;r=stable&amp;domain=www.jal.co.jp" async=""></script><script src="https://connect.facebook.net/signals/config/972506872954040?v=2.9.140&amp;r=stable&amp;domain=www.jal.co.jp" async=""></script><script src="https://connect.facebook.net/signals/config/622071948237351?v=2.9.140&amp;r=stable&amp;domain=www.jal.co.jp" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" data="https://i.socdm.com/s/so_sg.js?sgid=67723"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script type="text/javascript" async="" charset="utf-8" src="https://d-track.send.microad.jp/js/blade_track_jp.js"></script><script src="https://nexus.ensighten.com/uw-jal/prod/serverComponent.php?namespace=Bootstrapper&amp;staticJsPath=nexus.ensighten.com/uw-jal/prod/code/&amp;publishedOn=Wed Jan 17 01:22:39 GMT 2024&amp;ClientID=2756&amp;PageID=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D"></script>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<title>JAL | 発着案内（国内線）</title>
+<link rel="canonical" href="https://www.jal.co.jp/flight-status/dom/">
+<link rel="alternate" media="only screen and (max-width: 640px)" href="https://www.jal.co.jp/flight-status/dom/sp/search/">
+<link rel="stylesheet" href="/flight-status/fy19design/css/master.css">
+<link rel="stylesheet" href="/flight-status/fy19design/css/add_style.css">
+<style type="text/css">
+body,td,th {
+  font-family: Meiryo, "Hiragino Kaku Gothic ProN", sans-serif;
+}
+</style>
+<iframe src="javascript:void(0)" title="" role="presentation" style="width: 0px; height: 0px; border: 0px; display: none;"></iframe><script type="text/javascript" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script><script type="text/javascript" src="//s.yjtag.jp/lib/a28ef273b989a01a969138e174704ef6b30f800e.js?v=2"></script><script src="//nexus.ensighten.com/uw-jal/prod/Bootstrap.js" type="text/javascript" async=""></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-61WF43F8Q0&amp;l=JLJS_GTM_dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-M78X2NBYF0&amp;l=JLJS_GTM_dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script><script src="//bat.bing.com/bat.js" async=""></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TBJ5973B&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T8PD5K97&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NB34L79S&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T6T6Z3N&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-ML3RCGP&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5VTW9TL&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T8KBSWX&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-TSH5HGX&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-KZW2JS6&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-M78XLW2&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-NTRCPRB&amp;l=JLJS_GTM_dataLayer"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" src="//yjtag.yahoo.co.jp/tag?site=G8jJqXh&amp;referrer=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;docReferrer=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;H=1o8kn8n"></script><script async="" src="//s.yjtag.jp/tag.js#site=G8jJqXh"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-NXT42N&amp;l=JLJS_GTM_dataLayer"></script><script src="/flight-status/fy19design/js/init.js"></script>
+
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="3MXWP-V5B3J-6HM49-DWDEH-MEVC8",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"3MXWP-V5B3J-6HM49-DWDEH-MEVC8",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="afhvsndii6ue2znh3x6q-f-02671c4bb-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"36","ak.cp":"890100","ak.ai":parseInt("568877",10),"ak.ol":"0","ak.cr":84,"ak.ipv":4,"ak.proto":"h2","ak.rid":"4347a5b","ak.r":43653,"ak.a2":e,"ak.m":"a","ak.n":"essl","ak.bpcip":"1.79.89.0","ak.cport":49839,"ak.gh":"23.62.9.16","ak.quicv":"","ak.tlsv":"tls1.2","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1705500157","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==/BXCxjF1RekXh9QXGfcgg+6n5G/xDvNxP8UZ+D1VG8NugolT1s37D+xb4M9Y9w2cyuAcE0zn65BjH3qKosTP/jYva33XIlpwgjNOEqv0LUrToHgcC6IhiNh3S5nZvwCMF4BMgN+NKwiq9ggnVTbY1fOk2i6cHal5D4rNuCXiwq3Cswg5c++X/GBIK09qY1fw3U9jUolJGaJXI2r98q+/QVA2Si+eNhjzav2cIddw+0zRvV29fzwdoT39nHsc3DuGHBHV5CBE50zHyMnJCU5Pzo4b9VVJFcj6cZ8ExSabK/nbGM6P8ejUgAOir5YGRTMBh/rpKXVsGBZL0px0fcpl42EUK88RZIAIXsMq4VTzynpfSJ0CT2Fjr3zA0ysRcvQ5nsEERFdOcGIyFVBmN1YNjfj06/QvGSgzLqYGyZUsUxk=","ak.pv":"159","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script><script src="https://bat.bing.com/p/action/187019728.js" type="text/javascript" async="" data-ueto="ueto_fa99b4c999"></script><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><style type="text/css">#ensModalWrapper {
+    border:none!important;
+    box-shadow:none!important;
+     padding:0!important;
+    z-index: 9999;
+}
+
+#ensModalWrapper:after{
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.ensModal{
+font-size: 18px;
+    color: #333;
+    padding: 20px 20px 100px 20px!important;
+    background-color: #fff;
+    z-index: 99999;
+    position: relative;
+    border: 1px solid #111;
+    box-shadow: 5px 5px 5px grey;
+    height: auto;
+}
+
+.ensModal .ensTitle {
+    margin: 0px!important;
+    width: auto!important;
+    color: #74736F;
+    position: static!important;
+    padding-left: 0!important;
+    padding-top: 0!important;
+    padding-bottom:0!important;
+    text-align: center;
+}
+
+.ensButtons {
+    clear: both;
+    margin-top: 5px!important;
+    float: none;
+    margin-left: auto;
+    display: block;
+    text-align: right;
+}
+
+.ensButtons .button.blue {
+    background-color: #8c713f!important;
+}
+
+.ensButtons .button {
+   width: 90px !important;
+   height: 24px !important;
+   font-size: 14px !important;
+}
+
+.ensModal hr {
+    border: 1px inset;
+    display: block;
+    visibility: visible;
+    margin: 0.5em auto;
+}
+
+.ensModal .link-text {
+    font-family: 'Montserrat', sans-serif;
+    color: #856514;
+    font-weight: 600;
+    position: relative;
+}
+.ensModal .alt-icon {
+    display: inline-block;
+    font-size: 0;
+    line-height: 1;
+    vertical-align: middle;
+}
+.ensModal [class*='link-other'] {
+    position: relative;
+}
+.ensModal [class*='link-other'] .alt-icon {
+    position: relative;
+    top: -1px;
+    left: 1px;
+    width: 16px;
+    height: 16px;
+}
+
+#ensBannerDescription {
+font-size:70% !important;
+line-height: 1.3!important;
+}
+
+#ensNotifyBanner {
+background-color: rgba(25,27,35,0.8);
+opacity: 1;
+width: 80% !important;
+left: 9% !important;
+padding: 10px !important;
+}
+
+#popup_link {
+color:#ffffff;
+text-decoration: underline;
+}</style><script type="text/javascript" src="https://b99.yahoo.co.jp/pagead/conversion_async.js"></script><script type="text/javascript" src="https://b99.yahoo.co.jp/pagead/conversion_async.js"></script><script type="text/javascript" src="https://b99.yahoo.co.jp/pagead/conversion_async.js"></script><script type="text/javascript" src="https://tg.socdm.com/sa/js?said=sg67723-s&amp;t=1&amp;tp=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;pp=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F"></script><meta http-equiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9"><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/11218677722/?random=1705500158534&amp;cv=11&amp;fst=1705500158534&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be41a0v9123468532&amp;gcd=11l1l1l1l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;ref=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=JAL%20%7C%20%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%EF%BC%88%E5%9B%BD%E5%86%85%E7%B7%9A%EF%BC%89&amp;auid=1155691038.1705500153&amp;uamb=0&amp;uap=macOS&amp;uaw=0&amp;data=event%3Dgtag.config&amp;rfmt=3&amp;fmt=4"></script><script charset="utf-8" src="https://analytics.tiktok.com/i18n/pixel/static/identify_55404.js"></script><iframe src="https://tg.socdm.com/aux/sosync" width="1" height="1" style="position: absolute; border: none; padding: 0px; margin: 0px; display: none; visibility: hidden;"></iframe></head>
+
+<body id="body">
+
+
+<noscript><p class="text-noscript"><b>当サイトをご利用になるためには、Javascript対応のブラウザが必要です。また、設定でJavascriptを有効にする必要があります。</b></p></noscript>
+
+
+<!-- ======================== Header ======================== -->
+<header id="header" class="_simple">
+<div class="h-inner">
+<p class="h-logo"><img src="/flight-status/fy19design/img/logo.png" alt="JAPAN AIRLINES"></p>
+</div><!-- /h-inner -->
+</header>
+<!-- ======================== Header ======================== -->
+
+<!-- ======================== Main ======================== -->
+<main id="main">
+
+<div class="hdg-l1">
+<h1 class="hdg-l1_txt">発着案内（国内線）</h1>
+</div><!-- /hdg-l1 -->
+
+<div class="panel-attention JS_FSResult" id="JS_FSErrArea" style="display: none;">
+<h2 class="panel-attention_hdg">以下ご確認ください。</h2>
+<ul class="list">
+<li class="JS_FSErrMsg"></li>
+</ul>
+</div>
+
+<div class="tab js-tab" id="JS_FSInputArea" style="display: block;">
+<ul class="tab_list" data-col="4">
+<li class="JS_tabRadio is-current"><span class="form-radio">
+<input id="form-radio-item-01" class="js-tab_radio JS_FSInIndSearch" name="FsBtn" type="radio" value="route" checked="">
+<label class="form-radio_item" for="form-radio-item-01">路線で検索する</label>
+</span></li>
+<li class="JS_tabRadio"><span class="form-radio">
+<input id="form-radio-item-02" class="js-tab_radio JS_FSInIndSearch" name="FsBtn" type="radio" value="flightNum">
+<label class="form-radio_item" for="form-radio-item-02">便名で検索する</label>
+</span></li>
+</ul>
+
+<div class="tab_content">
+<div id="tab-item" class="tab_item js-tab_item JS_tabItem is-active" data-js-tab-bind="route" aria-hidden="false">
+<form class="js-form-way JS_FSInRouteSearchForm">
+<div class="grid _stick _condition js-form-condition mt-20 weather-information-top" data-col="4">
+
+<div class="grid_col departure-date">
+<div class="form-select-condition _departuredate">
+<label for="select-departuredate" class="form-select-condition_txt">出発日</label>
+<select name="DATEFLG" id="select-departuredate" class="JS_FSInSearchDate">
+<option value="1">前日</option>
+<option value="" selected="selected">当日</option>
+<option value="2">翌日</option>
+</select>
+<!-- /.form-select-condition --></div>
+</div><!-- /grid_col -->
+
+<div class="grid_col origin-destination">
+<div class="form-select-condition _incoming">
+<label for="select-incoming" class="form-select-condition_txt">出発</label>
+<select name="DPORT" id="select-incoming" class="js-form-condition_incoming JS_FSInDepAirportCode">
+<!-- dep airport options -->
+<option value="HND" selected="">東京(羽田)</option>
+<option value="ITM">大阪(伊丹)</option>
+<option value="KIX">大阪(関西)</option>
+<option value="CTS">札幌(新千歳)</option>
+<option value="NGO">名古屋(中部)</option>
+<option value="FUK">福岡</option>
+<option value="OKA">沖縄(那覇)</option>
+<option value="123">---</option>
+<option value="CTS">札幌(新千歳)</option>
+<option value="OKD">札幌(丘珠)</option>
+<option value="RIS">利尻</option>
+<option value="MMB">女満別</option>
+<option value="AKJ">旭川</option>
+<option value="SHB">根室中標津</option>
+<option value="KUH">釧路</option>
+<option value="OBO">帯広</option>
+<option value="HKD">函館</option>
+<option value="OIR">奥尻</option>
+<option value="AOJ">青森</option>
+<option value="MSJ">三沢</option>
+<option value="AXT">秋田</option>
+<option value="HNA">花巻</option>
+<option value="SDJ">仙台</option>
+<option value="GAJ">山形</option>
+<option value="HND">東京(羽田)</option>
+<option value="NRT">東京(成田)</option>
+<option value="KIJ">新潟</option>
+<option value="MMJ">松本</option>
+<option value="KMQ">小松</option>
+<option value="FSZ">静岡</option>
+<option value="NGO">名古屋(中部)</option>
+<option value="NKM">名古屋(小牧)</option>
+<option value="ITM">大阪(伊丹)</option>
+<option value="KIX">大阪(関西)</option>
+<option value="UKB">大阪(神戸)</option>
+<option value="SHM">南紀白浜</option>
+<option value="TJH">但馬</option>
+<option value="OKI">隠岐</option>
+<option value="OKJ">岡山</option>
+<option value="IZO">出雲</option>
+<option value="HIJ">広島</option>
+<option value="UBJ">山口宇部</option>
+<option value="TKS">徳島</option>
+<option value="TAK">高松</option>
+<option value="KCZ">高知</option>
+<option value="MYJ">松山</option>
+<option value="FUK">福岡</option>
+<option value="KKJ">北九州</option>
+<option value="OIT">大分</option>
+<option value="NGS">長崎</option>
+<option value="TSJ">対馬</option>
+<option value="IKI">壱岐</option>
+<option value="FUJ">五島福江</option>
+<option value="KMJ">熊本</option>
+<option value="AXJ">天草</option>
+<option value="KMI">宮崎</option>
+<option value="KOJ">鹿児島</option>
+<option value="TNE">種子島</option>
+<option value="KUM">屋久島</option>
+<option value="KKX">喜界島</option>
+<option value="ASJ">奄美大島</option>
+<option value="TKN">徳之島</option>
+<option value="OKE">沖永良部</option>
+<option value="RNJ">与論</option>
+<option value="OKA">沖縄(那覇)</option>
+<option value="KTD">北大東</option>
+<option value="MMD">南大東</option>
+<option value="UEO">久米島</option>
+<option value="MMY">宮古</option>
+<option value="TRA">多良間</option>
+<option value="ISG">石垣</option>
+<option value="OGN">与那国</option>
+
+<!-- /dep airport options -->
+</select>
+<button type="button" class="form-select-condition_exc js-form-condition_exc"><img src="/flight-status/fy19design/img/icon_exchange_001.png" alt="出発と到着を入れ替える"></button>
+<!-- /.form-select-condition --></div>
+</div><!-- /grid_col -->
+
+<div class="grid_col origin-destination">
+<div class="form-select-condition _outgoing">
+<label for="select-outgoing" class="form-select-condition_txt">到着</label>
+<select name="APORT" id="select-outgoing" class="js-form-condition_outgoing JS_FSInArrAirportCode">
+<!-- dep airport options -->
+<option value="HND" selected="">東京(羽田)</option>
+<option value="ITM">大阪(伊丹)</option>
+<option value="KIX">大阪(関西)</option>
+<option value="CTS">札幌(新千歳)</option>
+<option value="NGO">名古屋(中部)</option>
+<option value="FUK">福岡</option>
+<option value="OKA">沖縄(那覇)</option>
+<option value="123">---</option>
+<option value="CTS">札幌(新千歳)</option>
+<option value="OKD">札幌(丘珠)</option>
+<option value="RIS">利尻</option>
+<option value="MMB">女満別</option>
+<option value="AKJ">旭川</option>
+<option value="SHB">根室中標津</option>
+<option value="KUH">釧路</option>
+<option value="OBO">帯広</option>
+<option value="HKD">函館</option>
+<option value="OIR">奥尻</option>
+<option value="AOJ">青森</option>
+<option value="MSJ">三沢</option>
+<option value="AXT">秋田</option>
+<option value="HNA">花巻</option>
+<option value="SDJ">仙台</option>
+<option value="GAJ">山形</option>
+<option value="HND">東京(羽田)</option>
+<option value="NRT">東京(成田)</option>
+<option value="KIJ">新潟</option>
+<option value="MMJ">松本</option>
+<option value="KMQ">小松</option>
+<option value="FSZ">静岡</option>
+<option value="NGO">名古屋(中部)</option>
+<option value="NKM">名古屋(小牧)</option>
+<option value="ITM">大阪(伊丹)</option>
+<option value="KIX">大阪(関西)</option>
+<option value="UKB">大阪(神戸)</option>
+<option value="SHM">南紀白浜</option>
+<option value="TJH">但馬</option>
+<option value="OKI">隠岐</option>
+<option value="OKJ">岡山</option>
+<option value="IZO">出雲</option>
+<option value="HIJ">広島</option>
+<option value="UBJ">山口宇部</option>
+<option value="TKS">徳島</option>
+<option value="TAK">高松</option>
+<option value="KCZ">高知</option>
+<option value="MYJ">松山</option>
+<option value="FUK">福岡</option>
+<option value="KKJ">北九州</option>
+<option value="OIT">大分</option>
+<option value="NGS">長崎</option>
+<option value="TSJ">対馬</option>
+<option value="IKI">壱岐</option>
+<option value="FUJ">五島福江</option>
+<option value="KMJ">熊本</option>
+<option value="AXJ">天草</option>
+<option value="KMI">宮崎</option>
+<option value="KOJ">鹿児島</option>
+<option value="TNE">種子島</option>
+<option value="KUM">屋久島</option>
+<option value="KKX">喜界島</option>
+<option value="ASJ">奄美大島</option>
+<option value="TKN">徳之島</option>
+<option value="OKE">沖永良部</option>
+<option value="RNJ">与論</option>
+<option value="OKA">沖縄(那覇)</option>
+<option value="KTD">北大東</option>
+<option value="MMD">南大東</option>
+<option value="UEO">久米島</option>
+<option value="MMY">宮古</option>
+<option value="TRA">多良間</option>
+<option value="ISG">石垣</option>
+<option value="OGN">与那国</option>
+
+<!-- /dep airport options -->
+</select>
+<!-- /.form-select-condition --></div>
+</div><!-- /grid_col -->
+
+<div class="grid_col flight-search--submit-btn">
+<button type="button" class="btn JS_FSRouteSearchBtn">検索する</button>
+</div>
+</div><!-- /grid -->
+</form>
+</div><!-- /tab_item -->
+
+
+<div id="tab-item-02" class="tab_item js-tab_item JS_tabItem" data-js-tab-bind="flightNum" aria-hidden="true">
+
+<form class="js-form-way JS_FSInFlightNumSearchForm">
+<div class="grid _stick _condition js-form-condition mt-20 weather-information-top" data-col="4">
+
+<div class="grid_col select-flight-date">
+<div class="form-select-condition _departuredate">
+<label for="select-departuredate" class="form-select-condition_txt">出発日</label>
+<select name="dateAttribute" id="select-departuredate" class="JS_FSInSearchDate">
+<option value="1">前日</option>
+<option value="" selected="selected">当日</option>
+<option value="2">翌日</option>
+</select>
+<!-- /.form-select-condition --></div>
+</div><!-- /grid_col -->
+
+<div class="grid_col select-airline">
+<div class="form-select-condition _departuredate">
+<label for="select-airline" class="form-select-condition_txt">航空会社</label>
+<select name="airlineCode" id="select-airline" class="JS_FSInCarrierCode">
+<option value="JAL" selected="selected">JAL</option>
+<option value="JTA">JTA</option>
+<option value="RAC">RAC</option>
+</select>
+<!-- /.form-select-condition --></div>
+</div><!-- /grid_col -->
+
+<div class="grid_col flight-number-input-box">
+<label for="flight-number">便名</label>
+<input type="text" name="flightSerNo" id="flight-number" class="form-txt _full js-form-validate-blank JS_FSInFlightNo is-blank" placeholder="例：051" maxlength="4" required="">
+</div>
+
+<div class="grid_col flight-search--submit-btn">
+<button type="button" class="btn JS_FSFlightNumSearchBtn">検索する</button>
+</div>
+</div><!-- /grid -->
+</form>
+</div><!-- /tab_item -->
+</div><!-- /tab_content -->
+</div><!-- /tab -->
+
+<div class="weather-information-btm JS_FSResult" id="JS_FSHeadArea" style="">
+<div class="info-_col">
+<div class="information-date JS_FSDate">2024年1月17日（水）</div>
+</div>
+
+<div class="info-_col departure_col" id="JS_FSDepAirportArea">
+<div class="col_txt-top"><span class="airport-name">出発空港</span><span class="current-time JS_FSWeatherTime JS_FSWeather"></span></div>
+<div class="col_txt-btm"><em class="city_name JS_FSAirportName">東京（羽田）</em><span class="weather_ico JS_FSWeatherState"></span><em class="temperature JS_FSCelTemp JS_FSWeather"></em></div>
+</div>
+
+<div class="info-_col arrival_col" id="JS_FSArrAirportArea">
+<div class="col_txt-top"><span class="airport-name">到着空港</span><span class="current-time JS_FSWeatherTime JS_FSWeather"></span></div>
+<div class="col_txt-btm"><em class="city_name JS_FSAirportName">青森</em><span class="weather_ico JS_FSWeatherState"></span><em class="temperature JS_FSCelTemp JS_FSWeather"></em></div>
+</div>
+
+<div class="info-_col JS_FSLatestFlightNews"><a href="/jp/ja/other/weather_info_dom/#OUTLOOK" class="btn-next">運航の見通し（国内線）</a></div>
+</div>
+	
+<!--<div id="JS_panelNews" class="panel-news mt-30 mb-0" style="display:none;">
+<h2 class="panel-news_hdg">お知らせ</h2>
+<div class="panel-news_item">
+<ul class="link-list JS_panelNewsList">
+</ul>
+</div>
+</div>--><!-- /panel-news -->
+<script>
+var JLJS_panelNewsData = { 
+	boardDate1:'',
+	boardAirport1:'',
+	arrivalAirport1:'',
+	isLogin:''
+};
+</script>
+
+<div class="panel mt-30 JS_FSResult" id="JS_FSAttentionArea" style="display: none;">
+<div class="inr-box">
+<div class="box-item">
+<p>便名欄に<em class="attention_mark_txt"><img src="/flight-status/fy19design/img/icon_attention_001.png" alt="ご注意"><span>マーク</span></em>がある便は、実際の運航状況に関わらず予約の変更・払い戻しにおいて特別な取り扱いを行っております。<br>
+欠航・遅延がある場合には、決定次第このページの「ご案内」欄にてご案内します。</p>
+</div>
+<div class="box-item"><p class="_btn"><a href="/jp/ja/dom/serviceinfo/" class="btn-04" target="otherwindow"><img src="/flight-status/fy19design/img/icon_blank_001.png" alt="新しいウインドウで開きます" class="icon-blank">欠航・遅延に関するサポート</a></p></div>
+</div>
+</div><!-- /panel -->
+
+<p class="right JS_FSResult" id="JS_FSRecvTimeArea" style=""><small class="JS_FSRecvTime">運航情報：23時2分現在</small></p>
+
+<table class="form-table-05 JS_FSResult" id="JS_FSDetailArea" style="">
+<thead>
+<tr>
+<th>便名</th>
+<th>予定</th>
+<th>出発状況（搭乗口）</th>
+<th>到着状況（出口）</th>
+<th>ご案内</th>
+<th></th>
+</tr>
+</thead>
+<tbody class="JS_FSDetailTable">
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL141</span></td>
+
+<td>7:40 — 9:05
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">7:44　出発済み
+
+
+
+<br>（搭乗口34）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">9:01　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL143</span></td>
+
+<td>9:30 — 10:55
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">9:27　出発済み
+
+
+
+<br>（搭乗口21）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">10:44　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL145</span></td>
+
+<td>13:05 — 14:25
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">13:02　出発済み
+
+
+
+<br>（搭乗口10）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">14:23　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL147</span></td>
+
+<td>16:00 — 17:20
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">16:01　出発済み
+
+
+
+<br>（搭乗口12）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">17:19　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL149</span></td>
+
+<td>18:40 — 20:10
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">18:42　出発済み
+
+
+
+<br>（搭乗口21）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">19:57　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+
+
+
+
+<tr>
+
+
+
+<td>
+
+
+
+
+
+
+<span class="flight_number_txt ">JAL151</span></td>
+
+<td>19:55 — 21:25
+
+
+
+</td>
+<td class="dep_flight_time"><span class="emData">19:52　出発済み
+
+
+
+<br>（搭乗口10）
+
+
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData">21:04　到着済み
+
+
+
+</span></td>
+<td>
+
+
+
+&nbsp;
+
+
+	
+</td>
+<td>
+
+
+
+&nbsp;
+
+
+
+</td>
+</tr>
+
+
+</tbody>
+</table>
+
+<div class="loading-icon" id="JS_FSLoading" style="display: none;"><img src="/flight-status/fy19design/img/spin-black.gif" alt=""></div>
+
+<div class="panel mt-50">
+<h3 class="panel_hdg _attention">ご注意</h3>
+<ul class="list">
+<li><strong>他社運航のコードシェア便の最新状況については、各運航会社へご確認ください。（運航会社側の情報と異なる場合があります）</strong></li>
+</ul>
+<h4 class="panel_hdg-02">表示について</h4>
+<ul class="list">
+<li>出発状況は出発が確定し飛行機が動き出す時刻です。</li>
+<li><span class="icon_inflight"></span>：航行中</li>
+<li>便名の前に表示される航空会社コードは以下の航空会社を示します。<br>
+JAL：日本航空（日本航空、ジェイ・エア、日本エアコミューター、北海道エアシステム、日本トランスオーシャン航空）<br>
+JTA：日本トランスオーシャン航空<br>
+RAC：琉球エアーコミューター</li>
+</ul>
+</div><!-- /panel -->
+
+<div class="panel-service">
+<div class="panel-service_item">
+<h2 class="panel-service_hdg">サポートメニュー</h2>
+<ul class="panel-service_item_list">
+<li>
+<div class="panel-service_item_list_inner">
+<div class="_item">
+<h3 class="panel-service_hdg_02">欠航・遅延便検索</h3>
+<p>本日より過去1年間の欠航・到着遅延・到着地変更・引き返しとなった便の検索、ならびに証明書の発行も承ります。</p>
+</div>
+<div class="_btn">
+<ul class="btn-list">
+<li><a href="javascript:document.formcancel.submit();" class="btn-04"><img src="/flight-status/fy19design/img/icon_blank_001.png" class="icon-blank" alt="新しいウインドウで開きます">対象便を検索する</a>
+<form method="POST" action="https://booking.jal.co.jp/jl/dom-pbkg/irregularSearch" name="formcancel" target="otherwindow">
+<input name="linkId" type="hidden" value="02">
+<input name="langCd" type="hidden" value="ja">
+</form>
+</li>
+</ul>
+</div>
+</div><!-- /panel-service_item_list_inner -->
+</li>
+
+<li>
+<div class="panel-service_item_list_inner">
+<div class="_item">
+<h3 class="panel-service_hdg_02">JAL MaaS 目的地までの経路検索</h3>
+<p>空港前後の移動の検索や、空港情報のご案内、地上交通の予約・手配がワンストップで可能となる他、現地でご利用いただけるお得なクーポンもご提供します。</p>
+</div>
+<div class="_btn">
+<ul class="btn-list">
+<li><a href="/jp/ja/relations/jalmaas/" class="btn-04" target="otherwindow"><img src="/flight-status/fy19design/img/icon_blank_001.png" alt="新しいウインドウで開きます" class="icon-blank">目的地までの経路検索</a></li>
+</ul>
+</div>
+</div><!-- /panel-service_item_list_inner -->
+</li>
+	
+<li>
+<div class="panel-service_item_list_inner">
+<div class="_item">
+<h3 class="panel-service_hdg_02">空港情報</h3>
+<p>空港ターミナルなど国内の各空港情報をご案内します。</p>
+</div>
+<div class="_btn">
+<ul class="btn-list">
+<li><a href="https://www.jal.co.jp/jp/ja/dom/airport/" class="btn-04" target="otherwindow"><img src="/flight-status/fy19design/img/icon_blank_001.png" alt="新しいウインドウで開きます" class="icon-blank">空港情報</a></li>
+</ul>
+</div>
+</div><!-- /panel-service_item_list_inner -->
+</li>
+</ul>
+</div><!-- /panel-service_item -->
+</div><!-- /panel-service -->
+
+	<div class="info-_col center"><a href="https://www.jal.co.jp/jp/ja/" class="btn-next">ホームへ戻る</a></div>
+
+</main>
+<!-- ======================== Main ======================== -->
+
+<!-- ======================== Footer ======================== -->
+<footer id="footer">
+<div class="f-inner">
+<p class="f-inner_txt"><small lang="en">Copyright©Japan Airlines. All rights reserved.</small></p>
+</div><!-- /f-inner -->
+</footer>
+
+<script>
+var JLJS_GTM_dataLayer = [{
+'depM':'',
+'depD':'',
+'arrM':'',
+'arrD':'',
+'depAC':'',
+'arrAC':'',
+'segType':'',
+'class':'',
+'adt':'',
+'chd':'',
+'inf':'',
+'linkid':'',
+'memberNo':'',
+'pnrREF':'',
+'seg':'',
+'eJALpay':'',
+'totalPrice':'',
+'eJAL_amount':'',
+'dApt1':'',
+'dApt2':'',
+'dApt3':'',
+'dApt4':'',
+'aApt1':'',
+'aApt2':'',
+'aApt3':'',
+'aApt4':'',
+'dDate1':'',
+'dDate2':'',
+'dDate3':'',
+'dDate4':'',
+'flight1':'',
+'flight2':'',
+'flight3':'',
+'flight4':'',
+'rdb1':'',
+'rdb2':'',
+'rdb3':'',
+'rdb4':'',
+'class1':'',
+'class2':'',
+'class3':'',
+'class4':'',
+'jmb1':'',
+'jmb2':'',
+'jmb3':'',
+'jmb4':'',
+'jmb5':'',
+'jmb6':'',
+'age1':'',
+'age2':'',
+'age3':'',
+'age4':'',
+'age5':'',
+'age6':'',
+'sex1':'',
+'sex2':'',
+'sex3':'',
+'sex4':'',
+'sex5':'',
+'sex6':''
+}];
+</script>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NXT42N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','JLJS_GTM_dataLayer','GTM-NXT42N');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Yahoo Tag Manager -->
+<script type="text/javascript">
+  (function () {
+    var tagjs = document.createElement("script");
+    var s = document.getElementsByTagName("script")[0];
+    tagjs.async = true;
+    tagjs.src = "//s.yjtag.jp/tag.js#site=G8jJqXh";
+    s.parentNode.insertBefore(tagjs, s);
+  }());
+</script>
+<noscript>
+  <iframe src="//b.yjtag.jp/iframe?c=G8jJqXh" width="1" height="1" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+</noscript>
+<!-- End Yahoo Tag Manager -->
+<!-- ======================== Footer ======================== -->
+
+<!-- ======================== chat =================================== -->
+<!-- EE tag -->
+    <!--<script>window.ATGSvcs = {'eeid':'200106309899'};</script>
+    <script src="//static.atgsvcs.com/js/atgsvcs.js"></script>
+	  <script>
+      var l = 'faq.jal.co.jp', d=document,ss='script',s=d.getElementsByTagName(ss)[0];
+      function r(u) {
+        var rn=d.createElement(ss); rn.type='text/javascript'; rn.defer=rn.async=!0; rn.src="//"+l+u; s.parentNode.insertBefore(rn,s);
+      }
+      r('/rnt/rnw/javascript/vs/1/vsapi.js'); r('/vs/1/vsopts.js');
+      </script>-->
+<!-- End EE tag -->
+<!--<div id="myDiv"></div>-->
+<!-- ======================== chat =================================== -->
+
+<!-- ======================== JavaScript =================================== -->
+<script src="/flight-status/fy19design/js/jquery.js"></script><script type="text/javascript" id="">(function(c,d,f,g,e){c[e]=c[e]||[];var h=function(){var b={ti:"187019728"};b.q=c[e];c[e]=new UET(b);c[e].push("pageLoad")};var a=d.createElement(f);a.src=g;a.async=1;a.onload=a.onreadystatechange=function(){var b=this.readyState;b&&"loaded"!==b&&"complete"!==b||(h(),a.onload=a.onreadystatechange=null)};d=d.getElementsByTagName(f)[0];d.parentNode.insertBefore(a,d)})(window,document,"script","//bat.bing.com/bat.js","uetq_jal");</script>
+ 
+ <script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=DC-13235889"></script>
+ 
+ <script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=DC-13235889"></script><script type="text/javascript" id="">(function(a,d,c,b){a="//nexus.ensighten.com/uw-jal/prod/Bootstrap.js";d=document;c="script";b=d.createElement(c);b.src=a;b.type="text/java"+c;b.async=!0;a=d.getElementsByTagName(c)[0];a.parentNode.insertBefore(b,a)})();</script><script type="text/javascript" id="" src="//js.rtoaster.jp/Rtoaster.js"></script>
+<script src="/flight-status/fy19design/js/run.js"></script>
+<script src="/commonY15/js/lib/lodash.js"></script>
+<script src="/sp/share/flight-status/js/flightStatusDict.js"></script>
+<script src="/sp/share/flight-status/js/flightStatusCityList.js"></script>
+<script src="/sp/share/flight-status/js/flightStatusUtil.js"></script>
+<script src="/sp/share/flight-status/js/flightStatusModule.js"></script>
+<script src="/sp/share/flight-status/js/flightStatusPanelNews.js"></script>
+<script src="/flight-status/dom/js/flightStatusControlDom.js"></script>
+<script src="/flight-status/dom/js/flightStatusPanelNewsConf.js"></script>
+
+<script id="JS_FSDetailTemplate" type="text/x-lodash-template">
+<% for(var i=0, len = flightData.length; i < len; i++){ %>
+<%     var data = flightData[i]; %>
+<%     if(!data.isMltLeg){ %>
+<%         if(data.isIrregular || data.isInFlight){ %>
+
+<tr class="<% if(data.isIrregular){ %>irregular <% } %><% if(data.isInFlight){ %>in-flight <% }%>">
+
+<%         } else { %>
+
+<tr>
+
+<%         } %>
+
+<td>
+
+<%     } else { %>
+
+<tr class="<% if(data.mltLeg.isLastBlock){ %>multi_last_block <% } else { %>multi_first_block <% } %><% if(data.isIrregular){ %>irregular <% } %><% if(data.isInFlight){ %>in-flight <% } %>">
+
+<%         if(data.mltLeg.isFirstBlock){ %>
+
+<td rowspan="<%= data.mltLeg.mltLegLen %>" class="multi_plane">
+
+<%         } %>
+<%     } %>
+<%     if(data.isInterFlight){ %>
+
+<span class="other_flight">国際便</span>
+
+<%     } %>
+<%     if(data.skdChgFlightDate){ %>
+
+<span class="other_flight"><%= data.skdChgFlightDate %></span>
+
+<%     } %>
+<%     if(data.isNskFlight){ %>
+
+<span class="other_flight">臨時便</span>
+
+<%     } %>
+
+<span class="flight_number_txt <% if(data.isIrregular){ %>attention_mark<% } %>"><%= data.flightNum %></span></td>
+
+<td><% if(data.std && data.sta){ %><%= data.std %> &mdash; <%= data.sta %><% } %>
+
+<%     if(data.isMltLeg){ %>
+
+<span class="<% if(data.isLastBlock){ %>multi_last<% } else { %>multi_first<% } %>"><%= data.depAirport %> &mdash; <%= data.arrAirport %></span>
+
+<%     } %>
+
+</td>
+<td class="dep_flight_time"><span class="emData"><%= data.atd %>　<%= data.depSts %>
+
+<%     if(data.depGate){ %>
+
+<br><%= data.depGate %>
+
+<%     } %>
+
+</span><span class="plane"></span></td>
+<td class="arr_flight_time"><span class="emData"><%= data.ata %>　<%= data.arrSts %>
+
+<%     if(data.arrTml){ %>
+
+<br><%= data.arrTml %>
+
+<%     } %>
+
+</span></td>
+<td>
+
+<%     if(data.rmk1){ %>
+
+<span class="form-table-05_txt_change"><%= data.rmk1 %></span>
+
+<%     } else { %>
+
+&nbsp;
+
+<%     } %>
+	
+</td>
+<td>
+
+<% if(data.rmk2){ %>
+
+<%= data.rmk2 %>
+
+<% } else { %>
+
+&nbsp;
+
+<% } %>
+
+</td>
+</tr>
+
+<% } %>
+</script>
+
+
+<!-- ======================== JavaScript =================================== -->
+<script type="text/javascript" src="/VsZmwd-egE6Hz0uBvmaHVGj1zmQ/1Vaz8NJXfE/LRJ3AEFcVA/U1QEZ/Gs0WXY"></script>
+<img src="https://b95.yahoo.co.jp/s?s=bt&amp;csurl=https://yjtag.yahoo.co.jp/cs&amp;tp=8FzrfRY&amp;btt=ESqzeQt5zU6kbscV6kKSm0Dz_3w5laAyQFGCf6CvH28" style="display:none;"><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code --><!-- Segment Pixel - RTGタグ - DO NOT MODIFY -->
+
+<!-- End of Segment Pixel --><!-- Facebook Pixel Code -->
+
+
+<!-- End Facebook Pixel Code --><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code --><!-- Facebook Pixel Code -->
+
+
+<!-- End Facebook Pixel Code -->
+      <!-- Facebook Pixel Code -->
+
+
+<!-- End Facebook Pixel Code --><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code --><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code --><!-- Yahoo! JAPAN xdomain script --><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code --><!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code -->
+<!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code -->
+<!-- Twitter conversion tracking base code -->
+
+<!-- End Twitter conversion tracking base code -->
+<!-- LINE Tag Base Code -->
+<!-- Do Not Modify -->
+
+
+<!-- End LINE Tag Base Code -->
+<!-- SmartNews Ads Pixel Code -->
+
+
+<div id="batBeacon997155102614" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon641956713084" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=187019728&amp;Ver=2&amp;mid=d63a4716-64d4-4ff6-a5e8-936f3dff2c3f&amp;sid=0fec8920b54111eebea9837b8902a8fd&amp;vid=0fec8130b54111eeaa55dd593543838b&amp;vids=0&amp;msclkid=N&amp;pi=918639831&amp;lg=en-US&amp;sw=1470&amp;sh=956&amp;sc=30&amp;nwd=1&amp;tl=JAL%20%7C%20%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%EF%BC%88%E5%9B%BD%E5%86%85%E7%B7%9A%EF%BC%89&amp;p=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;r=https%3A%2F%2Fwww.jal.co.jp%2Fjp%2Fja%2Fother%2Fweather_info_dom%2F&amp;lt=622&amp;evt=pageLoad&amp;sv=1&amp;rn=252201" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div>
+ <script type="text/javascript" id="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","DC-13235889");</script>
+ 
+
+
+ 
+<script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=AW-11218677722"></script>
+ <script type="text/javascript" id="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","DC-13235889");</script>
+ 
+
+
+ 
+<script type="text/javascript" id="" src="https://www.googletagmanager.com/gtag/js?id=AW-11218677722"></script>
+<script type="text/javascript" id="">var JALCOJP=Rtoaster.Cookie.get("JALCOJP"),memNo=Rtoaster.Cookie.get("memNo");JALCOJP&&!memNo?Rtoaster.init(google_tag_manager["rm"]["32047089"](1430),Rtoaster.Cookie.get("JALCOJP")):!JALCOJP&&memNo?Rtoaster.init(google_tag_manager["rm"]["32047089"](1431),Rtoaster.Cookie.get("memNo")):JALCOJP&&memNo?Rtoaster.init(google_tag_manager["rm"]["32047089"](1432),Rtoaster.Cookie.get("memNo"),Rtoaster.Cookie.get("JALCOJP")):Rtoaster.init(google_tag_manager["rm"]["32047089"](1433));Rtoaster.track();</script><img src="https://t.co/1/i/adsct?bci=4&amp;eci=3&amp;event=%7B%7D&amp;event_id=075b06c6-5231-49c8-a7b3-25dab3d445d2&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=9cda9157-1a18-4fd7-a219-b138f7495ba6&amp;tw_document_href=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;tw_iframe_status=0&amp;txn_id=o763a&amp;type=javascript&amp;version=2.3.29" height="1" width="1" style="display: none;"><img src="https://analytics.twitter.com/1/i/adsct?bci=4&amp;eci=3&amp;event=%7B%7D&amp;event_id=075b06c6-5231-49c8-a7b3-25dab3d445d2&amp;integration=advertiser&amp;p_id=Twitter&amp;p_user_id=0&amp;pl_id=9cda9157-1a18-4fd7-a219-b138f7495ba6&amp;tw_document_href=https%3A%2F%2Fwww.jal.co.jp%2Fflight-status%2Fdom%2F%3FFsBtn%3Droute%26DATEFLG%3D%26DPORT%3DHND%26APORT%3DAOJ%26DATEFLG_temp%3D%26DATEFLG_temp%3D&amp;tw_iframe_status=0&amp;txn_id=o763a&amp;type=javascript&amp;version=2.3.29" height="1" width="1" style="display: none;"> <script type="text/javascript" id="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","AW-11218677722");</script> <script type="text/javascript" id="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","AW-11218677722");</script></body><iframe id="__JSBridgeIframe_1.0__" title="jsbridge___JSBridgeIframe_1.0__" style="display: none;"></iframe><iframe id="__JSBridgeIframe_SetResult_1.0__" title="jsbridge___JSBridgeIframe_SetResult_1.0__" style="display: none;"></iframe><iframe id="__JSBridgeIframe__" title="jsbridge___JSBridgeIframe__" style="display: none;"></iframe><iframe id="__JSBridgeIframe_SetResult__" title="jsbridge___JSBridgeIframe_SetResult__" style="display: none;"></iframe></html>
