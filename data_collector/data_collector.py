@@ -35,6 +35,24 @@ class Scraper(object):
     def scrape(self, out_file):
         pass
 
+    class FlightInfo(object):
+        """各便の情報を格納するクラス。"""
+        def __init__(self,
+                    flight_number,
+                    dep_ap,
+                    arr_ap,
+                    dep_time,
+                    arr_time,
+                    act_dep_time,
+                    act_arr_time):
+            self.flight_number = flight_number
+            self.dep_ap = dep_ap
+            self.arr_ap = arr_ap
+            self.dep_time = dep_time
+            self.arr_time = arr_time
+            self.act_dep_time = act_dep_time
+            self.act_arr_time = act_arr_time
+
 class JalScraper(Scraper):
 
     def __init__(self):
@@ -60,6 +78,30 @@ class JalScraper(Scraper):
             f.write(self.browser.page_source)
         
         input()
+
+        JalScraper.__parse_result(self.browser.page_source)
+    
+    @classmethod
+    def __parse_result(page_source):
+        '''JALの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
+        
+        dataのサンプルページはtest_jal.txtを参照。'''
+        soup = BeautifulSoup(page_source, "html.parser")
+        # 出発地を取得する。
+        # 出発地はid="JA_FSDepAirportArea"を持つdivの子要素のうち、
+        # class="col_txt-btmを持つdiv elementのvalueで取得できる。
+        dep_ap = soup.find("div", id="JA_FSDepAirportArea").find("div", class_="col_txt-btm").text
+        # 到着地を取得する。
+        # 到着地はid="JA_FSArrAirportArea"を持つdivの子要素のうち、
+        # class="col_txt-btmを持つdiv elementのvalueで取得できる。
+        arr_ap = soup.find("div", id="JA_FSArrAirportArea").find("div", class_="col_txt-btm").text
+
+        # 各便の情報を取得する。
+        # 各便の情報はclass="JS_FSDetailTable"を持つtbodyの子要素のtrで取得できる。
+        flight_all_info = soup.find("tbody", class_="JS_FSDetailTable").find_all("tr")
+        for flight_info in flight_all_info:
+            pass
+
 
 if __name__ == "__main__":
     jal_scraper = JalScraper()
