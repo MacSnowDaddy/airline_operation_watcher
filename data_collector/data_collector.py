@@ -82,10 +82,13 @@ class JalScraper(Scraper):
         JalScraper.__parse_result(self.browser.page_source)
     
     @classmethod
-    def __parse_result(page_source):
+    def __parse_result(page_source) -> list:
         '''JALの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
         
-        dataのサンプルページはtest_jal.txtを参照。'''
+        dataのサンプルページはtest_jal.txtを参照。
+        return: list(FlightInfo)'''
+
+        parsed_flights_info = []
         soup = BeautifulSoup(page_source, "html.parser")
         # 出発地を取得する。
         # 出発地はid="JA_FSDepAirportArea"を持つdivの子要素のうち、
@@ -100,8 +103,22 @@ class JalScraper(Scraper):
         # 各便の情報はclass="JS_FSDetailTable"を持つtbodyの子要素のtrで取得できる。
         flight_all_info = soup.find("tbody", class_="JS_FSDetailTable").find_all("tr")
         for flight_info in flight_all_info:
-            pass
-
+            # get flight_number
+            # you can get flight_number using span element whose class is "flight_number_txt"
+            flight_number = flight_info.find("span", class_="flight_number_txt").text
+            # get original dep time and arr time
+            # you can get original dep time and arr time using seconde td element
+            dep_time = flight_info.find_all("td")[1].text.split("-")[0].strip()
+            arr_time = flight_info.find_all("td")[1].text.split("-")[1].strip()
+            # get actual dep time
+            # you can get actual dep time using third td element
+            act_dep_time = flight_info.find_all("td")[2].text
+            # get actual arr time
+            # you can get actual arr time using forth td element
+            act_arr_time = flight_info.find_all("td")[3].text
+            parsed_flights_info.append(Scraper.FlightInfo(flight_number, dep_ap, arr_ap, dep_time, arr_time, act_dep_time, act_arr_time))
+        
+        return parsed_flights_info
 
 if __name__ == "__main__":
     jal_scraper = JalScraper()
