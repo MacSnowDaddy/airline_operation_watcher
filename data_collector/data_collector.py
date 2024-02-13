@@ -86,11 +86,13 @@ class JalScraper(Scraper):
         search_btn = self.browser.find_element(By.XPATH, '//*[@id="wrapper"]/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div/div/div[1]/div/div/div/div/div/form/div[2]/ul/li[3]/input[1]')
         search_btn.click()
 
-        # save the result
-        with open(out_file, "w") as f:
-            f.write(self.browser.page_source)
-        
-        JalScraper.parse_result(self.browser.page_source)
+        parsed_list = JalScraper.parse_result(self.browser.page_source)
+
+        # save the result to csv
+        with open(out_file, "a") as f:
+            for flight_info in parsed_list:
+                f.write(flight_info.to_csv(header=False))
+                f.write("\n")
     
     @classmethod
     def parse_result(cls, page_source) -> list:
