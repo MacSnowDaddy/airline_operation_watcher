@@ -108,8 +108,8 @@ class JalScraper(Scraper):
             flight_number = flight_info.find("span", class_="flight_number_txt").text
             # get original dep time and arr time
             # you can get original dep time and arr time using seconde td element
-            dep_time = flight_info.find_all("td")[1].text.split("-")[0].strip()
-            arr_time = flight_info.find_all("td")[1].text.split("-")[1].strip()
+            dep_time = flight_info.find_all("td")[1].text.split("—")[0].strip()
+            arr_time = flight_info.find_all("td")[1].text.split("—")[1].strip()
             # get actual dep time
             # you can get actual dep time using third td element
             act_dep_time = flight_info.find_all("td")[2].text
