@@ -88,8 +88,6 @@ class JalScraper(Scraper):
         with open(out_file, "w") as f:
             f.write(self.browser.page_source)
         
-        input()
-
         JalScraper.parse_result(self.browser.page_source)
     
     @classmethod
