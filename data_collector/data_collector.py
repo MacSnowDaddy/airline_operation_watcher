@@ -32,6 +32,9 @@ class Scraper(object):
     def set_to(self, to_ap):
         self.to_ap = to_ap
     
+    def set_date(self, date:any):
+        self.date = date
+    
     def scrape(self, out_file):
         pass
 
@@ -73,6 +76,8 @@ class JalScraper(Scraper):
         self.url = scrap_dict["jal"]
     
     def scrape(self, out_file):
+        if self.date is None:
+            self.date = "today"
         self.browser.get(self.url)
         # set the dep ap
         dep_ap_select = self.browser.find_element(By.ID, "dep")
@@ -82,6 +87,15 @@ class JalScraper(Scraper):
         dest_ap_select = self.browser.find_element(By.ID, "arr")
         select_dest = Select(dest_ap_select)
         select_dest.select_by_value(self.to_ap)
+        # set the date
+        date_select = self.browser.find_element(By.ID, "DATEFLG")
+        select_date = Select(date_select)
+        if self.date == "today":
+            pass
+        elif self.date == "prev":
+            select_date.select_by_value("1")
+        elif self.date == "next":
+            select_date.select_by_value("2")
         # do search
         search_btn = self.browser.find_element(By.XPATH, '//*[@id="wrapper"]/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div/div/div[1]/div/div/div/div/div/form/div[2]/ul/li[3]/input[1]')
         search_btn.click()
