@@ -4,6 +4,18 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from data_collector import JalScraper
 
+class TestFlightInfo(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_to_csv(self):
+        flight_info = JalScraper.FlightInfo("JAL141", "東京（羽田）", "青森", "7:40", "9:05", "7:44", "9:01")
+        csv = flight_info.to_csv()
+        self.assertEqual(csv, "flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time\nJAL141,東京（羽田）,青森,7:40,9:05,7:44,9:01")
+        csv = flight_info.to_csv(header=False)
+        self.assertEqual(csv, "JAL141,東京（羽田）,青森,7:40,9:05,7:44,9:01")
+
+
 class TestJalScraper(unittest.TestCase):
     def setUp(self):
         pass
