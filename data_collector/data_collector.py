@@ -52,6 +52,17 @@ class Scraper(object):
             self.arr_time = arr_time
             self.act_dep_time = act_dep_time
             self.act_arr_time = act_arr_time
+        
+        def to_csv(self, header=True):
+            '''各便の情報をcsv形式で返す。
+            
+            @param header: bool, default=True'''
+            csv = ""
+            if header:
+                csv = "flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time\n"
+            csv = csv + f"{self.flight_number},{self.dep_ap},{self.arr_ap},{self.dep_time},{self.arr_time},{self.act_dep_time},{self.act_arr_time}"
+
+            return csv
 
 class JalScraper(Scraper):
 
