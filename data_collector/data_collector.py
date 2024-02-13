@@ -93,11 +93,11 @@ class JalScraper(Scraper):
         # 出発地を取得する。
         # 出発地はid="JA_FSDepAirportArea"を持つdivの子要素のうち、
         # class="col_txt-btmを持つdiv elementのvalueで取得できる。
-        dep_ap = soup.find("div", id="JA_FSDepAirportArea").find("div", class_="col_txt-btm").text
+        dep_ap = soup.find("div", id="JS_FSDepAirportArea").find("div", class_="col_txt-btm").text
         # 到着地を取得する。
         # 到着地はid="JA_FSArrAirportArea"を持つdivの子要素のうち、
         # class="col_txt-btmを持つdiv elementのvalueで取得できる。
-        arr_ap = soup.find("div", id="JA_FSArrAirportArea").find("div", class_="col_txt-btm").text
+        arr_ap = soup.find("div", id="JS_FSArrAirportArea").find("div", class_="col_txt-btm").text
 
         # 各便の情報を取得する。
         # 各便の情報はclass="JS_FSDetailTable"を持つtbodyの子要素のtrで取得できる。
