@@ -76,6 +76,8 @@ class JalScraper(Scraper):
         self.url = scrap_dict["jal"]
     
     def scrape(self, out_file):
+        assert self.from_ap is not None, "出発地を設定してください。"
+        assert self.to_ap is not None, "到着地を設定してください。"
         if self.date is None:
             self.date = "today"
         self.browser.get(self.url)
