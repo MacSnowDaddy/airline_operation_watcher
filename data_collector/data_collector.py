@@ -38,6 +38,7 @@ class Scraper(object):
     class FlightInfo(object):
         """各便の情報を格納するクラス。"""
         def __init__(self,
+                    flight_date,
                     flight_number,
                     dep_ap,
                     arr_ap,
@@ -45,6 +46,7 @@ class Scraper(object):
                     arr_time,
                     act_dep_time,
                     act_arr_time):
+            self.flight_date = flight_date
             self.flight_number = flight_number
             self.dep_ap = dep_ap
             self.arr_ap = arr_ap
@@ -59,8 +61,8 @@ class Scraper(object):
             @param header: bool, default=True'''
             csv = ""
             if header:
-                csv = "flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time\n"
-            csv = csv + f"{self.flight_number},{self.dep_ap},{self.arr_ap},{self.dep_time},{self.arr_time},{self.act_dep_time},{self.act_arr_time}"
+                csv = "flight_date,flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time\n"
+            csv = csv + f"{self.flight_date},{self.flight_number},{self.dep_ap},{self.arr_ap},{self.dep_time},{self.arr_time},{self.act_dep_time},{self.act_arr_time}"
 
             return csv
 
@@ -99,6 +101,10 @@ class JalScraper(Scraper):
 
         parsed_flights_info = []
         soup = BeautifulSoup(page_source, "html.parser")
+        # 運航日を取得する。
+        # 運航日はclass="information-date JS_FSDate"を持つdiv elementのvalueで取得できる。
+        # 曜日を含めずに抽出する。
+        flight_date = soup.find("div", class_="information-date JS_FSDate").text.split("（")[0]
         # 出発地を取得する。
         # 出発地はid="JA_FSDepAirportArea"を持つdivの子要素のうち、
         # class="col_txt-btmを持つdiv elementのvalueで取得できる。
@@ -125,6 +131,15 @@ class JalScraper(Scraper):
             # get actual arr time
             # you can get actual arr time using forth td element
             act_arr_time = flight_info.find_all("td")[3].text.split()[0]
-            parsed_flights_info.append(Scraper.FlightInfo(flight_number, dep_ap, arr_ap, dep_time, arr_time, act_dep_time, act_arr_time))
+            parsed_flights_info.append(
+                Scraper.FlightInfo(
+                    flight_date,
+                    flight_number,
+                    dep_ap,
+                    arr_ap,
+                    dep_time,
+                    arr_time,
+                    act_dep_time,
+                    act_arr_time))
         
         return parsed_flights_info
