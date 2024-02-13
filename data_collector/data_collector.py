@@ -112,10 +112,10 @@ class JalScraper(Scraper):
             arr_time = flight_info.find_all("td")[1].text.split("—")[1].strip()
             # get actual dep time
             # you can get actual dep time using third td element
-            act_dep_time = flight_info.find_all("td")[2].text
+            act_dep_time = flight_info.find_all("td")[2].text.split()[0]
             # get actual arr time
             # you can get actual arr time using forth td element
-            act_arr_time = flight_info.find_all("td")[3].text
+            act_arr_time = flight_info.find_all("td")[3].text.split()[0]
             parsed_flights_info.append(Scraper.FlightInfo(flight_number, dep_ap, arr_ap, dep_time, arr_time, act_dep_time, act_arr_time))
         
         return parsed_flights_info
