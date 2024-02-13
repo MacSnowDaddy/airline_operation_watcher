@@ -119,9 +119,3 @@ class JalScraper(Scraper):
             parsed_flights_info.append(Scraper.FlightInfo(flight_number, dep_ap, arr_ap, dep_time, arr_time, act_dep_time, act_arr_time))
         
         return parsed_flights_info
-
-if __name__ == "__main__":
-    jal_scraper = JalScraper()
-    jal_scraper.set_from("HND")
-    jal_scraper.set_to("CTS")
-    jal_scraper.scrape("test_jal.txt")
