@@ -79,10 +79,10 @@ class JalScraper(Scraper):
         
         input()
 
-        JalScraper.__parse_result(self.browser.page_source)
+        JalScraper.parse_result(self.browser.page_source)
     
     @classmethod
-    def __parse_result(page_source) -> list:
+    def parse_result(cls, page_source) -> list:
         '''JALの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
         
         dataのサンプルページはtest_jal.txtを参照。
