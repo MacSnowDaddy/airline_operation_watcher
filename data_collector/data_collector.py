@@ -218,3 +218,14 @@ class JalScraper(Scraper):
                     other=other))
         
         return parsed_flights_info
+
+class AnaScraper(Scraper):
+    '''ANAの運航情報を取得するためのクラス。
+
+    ANAの運航状況は以下のURLに対して出発空港、到着空港、日付を指定することで取得できる。
+    https://www.ana.co.jp/fs/dom/jp/result.html?mode=1&depAirportSelect=ITM&txtDepAirport=%E5%A4%A7%E9%98%AA%28%E4%BC%8A%E4%B8%B9%29&arrAirportSelect=AOJ&txtArrAirport=%E9%9D%92%E6%A3%AE&requestDate=20240215
+    '''
+
+    def scrape(self, outfile):
+        assert self.from_ap is not None, "出発地を設定してください。"
+        assert self.to_ap is not None, "到着地を設定してください。"
