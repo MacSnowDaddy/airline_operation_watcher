@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
+import ap_dict
 
 # set list of scrap
 scrap_dict = {"jal" : "https://www.jal.co.jp/jp/ja/other/weather_info_dom/",
@@ -225,7 +226,159 @@ class AnaScraper(Scraper):
     ANAの運航状況は以下のURLに対して出発空港、到着空港、日付を指定することで取得できる。
     https://www.ana.co.jp/fs/dom/jp/result.html?mode=1&depAirportSelect=ITM&txtDepAirport=%E5%A4%A7%E9%98%AA%28%E4%BC%8A%E4%B8%B9%29&arrAirportSelect=AOJ&txtArrAirport=%E9%9D%92%E6%A3%AE&requestDate=20240215
     '''
-
-    def scrape(self, outfile):
+    def __init__(self):
+        super().__init__()
+        self.url = scrap_dict["ana"]
+    
+    def scrape(self, out_file):
         assert self.from_ap is not None, "出発地を設定してください。"
         assert self.to_ap is not None, "到着地を設定してください。"
+        if self.date is None:
+            self.date = "today"
+        
+        from_ap_jp = ap_dict.decode(self.from_ap)
+        to_ap_jp = ap_dict.decode(self.to_ap)
+        import datetime
+        if self.date == "today":
+            self.date = datetime.date.today().strftime("%Y%m%d")
+        elif self.date == "prev":
+            self.date = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y%m%d")
+        elif self.date == "next":
+            self.date = (datetime.date.today() + datetime.timedelta(days=1)).strftime("%Y%m%d")
+
+        url = f"{self.url}result.html?mode=1&depAirportSelect={self.from_ap}&txtDepAirport={from_ap_jp}&arrAirportSelect={self.to_ap}&txtArrAirport={to_ap_jp}&requestDate={self.date}"
+
+        self.browser.get(url)
+
+        # save as html
+        with open("ana.html", "w") as f:
+            f.write(self.browser.page_source)
+
+        parsed_list = AnaScraper.parse_result(self.browser.page_source)
+
+        with open(out_file, "a") as f:
+            for flight_info in parsed_list:
+                f.write(flight_info.to_csv(header=False))
+                f.write("\n")
+
+    
+    @classmethod
+    def parse_result(cls, page_source) -> list:
+        '''ANAの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
+        
+        dataのサンプルページはtest_ana.txtを参照。
+        return: list(FlightInfo)'''
+
+        parsed_flights_info = []
+        soup = BeautifulSoup(page_source, "html.parser")
+        # 運航日を取得する。
+        # 運航日はid="board"を持つspan elementのtextで取得できる。
+        # 曜日を含めずに抽出する。
+        flight_date_element = soup.find("span", id="Board")
+        if flight_date_element is not None:
+            flight_date = flight_date_element.text.split("(")[0]
+        else:
+            flight_date = "ERROR" 
+        # 出発地を取得する。
+        # 出発地はid="Head_DepAirport"を持つspan elementのtextで取得できる。
+        dep_ap_element = soup.find("span", id="Head_DepAirport")
+        if dep_ap_element is not None:
+            dep_ap = dep_ap_element.text
+        else:
+            dep_ap = "ERROR"
+        # 到着地を取得する。
+        # 到着地はid="Head_ArrAirport"を持つspan elementのtextで取得できる。
+        arr_ap_element = soup.find("span", id="Head_ArrAirport")
+        if arr_ap_element is not None:
+            arr_ap = arr_ap_element.text
+        else:
+            arr_ap = "ERROR"
+
+        # 各便の情報を取得する。
+        # 各便の情報はid="resultC"を持つtableのtbody element内にあるclass="fs_detailRow"を持つtrで取得できる。
+        flight_all_info = soup.find("table", id="resultC").find("tbody").find_all("tr", class_="fs_dateilRow")
+        for flight_info in flight_all_info:
+            # get flight_number
+            # you can get flight_number using span element 
+            flight_number_element = flight_info.find_all("td")[0].find("span")
+            if flight_number_element is not None:
+                flight_number = flight_number_element.text.replace(" ", "")
+            else:
+                flight_number = "ERROR"
+            # get type of aircraft
+            # you can get type of aircraft using second td element
+            aircraft_type_element = flight_info.find_all("td")[1].find("span")
+            if aircraft_type_element is not None:
+                aircraft_type = aircraft_type_element.text
+            else:
+                aircraft_type = "ERROR"
+            # get original dep time and arr time
+            original_dep_element = flight_info.find_all("td")[2].find("span", class_="SkdDepTime")
+            if original_dep_element is not None:
+                dep_time = original_dep_element.text
+            else:
+                dep_time = "ERROR"
+            # get other dep info
+            bordingGate_element = flight_info.find_all("td")[3].find("span", class_="BordingGate")
+            if bordingGate_element is not None:
+                dep_other = "搭乗口" + bordingGate_element.text
+            else:
+                dep_other = "搭乗口情報なし"
+            # get actual dep time
+            act_dep_element = flight_info.find_all("td")[4].find("span", class_="ActDep")
+            if act_dep_element is not None:
+                act_dep_time = act_dep_element.text[:5]
+                try:
+                    dep_other = act_dep_element.text[5:] + dep_other
+                except IndexError:
+                    pass
+            else:
+                act_dep_time = "ERROR"
+            
+            # get original dep time and arr time
+            original_arr_element = flight_info.find_all("td")[5].find("span", class_="SkdArrTime")
+            if original_arr_element is not None:
+                arr_time = original_arr_element.text
+            else:
+                arr_time = "ERROR"
+            # get actual arr time
+            act_arr_element = flight_info.find_all("td")[7].find("span", class_="ActArr")
+            if act_arr_element is not None:
+                act_arr_time = act_arr_element.text[:5]
+                try:
+                    arr_other = act_arr_element.text[5:]
+                except IndexError:
+                    arr_other = "到着other情報なし"
+            else:
+                act_arr_time = "ERROR"
+            
+            #get other info
+            info_element = flight_info.find_all("td")[8].find("span", class_="Remarks")
+            if info_element is not None:
+                info = info_element.text
+            else:
+                info = "ERROR"
+            
+            #get other info
+            other_element = flight_info.find_all("td")[9].find("span", class_="DetailRemarks")
+            if other_element is not None:
+                other = other_element.text
+            else:
+                other = "ERROR"
+            parsed_flights_info.append(
+                Scraper.FlightInfo(
+                    flight_date,
+                    flight_number,
+                    dep_ap,
+                    arr_ap,
+                    dep_time,
+                    arr_time,
+                    act_dep_time,
+                    act_arr_time,
+                    dep_other=dep_other,
+                    arr_other=arr_other,
+                    info=info,
+                    other=other))
+        return parsed_flights_info
+            
+

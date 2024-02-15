@@ -3,6 +3,7 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from data_collector import JalScraper
+from data_collector import AnaScraper
 
 class TestFlightInfo(unittest.TestCase):
     def setUp(self):
@@ -39,6 +40,31 @@ class TestJalScraper(unittest.TestCase):
         csv_expected = "2024年1月17日,JAL141,東京（羽田）,青森,7:40,9:05,7:44,9:01,出発済み（搭乗口34）,到着済み,出発遅延,使用する飛行機の到着遅れのため出発に遅延が生じています。"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
         self.assertEqual(parsed_list[5].act_arr_time, "ERROR")
+
+class TestAnaScraper(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_parse_result(self):
+        print(os.path.dirname(__file__))
+        # Read the HTML content from test_jal.txt
+        with open(os.path.join(os.path.dirname(__file__), 'test_ana.txt'), 'r') as file:
+            html_content = file.read()
+        parsed_list = AnaScraper.parse_result(html_content)
+
+        self.assertEqual(len(parsed_list), 3)
+        self.assertEqual(parsed_list[0].flight_date, "2月15日")
+        self.assertEqual(parsed_list[0].dep_ap, "大阪(伊丹)")
+        self.assertEqual(parsed_list[0].arr_ap, "青森")
+        self.assertEqual(parsed_list[0].flight_number, "ANA1851")
+        self.assertEqual(parsed_list[0].dep_time, "09:00")
+        self.assertEqual(parsed_list[0].arr_time, "10:45")
+        self.assertEqual(parsed_list[0].act_dep_time, "09:01")
+        self.assertEqual(parsed_list[0].act_arr_time, "10:38")
+        csv_expected = "2月15日,ANA1851,大阪(伊丹),青森,09:00,10:45,09:01,10:38,出発済み搭乗口13,到着済み,-,-"
+        self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
+        self.assertEqual(parsed_list[2].act_arr_time, "-")
+
 
 
 if __name__ == "__main__":
