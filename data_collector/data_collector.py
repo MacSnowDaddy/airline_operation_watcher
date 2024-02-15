@@ -48,7 +48,8 @@ class Scraper(object):
                     dep_time,
                     arr_time,
                     act_dep_time,
-                    act_arr_time):
+                    act_arr_time,
+                    **kwargs):
             self.flight_date = flight_date
             self.flight_number = flight_number
             self.dep_ap = dep_ap
@@ -57,15 +58,18 @@ class Scraper(object):
             self.arr_time = arr_time
             self.act_dep_time = act_dep_time
             self.act_arr_time = act_arr_time
+            self.kwargs = kwargs
         
         def to_csv(self, header=True):
             '''各便の情報をcsv形式で返す。
             
             @param header: bool, default=True'''
             csv = ""
+            kwargs_key = ",".join([f"{k}" for k in self.kwargs.keys()])
+            kwgars_value = ",".join([f"{v}" for v in self.kwargs.values()])
             if header:
-                csv = "flight_date,flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time\n"
-            csv = csv + f"{self.flight_date},{self.flight_number},{self.dep_ap},{self.arr_ap},{self.dep_time},{self.arr_time},{self.act_dep_time},{self.act_arr_time}"
+                csv = "flight_date,flight_number,dep_ap,arr_ap,dep_time,arr_time,act_dep_time,act_arr_time," + kwargs_key + "\n"
+            csv = csv + f"{self.flight_date},{self.flight_number},{self.dep_ap},{self.arr_ap},{self.dep_time},{self.arr_time},{self.act_dep_time},{self.act_arr_time},"+kwgars_value
 
             return csv
 
@@ -176,14 +180,28 @@ class JalScraper(Scraper):
             # you can get actual dep time using third td element
             try:
                 act_dep_time = flight_info.find_all("td")[2].text.split()[0]
+                dep_other = "".join(flight_info.find_all("td")[2].text.split()[1:]).strip().replace("\n", "")
             except IndexError:
                 act_dep_time = "ERROR"
             # get actual arr time
             # you can get actual arr time using forth td element
             try:
                 act_arr_time = flight_info.find_all("td")[3].text.split()[0]
+                arr_other = "".join(flight_info.find_all("td")[3].text.split()[1:]).strip().replace("\n", "")
             except IndexError:
                 act_arr_time = "ERROR"
+            
+            # get info
+            try:
+                info = flight_info.find_all("td")[4].text.strip().replace("\n", "")
+            except IndexError:
+                info = "ERROR"
+            
+            # get other
+            try:
+                other = flight_info.find_all("td")[5].text.strip().replace("\n", "")
+            except IndexError:
+                other = "ERROR"
             parsed_flights_info.append(
                 Scraper.FlightInfo(
                     flight_date,
@@ -193,6 +211,10 @@ class JalScraper(Scraper):
                     dep_time,
                     arr_time,
                     act_dep_time,
-                    act_arr_time))
+                    act_arr_time,
+                    dep_other=dep_other,
+                    arr_other=arr_other,
+                    info=info,
+                    other=other))
         
         return parsed_flights_info

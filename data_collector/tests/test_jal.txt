@@ -494,7 +494,7 @@ var JLJS_panelNewsData = {
 
 
 
-&nbsp;
+出発遅延
 
 
 	
@@ -503,7 +503,7 @@ var JLJS_panelNewsData = {
 
 
 
-&nbsp;
+使用する飛行機の到着遅れのため出発に遅延が生じています。
 
 
 
