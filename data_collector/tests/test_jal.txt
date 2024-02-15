@@ -770,7 +770,7 @@ var JLJS_panelNewsData = {
 
 
 </span><span class="plane"></span></td>
-<td class="arr_flight_time"><span class="emData">21:04　到着済み
+<td class="arr_flight_time"><span class="emData">　
 
 
 

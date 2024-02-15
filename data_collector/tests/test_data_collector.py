@@ -36,6 +36,7 @@ class TestJalScraper(unittest.TestCase):
         self.assertEqual(parsed_list[0].arr_time, "9:05")
         self.assertEqual(parsed_list[0].act_dep_time, "7:44")
         self.assertEqual(parsed_list[0].act_arr_time, "9:01")
+        self.assertEqual(parsed_list[5].act_aar_time, "ERROR")
 
 
 if __name__ == "__main__":

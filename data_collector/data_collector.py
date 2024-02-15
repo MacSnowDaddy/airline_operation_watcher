@@ -126,15 +126,27 @@ class JalScraper(Scraper):
         # 運航日を取得する。
         # 運航日はclass="information-date JS_FSDate"を持つdiv elementのvalueで取得できる。
         # 曜日を含めずに抽出する。
-        flight_date = soup.find("div", class_="information-date JS_FSDate").text.split("（")[0]
+        flight_date_element = soup.find("div", class_="information-date JS_FSDate")
+        if flight_date_element is not None:
+            flight_date = flight_date_element.text.split("（")[0]
+        else:
+            flight_date = "ERROR" 
         # 出発地を取得する。
         # 出発地はid="JA_FSDepAirportArea"を持つdivの子要素のうち、
         # class="col_txt-btmを持つdiv elementのvalueで取得できる。
-        dep_ap = soup.find("div", id="JS_FSDepAirportArea").find("div", class_="col_txt-btm").text
+        dep_ap_element = soup.find("div", id="JS_FSDepAirportArea").find("div", class_="col_txt-btm")
+        if dep_ap_element is not None:
+            dep_ap = dep_ap_element.text
+        else:
+            dep_ap = "ERROR"
         # 到着地を取得する。
         # 到着地はid="JA_FSArrAirportArea"を持つdivの子要素のうち、
         # class="col_txt-btmを持つdiv elementのvalueで取得できる。
-        arr_ap = soup.find("div", id="JS_FSArrAirportArea").find("div", class_="col_txt-btm").text
+        arr_ap_element = soup.find("div", id="JS_FSArrAirportArea").find("div", class_="col_txt-btm")
+        if arr_ap_element is not None:
+            arr_ap = arr_ap_element.text
+        else:
+            arr_ap = "ERROR"
 
         # 各便の情報を取得する。
         # 各便の情報はclass="JS_FSDetailTable"を持つtbodyの子要素のtrで取得できる。
@@ -142,17 +154,36 @@ class JalScraper(Scraper):
         for flight_info in flight_all_info:
             # get flight_number
             # you can get flight_number using span element whose class is "flight_number_txt"
-            flight_number = flight_info.find("span", class_="flight_number_txt").text
+            flight_number_element = flight_info.find("span", class_="flight_number_txt")
+            if flight_number_element is not None:
+                flight_number = flight_number_element.text
+            else:
+                flight_number = "ERROR"
             # get original dep time and arr time
             # you can get original dep time and arr time using seconde td element
-            dep_time = flight_info.find_all("td")[1].text.split("—")[0].strip()
-            arr_time = flight_info.find_all("td")[1].text.split("—")[1].strip()
+            time_element = flight_info.find_all("td")
+            if len(time_element) > 1 and time_element[1] is not None :
+                try:
+                    dep_time = time_element[1].text.split("—")[0].strip()
+                    arr_time = time_element[1].text.split("—")[1].strip()
+                except IndexError:
+                    dep_time = "ERROR"
+                    arr_time = "ERROR"
+            else:
+                dep_time = "ERROR"
+                arr_time = "ERROR"
             # get actual dep time
             # you can get actual dep time using third td element
-            act_dep_time = flight_info.find_all("td")[2].text.split()[0]
+            try:
+                act_dep_time = flight_info.find_all("td")[2].text.split()[0]
+            except IndexError:
+                act_dep_time = "ERROR"
             # get actual arr time
             # you can get actual arr time using forth td element
-            act_arr_time = flight_info.find_all("td")[3].text.split()[0]
+            try:
+                act_arr_time = flight_info.find_all("td")[3].text.split()[0]
+            except IndexError:
+                act_arr_time = "ERROR"
             parsed_flights_info.append(
                 Scraper.FlightInfo(
                     flight_date,
