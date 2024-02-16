@@ -9,7 +9,10 @@ class TestApDict(unittest.TestCase):
         pass
 
     def test_decode(self):
-        self.assertEqual(ap_dict.decode("HND"), "東京（羽田）")
+        self.assertEqual(ap_dict.decode("HND"), "東京(羽田)")
+    
+    def test_encode(self):
+        self.assertEqual(ap_dict.encode("東京(羽田)"), "HND")
 
 if __name__ == "__main__":
     unittest.main()

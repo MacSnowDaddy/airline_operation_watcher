@@ -75,3 +75,10 @@ ap_dict_jal = {
 def decode(ap_code):
     '''空港コードを日本語に変換する。'''
     return ap_dict_jal[ap_code]
+
+def encode(ap_name):
+    '''空港名を空港コードに変換する。'''
+    for key, value in ap_dict_jal.items():
+        if value == ap_name:
+            return key
+    return None
