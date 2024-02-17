@@ -1,3 +1,66 @@
+ap_dict_ana = {
+    "SPK" : "札幌(千歳)",
+    "RIS" : "利尻",
+    "WKJ" : "稚内",
+    "MBE" : "オホーツク紋別",
+    "MMB" : "女満別",
+    "AKJ" : "旭川",
+    "SHB" : "根室中標津",
+    "KUH" : "釧路",
+    "OBO" : "帯広",
+    "HKD" : "函館",
+    "AOJ" : "青森",
+    "ONJ" : "大館能代",
+    "AXT" : "秋田",
+    "SYO" : "庄内",
+    "SDJ" : "仙台",
+    "FKS" : "福島",
+    "HND" : "東京(羽田)",
+    "NRT" : "東京(成田)",
+    "HAC" : "八丈島",
+    "KIJ" : "新潟",
+    "FSZ" : "静岡",
+    "NGO" : "名古屋(中部)",
+    "TOY" : "富山",
+    "KMQ" : "小松",
+    "NTQ" : "能登",
+    "ITM" : "大阪(伊丹)",
+    "KIX" : "大阪(関西)",
+    "UKB" : "大阪(神戸)",
+    "OKJ" : "岡山",
+    "HIJ" : "広島",
+    "IWK" : "岩国",
+    "UBJ" : "山口宇部",
+    "TTJ" : "鳥取",
+    "YGJ" : "米子",
+    "IWJ" : "萩・石見",
+    "TAK" : "高松",
+    "TKS" : "徳島",
+    "MYJ" : "松山",
+    "KCZ" : "高知",
+    "FUK" : "福岡",
+    "KKJ" : "北九州",
+    "HSG" : "佐賀",
+    "OIT" : "大分",
+    "KMJ" : "熊本",
+    "NGS" : "長崎",
+    "TSJ" : "対馬",
+    "IKI" : "壱岐",
+    "FUJ" : "五島福江",
+    "AXJ" : "天草",
+    "KMI" : "宮崎",
+    "KOJ" : "鹿児島",
+    "TNE" : "種子島",
+    "KUM" : "屋久島",
+    "KKX" : "喜界島",
+    "RNJ" : "与論",
+    "ASJ" : "奄美",
+    "TKN" : "徳之島",
+    "OKE" : "沖永良部",
+    "OKA" : "沖縄(那覇)",
+    "MMY" : "宮古",
+    "ISG" : "石垣",
+}
 ap_dict_jal = {
     'HND': '東京（羽田）',
     "ITM" : '大阪(伊丹)',
@@ -72,13 +135,22 @@ ap_dict_jal = {
     "OGN" : '与那国',
 }
 
-def decode(ap_code):
+def decode(ap_code, company = "jal"):
     '''空港コードを日本語に変換する。'''
-    return ap_dict_jal[ap_code]
+    if company == "jal":
+        return ap_dict_jal[ap_code]
+    elif company == "ana":
+        return ap_dict_ana[ap_code]
 
-def encode(ap_name):
+def encode(ap_name, company = "jal"):
     '''空港名を空港コードに変換する。'''
-    for key, value in ap_dict_jal.items():
-        if value == ap_name:
-            return key
+    if company == "jal":
+        for key, value in ap_dict_jal.items():
+            if value == ap_name:
+                return key
+    elif company == "ana":
+        for key, value in ap_dict_ana.items():
+            if value == ap_name:
+                return key
     return None
+
