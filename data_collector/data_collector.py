@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 import ap_dict
 
 # set list of scrap
-scrap_dict = {"jal" : "https://www.jal.co.jp/jp/ja/other/weather_info_dom/",
+scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "ana" : "https://www.ana.co.jp/fs/dom/jp/",
               "fda" : "https://www.fujidream.co.jp/sp/flight_info/",
               "sky" : "https://www.res.skymark.co.jp/mercury/fis/flight_announce_i18n",
@@ -75,6 +75,10 @@ class Scraper(object):
             return csv
 
 class JalScraper(Scraper):
+    '''JALの運航情報を取得するためのクラス。
+    
+    JALの運航状況は以下のURLに対して出発空港、到着空港、日付を指定することで取得できる。
+    https://www.jal.co.jp/flight-status/dom/?FsBtn=route&DATEFLG=1&DPORT=CTS&APORT=HND&DATEFLG_temp=1&DATEFLG_temp='''
 
     def __init__(self):
         super().__init__()
@@ -85,27 +89,15 @@ class JalScraper(Scraper):
         assert self.to_ap is not None, "到着地を設定してください。"
         if self.date is None:
             self.date = "today"
-        self.browser.get(self.url)
-        # set the dep ap
-        dep_ap_select = self.browser.find_element(By.ID, "dep")
-        select_dep = Select(dep_ap_select)
-        select_dep.select_by_value(self.from_ap)
-        # set the dest ap
-        dest_ap_select = self.browser.find_element(By.ID, "arr")
-        select_dest = Select(dest_ap_select)
-        select_dest.select_by_value(self.to_ap)
-        # set the date
-        date_select = self.browser.find_element(By.ID, "DATEFLG")
-        select_date = Select(date_select)
+        
         if self.date == "today":
-            pass
+            date_flg = ""
         elif self.date == "prev":
-            select_date.select_by_value("1")
+            date_flg = "1"
         elif self.date == "next":
-            select_date.select_by_value("2")
-        # do search
-        search_btn = self.browser.find_element(By.XPATH, '//*[@id="wrapper"]/div/div/div[2]/div[2]/div/div/div[2]/div/div[4]/div/div/div[1]/div/div/div/div/div/form/div[2]/ul/li[3]/input[1]')
-        search_btn.click()
+            date_flg = "2"
+        url = f'{self.url}?FsBtn=route&DATEFLG={date_flg}&DPORT={self.from_ap}&APORT={self.to_ap}&DATEFLG_temp=1&DATEFLG_temp='
+        self.browser.get(url)
 
         # save as html
         with open("jal.html", "w") as f:
