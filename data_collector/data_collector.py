@@ -228,8 +228,8 @@ class AnaScraper(Scraper):
         if self.date is None:
             self.date = "today"
         
-        from_ap_jp = ap_dict.decode(self.from_ap)
-        to_ap_jp = ap_dict.decode(self.to_ap)
+        from_ap_jp = ap_dict.decode(self.from_ap, company="ana")
+        from_ap_jp = ap_dict.decode(self.from_ap, company="ana")
         import datetime
         if self.date == "today":
             self.date = datetime.date.today().strftime("%Y%m%d")
