@@ -1,13 +1,19 @@
 import data_collector
 import time
 
-collector = data_collector.JalScraper()
 jal_collection_list = [
-    ['HND', ['CTS', 'FUK', 'AOJ', 'MMB', 'AKJ']],
-    ['CTS', ['AOJ', 'HNA', 'SDJ', 'KIJ']]
+    ['NRT', ['CTS', 'NGO', 'ITM']],
+    ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ']],
+    ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
+    ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
 ]
 ana_collection_list = [
-    ['HND', ['CTS', 'FUK', '']]
+    ['NRT', ['SPK', 'NGO', 'ITM']],
+    ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX']],
+    ['NGO', ['SPK', 'AXT']],
+    ['KIX', ['SPK']],
+    ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
+    ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'FSZ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
 ]
 for collection in jal_collection_list:
     for to in collection[1]:
