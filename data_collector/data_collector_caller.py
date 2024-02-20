@@ -15,6 +15,8 @@ ana_collection_list = [
     ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
     ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'FSZ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
 ]
+
+collector = data_collector.JalScraper()
 for collection in jal_collection_list:
     for to in collection[1]:
         # 往路
@@ -31,7 +33,17 @@ for collection in jal_collection_list:
         time.sleep(3)
 
 collector = data_collector.AnaScraper()
-collector.set_from("HND")
-collector.set_to("CTS")
-collector.set_date("prev")
-collector.scrape("ana.csv")
+for collection in ana_collection_list:
+    for to in collection[1]:
+        # 往路
+        collector.set_from(collection[0])
+        collector.set_to(to)
+        collector.set_date("prev")
+        collector.scrape("ana.csv")
+        time.sleep(3)
+        # 復路
+        collector.set_from(to)
+        collector.set_to(collection[0])
+        collector.set_date("prev")
+        collector.scrape("ana.csv")
+        time.sleep(3)
