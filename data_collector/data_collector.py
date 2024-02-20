@@ -238,7 +238,7 @@ class AnaScraper(Scraper):
         elif self.date == "next":
             self.date = (datetime.date.today() + datetime.timedelta(days=1)).strftime("%Y%m%d")
 
-        url = f"{self.url}result.html?mode=1&depAirportSelect={self.from_ap}&txtDepAirport={from_ap_jp}&arrAirportSelect={self.to_ap}&txtArrAirport={to_ap_jp}&requestDate={self.date}"
+        url = f"{self.url}result.html?mode=1&depAirportSelect={self.from_ap}&txtDepAirport={from_ap_jp}&arrAirportSelect={self.to_ap}&txtArrAirport={self.to_ap}&requestDate={self.date}"
 
         self.browser.get(url)
 
