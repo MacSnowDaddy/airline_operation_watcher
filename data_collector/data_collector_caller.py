@@ -13,7 +13,7 @@ ana_collection_list = [
     ['NGO', ['SPK', 'AXT']],
     ['KIX', ['SPK']],
     ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
-    ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'FSZ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
+    ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
 ]
 
 collector = data_collector.JalScraper()
