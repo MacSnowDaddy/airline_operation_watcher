@@ -1,5 +1,6 @@
 import data_collector
 import time
+import threading
 
 jal_collection_list = [
     ['NRT', ['CTS', 'NGO', 'ITM']],
@@ -16,34 +17,47 @@ ana_collection_list = [
     ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
 ]
 
-collector = data_collector.JalScraper()
-for collection in jal_collection_list:
-    for to in collection[1]:
-        # 往路
-        collector.set_from(collection[0])
-        collector.set_to(to)
-        collector.set_date("prev")
-        collector.scrape("jal.csv")
-        time.sleep(3)
-        # 復路
-        collector.set_from(to)
-        collector.set_to(collection[0])
-        collector.set_date("prev")
-        collector.scrape("jal.csv")
-        time.sleep(3)
+def scrape_jal():
+    collector = data_collector.JalScraper()
+    for collection in jal_collection_list:
+        for to in collection[1]:
+            # 往路
+            collector.set_from(collection[0])
+            collector.set_to(to)
+            collector.set_date("prev")
+            collector.scrape("jal.csv")
+            time.sleep(3)
+            # 復路
+            collector.set_from(to)
+            collector.set_to(collection[0])
+            collector.set_date("prev")
+            collector.scrape("jal.csv")
+            time.sleep(3)
 
-collector = data_collector.AnaScraper()
-for collection in ana_collection_list:
-    for to in collection[1]:
-        # 往路
-        collector.set_from(collection[0])
-        collector.set_to(to)
-        collector.set_date("prev")
-        collector.scrape("ana.csv")
-        time.sleep(3)
-        # 復路
-        collector.set_from(to)
-        collector.set_to(collection[0])
-        collector.set_date("prev")
-        collector.scrape("ana.csv")
-        time.sleep(3)
+def scrape_ana():
+    collector = data_collector.AnaScraper()
+    for collection in ana_collection_list:
+        for to in collection[1]:
+            # 往路
+            collector.set_from(collection[0])
+            collector.set_to(to)
+            collector.set_date("prev")
+            collector.scrape("ana.csv")
+            time.sleep(3)
+            # 復路
+            collector.set_from(to)
+            collector.set_to(collection[0])
+            collector.set_date("prev")
+            collector.scrape("ana.csv")
+            time.sleep(3)
+
+
+thread_jal = threading.Thread(target=scrape_jal)
+thread_ana = threading.Thread(target=scrape_ana)
+
+thread_jal.start()
+thread_ana.start()
+
+thread_jal.join()
+thread_ana.join()
+
