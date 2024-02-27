@@ -370,7 +370,8 @@ class AnaScraper(Scraper):
                     dep_other=dep_other,
                     arr_other=arr_other,
                     info=info,
-                    other=other))
+                    other=other,
+                    aircraft_type=aircraft_type))
         return parsed_flights_info
             
 
