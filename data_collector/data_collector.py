@@ -386,5 +386,5 @@ class TokScraper(Scraper):
         self.url = scrap_dict["tok"]
     
     def scrape(self, out_file):
-        
+        pass
 
