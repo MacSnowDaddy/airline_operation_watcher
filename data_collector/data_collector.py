@@ -176,6 +176,7 @@ class JalScraper(Scraper):
                 dep_other = "".join(flight_info.find_all("td")[2].text.split()[1:]).strip().replace("\n", "")
             except IndexError:
                 act_dep_time = "ERROR"
+                dep_other = "ERROR"
             # get actual arr time
             # you can get actual arr time using forth td element
             try:
@@ -183,6 +184,7 @@ class JalScraper(Scraper):
                 arr_other = "".join(flight_info.find_all("td")[3].text.split()[1:]).strip().replace("\n", "")
             except IndexError:
                 act_arr_time = "ERROR"
+                arr_other = "ERROR"
             
             # get info
             try:
