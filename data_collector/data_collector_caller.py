@@ -34,6 +34,7 @@ def scrape_jal(date="prev", sufix = ""):
             collector.set_date(date)
             collector.scrape(f"jal{sufix}.csv")
             time.sleep(3)
+    move_to_data_dir(f"jal{sufix}.csv")
 
 def scrape_ana(date="prev", sufix=""):
     collector = data_collector.AnaScraper()
@@ -51,6 +52,37 @@ def scrape_ana(date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"ana{sufix}.csv")
             time.sleep(3)
+    # move file created into data folder
+    move_to_data_dir(f"ana{sufix}.csv")
+    
+
+def move_to_data_dir(filename):
+    import shutil
+    import os
+    # define dir name to move
+    # dir name should be yyyymmdd-mmdd
+    # first mmdd is the first date of the week of the date
+    # (first day of the week is Sunday)
+    # second mmdd is the last date of the week of the date
+    # (last day of the week is Saturday)
+    date = filename[-12:-4]
+    date = datetime.datetime.strptime(date, '%Y%m%d')
+    first_day_of_week = date - datetime.timedelta(days=(date.weekday()+1))
+    last_day_of_week = date + datetime.timedelta(days=(5-date.weekday()))
+    date_str = first_day_of_week.strftime('%Y%m%d') + "-" + last_day_of_week.strftime('%m%d')
+    # move file
+    if filename == "":
+        return
+    elif "ana" in filename:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ana", 'analyze_target', date_str)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        shutil.move(filename, os.path.join(path, filename))
+    elif "jal" in filename:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "jal", 'analyze_target', date_str)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        shutil.move(filename, os.path.join(path, filename))
 
 import sys
 
