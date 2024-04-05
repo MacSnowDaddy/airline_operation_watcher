@@ -9,6 +9,7 @@ scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "ana" : "https://www.ana.co.jp/fs/dom/jp/",
               "fda" : "https://www.fujidream.co.jp/sp/flight_info/",
               "sky" : "https://www.res.skymark.co.jp/mercury/fis/flight_announce_i18n",
+              "tok" : "https://tokiair.com",
               }
 
 class Scraper(object):
@@ -376,4 +377,14 @@ class AnaScraper(Scraper):
                     aircraft_type=aircraft_type))
         return parsed_flights_info
             
+class TokScraper(Scraper):
+    '''TOKIAIRの運航情報を取得するためのクラス。
+    
+    '''
+    def __init__(self):
+        super().__init__()
+        self.url = scrap_dict["tok"]
+    
+    def scrape(self, out_file):
+        
 
