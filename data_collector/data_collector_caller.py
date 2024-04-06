@@ -5,13 +5,13 @@ import datetime
 
 jal_collection_list = [
     ['NRT', ['CTS', 'NGO', 'ITM']],
-    ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ']],
+    ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ', 'OKA']],
     ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
     ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
 ]
 ana_collection_list = [
     ['NRT', ['SPK', 'NGO', 'ITM']],
-    ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX']],
+    ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX', 'OKA']],
     ['NGO', ['SPK', 'AXT']],
     ['KIX', ['SPK']],
     ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
