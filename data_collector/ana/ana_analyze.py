@@ -5,9 +5,35 @@ import numpy as np
 
 
 def make_ana_dataframe(files):
-    # Create a dataframe from the list of files which dose not have header line.
+    '''Create a dataframe from the list of files which dose not have header line.
+
+    after calling this function, you'll get a dataframe which has the following columns.
+    date : date of the flight, format is 'YYYY/MM/DD'
+    name : name of the flight, e.g. 'ANA1234'
+    from : departure airport, e.g. '東京（成田）' , '札幌（千歳）' etc.
+    to : arrival airport, e.g. '札幌（千歳）', '東京（成田）' etc.
+    schedule_dep : scheduled departure time, format is 'HH:MM'
+    schedule_arr : scheduled arrival time, format is 'HH:MM'
+    actual_dep : actual departure time, format is 'HH:MM'
+    actual_arr : actual arrival time, format is 'HH:MM'
+    dep_info : information about departure, e.g. '出発済み搭乗口７' etc.
+    arr_info : information about arrival, e.g. '到着済み' etc.
+    info_other : other information, e.g. '出発遅れ' etc.
+    info_detail : detail information, e.g. '使用機到着遅れのため出発が遅れました。' etc.
+    type_of_aircraft : type of aircraft, e.g. 'B73D' etc. see the file 'type_and_volume.csv' for the detail of each type of aircraft.
+    act_dep_time_with_date : actual departure time with date, format is 'YYYY-MM-DD HH:MM'
+    act_arr_time_with_date : actual arrival time with date, format is 'YYYY-MM-DD HH:MM'
+    sch_dep_time_with_date : scheduled departure time with date, format is 'YYYY-MM-DD HH:MM'
+    sch_arr_time_with_date : scheduled arrival time with date, format is 'YYYY-MM-DD HH:MM'
+    dep_delay : delay time of departure in minutes
+    arr_delay : delay time of arrival in minutes
+    number_of_seat : number of seats of the aircraft
+    '''
     df = pd.concat([pd.read_csv(f, header=None) for f in files], ignore_index=True)
     df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other', 'info_detail', 'type_of_aircraft']
+    df = edit_date(df)
+    df = add_delay_column(df)
+    df = add_ac_type_column(df)
     return df
 
 
