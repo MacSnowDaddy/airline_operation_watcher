@@ -4,6 +4,7 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from data_collector import JalScraper
 from data_collector import AnaScraper
+from data_collector import AdoScraper
 
 class TestFlightInfo(unittest.TestCase):
     def setUp(self):
@@ -61,7 +62,7 @@ class TestAnaScraper(unittest.TestCase):
         self.assertEqual(parsed_list[0].arr_time, "10:45")
         self.assertEqual(parsed_list[0].act_dep_time, "09:01")
         self.assertEqual(parsed_list[0].act_arr_time, "10:38")
-        csv_expected = "2月15日,ANA1851,大阪(伊丹),青森,09:00,10:45,09:01,10:38,出発済み搭乗口13,到着済み,-,-"
+        csv_expected = "2月15日,ANA1851,大阪(伊丹),青森,09:00,10:45,09:01,10:38,出発済み搭乗口13,到着済み,-,-,Q84"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
         self.assertEqual(parsed_list[2].act_arr_time, "-")
 
