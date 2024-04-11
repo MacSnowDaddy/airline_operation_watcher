@@ -233,13 +233,7 @@ class AnaScraper(Scraper):
         
         from_ap_jp = ap_dict.decode(self.from_ap, company="ana")
         from_ap_jp = ap_dict.decode(self.from_ap, company="ana")
-        import datetime
-        if self.date == "today":
-            self.date = datetime.date.today().strftime("%Y%m%d")
-        elif self.date == "prev":
-            self.date = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y%m%d")
-        elif self.date == "next":
-            self.date = (datetime.date.today() + datetime.timedelta(days=1)).strftime("%Y%m%d")
+        self.date = date_formatter(self.date, "%Y%m%d")
 
         url = f"{self.url}result.html?mode=1&depAirportSelect={self.from_ap}&txtDepAirport={from_ap_jp}&arrAirportSelect={self.to_ap}&txtArrAirport={self.to_ap}&requestDate={self.date}"
 
@@ -388,3 +382,13 @@ class TokScraper(Scraper):
     def scrape(self, out_file):
         pass
 
+
+def date_formatter(date, format):
+    import datetime
+    if date == "today":
+        date = datetime.date.today().strftime(format)
+    elif date == "prev":
+        date = (datetime.date.today() - datetime.timedelta(days=1)).strftime(format)
+    elif date == "next":
+        date = (datetime.date.today() + datetime.timedelta(days=1)).strftime(format)
+    return date
