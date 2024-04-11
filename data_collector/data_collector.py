@@ -7,6 +7,7 @@ import ap_dict
 # set list of scrap
 scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "ana" : "https://www.ana.co.jp/fs/dom/jp/",
+              "ado" : "https://www.airdo.jp/flight-status/",
               "fda" : "https://www.fujidream.co.jp/sp/flight_info/",
               "sky" : "https://www.res.skymark.co.jp/mercury/fis/flight_announce_i18n",
               "tok" : "https://tokiair.com",
@@ -371,6 +372,145 @@ class AnaScraper(Scraper):
                     aircraft_type=aircraft_type))
         return parsed_flights_info
             
+class AdoScraper(Scraper):
+    '''AIRDOの運航情報を取得するためのクラス。
+    
+    scrap_dict["ado"]のURLに対して出発地、到着地、日付を指定し結果のページに遷移し、情報を取得する。
+    '''
+    def __init__(self):
+        super().__init__()
+        self.url = scrap_dict["ado"]
+    
+    def scrape(self, out_file):
+        assert self.from_ap is not None, "出発地を設定してください。"
+        assert self.to_ap is not None, "到着地を設定してください。"
+        if self.date is None:
+            self.date = "today"
+        
+        self.date = date_formatter(self.date, "%Y-%m-%d")
+        
+        self.browser.get(self.url)
+
+        search_form = self.browser.find_element(By.ID, "cus011001Form")
+
+        date_selection = Select(self.browser.find_element(By.ID, "depDate"))
+        date_selection.select_by_value(self.date)
+
+        from_selection = Select(self.browser.find_element(By.ID, "depApo"))
+        from_selection.select_by_value(self.from_ap)
+
+        to_selection = Select(self.browser.find_element(By.ID, "arrApo"))
+        to_selection.select_by_value(self.to_ap)
+
+        search_btn = search_form.find_element(By.TAG_NAME, "button")
+        search_btn.click()
+
+        self.browser.implicitly_wait(10)
+
+        # save as html
+        with open("ado.html", "w") as f:
+            f.write(self.browser.page_source)
+        
+        parsed_list = AdoScraper.parse_result(self.browser.page_source)
+
+        with open(out_file, "a") as f:
+            for flight_info in parsed_list:
+                f.write(flight_info.to_csv(header=False))
+                f.write("\n")
+        
+        # get inverse flights
+        inverse_btn = self.browser.find_element(By.ID, "cus011002Form").find_element(By.TAG_NAME, "a").click()
+        self.browser.implicitly_wait(10)
+        parsed_list = AdoScraper.parse_result(self.browser.page_source)
+        
+        with open(out_file, "a") as f:
+            for flight_info in parsed_list:
+                f.write(flight_info.to_csv(header=False))
+                f.write("\n")
+        
+    @classmethod
+    def parse_result(cls, page_source) -> list:
+        '''AIRDOの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
+        
+        dataのサンプルページはtest_ado.txtを参照。
+        return: list(FlightInfo)'''
+        parsed_flights_info = []
+        soup = BeautifulSoup(page_source, "html.parser")
+        #運航情報を取得する。
+        #運航情報はid="cur011002Form"を持つform element内にある。
+        todays_all_flights = soup.find("form", id="cus011002Form")
+        #運航日を取得する。
+        #運航日はclass="dep-date"を持つspan elementのtextで取得できる。
+        flight_date_element =todays_all_flights.find("span", class_="dep-date")
+        if flight_date_element is not None:
+            flight_date = flight_date_element.text
+        else:
+            flight_date = "ERROR"
+        #出発地,到着地を取得する。
+        dep_and_arr_ap_element =todays_all_flights.find("div", class_="section")
+        dep_ap_element = dep_and_arr_ap_element.find_all("span")[0]
+        if dep_ap_element is not None:
+            dep_ap = dep_ap_element.text
+        else:
+            dep_ap = "ERROR"
+        arr_ap_element = dep_and_arr_ap_element.find_all("span")[1]
+        if arr_ap_element is not None:
+            arr_ap = arr_ap_element.text
+        else:
+            arr_ap = "ERROR"
+
+        #各便の情報を取得する。
+        #各便の情報はid=tableIDを持つtable element内にある。
+        flight_all_info =todays_all_flights.find("table", id="tableID").find("tbody").find_all("tr")
+        for flight_info in flight_all_info:
+            #便名を取得する。
+            flight_number:str = flight_info.find_all("td")[0].text
+            flight_number = flight_number.replace("\n", "").replace(" ","")
+            #搭乗口を取得する。
+            onboard_gate = flight_info.find_all("td")[1].text
+            onboard_gate = onboard_gate.replace("\n", "").replace(" ","")
+            #出発定刻を取得]する。
+            scheduled_dep_time = flight_info.find_all("td")[2].text
+            scheduled_dep_time = scheduled_dep_time.replace("\n", "").replace(" ","")
+            #出発実時刻を取得する。
+            actual_dep_time = flight_info.find_all("td")[3].text.split()[0]
+            actual_dep_time = actual_dep_time.replace("\n", "").replace(" ","")
+            #出発状況を取得する。
+            dep_info = flight_info.find_all("td")[3].text.split()[1]
+            dep_info = dep_info.replace("\n", "").replace(" ","")
+            #到着定刻を取得する。
+            scheduled_arr_time = flight_info.find_all("td")[4].text
+            scheduled_arr_time = scheduled_arr_time.replace("\n", "").replace(" ","")
+            #到着実時刻を取得する。
+            actual_arr_time = flight_info.find_all("td")[5].text.split()[0]
+            actual_arr_time = actual_arr_time.replace("\n", "").replace(" ","")
+            #到着状況を取得する。
+            arr_info = flight_info.find_all("td")[5].text.split()[1]
+            arr_info = arr_info.replace("\n", "").replace(" ","")
+            #出口を取得する。
+            exit = flight_info.find_all("td")[6].text
+            exit = exit.replace("\n", "").replace(" ","")
+            #備考を取得する。
+            remarks = flight_info.find_all("td")[7].text
+            remarks = remarks.replace("\n", "").replace(" ","")
+            # i want to make clear code above
+
+
+            parsed_flights_info.append(
+                Scraper.FlightInfo(
+                    flight_date,
+                    flight_number,
+                    dep_ap,
+                    arr_ap,
+                    scheduled_dep_time,
+                    scheduled_arr_time,
+                    actual_dep_time,
+                    actual_arr_time,
+                    dep_other=dep_info + onboard_gate,
+                    arr_info=arr_info + exit,
+                    info=remarks))
+        return parsed_flights_info
+
 class TokScraper(Scraper):
     '''TOKIAIRの運航情報を取得するためのクラス。
     

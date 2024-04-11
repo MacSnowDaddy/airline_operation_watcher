@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://www.facebook.com/2008/fbml"><head>
+	
+        <meta charset="UTF-8">
+        
+        <title>発着案内検索結果｜MyAIRDO｜北海道の翼 AIRDO</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="/favicon.ico">
+        
+        <meta name="description" content="【発着案内検索結果】北海道発着の航空券はAIRDO(エア・ドゥ)で！乗った時から北海道！時刻表、空席・運賃照会、予約・購入、DOマイルのご案内。おトクなやホテル・レンタカープランのご紹介。">
+        <meta name="keywords" content="発着案内検索結果AIRDO,AIR DO,エア・ドゥ,国内線,航空券予約,DOマイル,ベア・ドゥ,ADO,hokkaido,北海道,札幌,東京">
+        
+        
+        <meta property="og:title" content="発着案内検索結果｜MyAIRDO｜北海道の翼 AIRDO">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://www.airdo.jp/ap/myairdo/cus103/cus103001">
+        <meta property="og:image" content="https://www.airdo.jp/common/images/ogp.png">
+        <meta property="og:site_name" content="北海道の翼 AIRDO">
+        <meta property="og:description" content="【AIRDO公式サイト】北海道発着の航空券はAIRDO(エア・ドゥ)で！乗った時から北海道！時刻表、空席・運賃照会、予約・購入、DOマイルのご案内。おトクなやホテル・レンタカープランのご紹介。">
+
+        <link rel="canonical" href="https://www.airdo.jp/ap/myairdo/cus011/cus011002">
+
+        <meta name="viewport" content="width=device-width">
+        <meta name="format-detection" content="telephone=no, email=no, address=no">
+
+        <meta name="ctx" content="/ap/">
+    
+	
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/js/fullcalendar/fullcalendar.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/js/fullcalendar/fullcalendar.print.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/js/remodal/remodal.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/js/remodal/remodal-default-theme.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/js/basictable/basictable.css" media="screen">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/myairdo/common/css/module2.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/normalize.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/base.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/module.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/header-footer.css?v=2c06ebe9fb94156be9dfa6fe901c02ae4687a58ddde533c7302a10a994fac74e">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/myairdo/common/css/frame.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/myairdo/common/css/myairdo.css">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/normalize.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/base.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/common/css/module.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/rsv/common/css/frame.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/rsv/common/css/rsv.css" media="all">
+            <link rel="stylesheet" href="/ap/ap-origin/myairdo/ap-static/myairdo/css/top.css" media="all">
+           
+        
+	<link rel="stylesheet" href="/ap/ap-origin/myairdo/css/cus011002.css" type="text/css" media="screen, projection, print">
+	
+            <script async="" charset="utf-8" src="https://px.ladsp.com/pixel_p?advertiser_id=00010337&amp;rp=--d90s--&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel_p?advertiser_id=00010337&amp;rp=--d60s--&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel_p?advertiser_id=00010337&amp;rp=--d30s--&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel_p?advertiser_id=00010337&amp;rp=--d10s--&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel?advertiser_id=00010337&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script async="" charset="utf-8" src="https://px.ladsp.com/pixel?advertiser_id=00010337&amp;su=2&amp;site_url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;referer=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-793355735&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-754424770&amp;l=dataLayer&amp;cx=c"></script><script src="https://connect.facebook.net/signals/config/270032552483833?v=2.9.153&amp;r=stable&amp;domain=www.airdo.jp&amp;hme=c3a545c63044e8e9102d4f32d84a1137594d024f28e801d670bc76dc5c075575&amp;ex_m=67%2C112%2C99%2C103%2C58%2C3%2C93%2C66%2C15%2C91%2C84%2C49%2C51%2C158%2C161%2C172%2C168%2C169%2C171%2C28%2C94%2C50%2C73%2C170%2C153%2C156%2C165%2C166%2C173%2C121%2C14%2C48%2C178%2C177%2C123%2C17%2C33%2C38%2C1%2C41%2C62%2C63%2C64%2C68%2C88%2C16%2C13%2C90%2C87%2C86%2C100%2C102%2C37%2C101%2C29%2C25%2C154%2C157%2C130%2C27%2C10%2C11%2C12%2C5%2C6%2C24%2C21%2C22%2C54%2C59%2C61%2C71%2C95%2C26%2C72%2C8%2C7%2C76%2C46%2C20%2C97%2C96%2C9%2C19%2C18%2C81%2C53%2C79%2C32%2C70%2C0%2C89%2C31%2C78%2C83%2C45%2C44%2C82%2C36%2C4%2C85%2C77%2C42%2C39%2C34%2C80%2C2%2C35%2C60%2C40%2C98%2C43%2C75%2C65%2C104%2C57%2C56%2C30%2C92%2C55%2C52%2C47%2C74%2C69%2C23%2C105" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script><script charset="utf-8" async="" src="https://cd.ladsp.com/script/pixel2_p_delay.js"></script><script charset="utf-8" async="" src="https://cd.ladsp.com/script/pixel2.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-878547945&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-6LPH49YY2E&amp;l=dataLayer&amp;cx=c"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K9BZDG9"></script><script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/jquery.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/jquery.matchHeight.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/moment.min.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/fullcalendar/fullcalendar.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/fullcalendar/locale/ja.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/remodal/remodal.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/basictable/jquery.basictable.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/script.js?v=2c06ebe9fb94156be9dfa6fe901c02ae4687a58ddde533c7302a10a994fac74e"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/validate.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/common/js/language.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/js/lib/jquery.cookie.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/ap-static/myairdo/common/js/script.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/ap-static/myairdo/common/js/script2.js"></script>
+            <script type="text/javascript" src="/ap/ap-origin/myairdo/ap-static/myairdo/common/js/paging.js"></script>
+        
+	
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K9BZDG9');</script>
+        <!-- End Google Tag Manager -->
+    
+<script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/878547945/?random=1712804950056&amp;cv=11&amp;fst=1712804950056&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/754424770/?random=1712804950067&amp;cv=11&amp;fst=1712804950067&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480h1v9171118937z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/754424770/?random=1712804950068&amp;cv=11&amp;fst=1712804950068&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480h1v9171118937z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/754424770/?random=1712804950069&amp;cv=11&amp;fst=1712804950069&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480h1v9171118937z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/754424770/?random=1712804950070&amp;cv=11&amp;fst=1712804950070&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480h1v9171118937z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/793355735/?random=1712804950074&amp;cv=11&amp;fst=1712804950074&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be4480z876895189za201&amp;gcd=13l3l3l3l1&amp;dma=0&amp;u_w=1470&amp;u_h=956&amp;url=https%3A%2F%2Fwww.airdo.jp%2Fap%2Fgen%2Fcus011%2Fcus011002%3FdepDateStr%3D2024%25E5%25B9%25B44%25E6%259C%258810%25E6%2597%25A5%25EF%25BC%2588%25E6%25B0%25B4%25EF%25BC%2589%26depApoName%3D%26arrApoName%3D%26lang%3DJA%26search%3D%26depDate%3D2024-04-10%26depApo%3DSPK%26arrApo%3DHND&amp;ref=https%3A%2F%2Fwww.airdo.jp%2Fflight-status%2F&amp;hn=www.googleadservices.com&amp;frm=0&amp;tiba=%E7%99%BA%E7%9D%80%E6%A1%88%E5%86%85%E6%A4%9C%E7%B4%A2%E7%B5%90%E6%9E%9C%EF%BD%9CMyAIRDO%EF%BD%9C%E5%8C%97%E6%B5%B7%E9%81%93%E3%81%AE%E7%BF%BC%20AIRDO&amp;npa=0&amp;pscdl=noapi&amp;fdr=QA&amp;rfmt=3&amp;fmt=4"></script></head>
+<body id="rsv" onload="return searchClick(this);"><div id="slide-menu-body">
+    
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9BZDG9"
+        height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    
+	<header role="banner">
+	<div class="container">
+		<div id="logo">
+			<a href="/">
+				<img src="/ap/ap-origin/myairdo/common/images/logo.png" alt="北海道の翼 AIRDO" class="hover">
+			</a>
+		</div>
+	</div>
+	</header>
+	<main role="main" id="content">
+	    <noscript>
+	        &lt;div class="container"&gt;
+	            &lt;div class="imp"&gt;
+	                &lt;p&gt;
+	                    ご使用のブラウザは現在JavaScriptが無効になっています。 &lt;br /&gt;ページが正しく表示されない場合があるため、JavaScriptの設定を有効にしてください。
+	                &lt;/p&gt;
+	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    </noscript>
+    <div id="main">
+    <article>
+	<form id="cus011002Form" name="cus011002Form" action="/ap/gen/cus011/cus011002" method="post"><input type="hidden" name="_csrf" value="80c970eb-7596-4469-acc0-a2e8edaefa5a">
+	<input type="hidden" name="method" value="">
+	<input type="hidden" name="lang" id="lang" value="JA">
+	<input type="hidden" name="referrer" id="referrer" value="https://www.airdo.jp/flight-status/">
+    <input type="hidden" name="depDateYYYYMMDD" value="20240410">
+	
+	<div class="container">
+		<header>
+			<h1>発着案内</h1>
+		</header> 
+		<p><span id="spId">12時08分</span>現在の発着案内です。</p>
+        <div class="text-center">
+	        <div class="section">
+		        <span class="place">札幌(新千歳)</span>
+		            <a href="/ap/gen/cus011/cus011002?lang=JA&amp;depDate=20240410&amp;depApo=HND&amp;arrApo=SPK"><img class="icon-flight-way" alt="" src="/ap/ap-origin/rsv/common/images/icn-out-home.png"></a>
+		        <span class="place">東京(羽田)</span>
+			</div>
+	        <div class="dep-date-area">
+	         <a id="jaPrev" href=".:" class="link-prev prev" style="display: none;">前日</a>
+		        <span class="dep-date">4月10日(水)</span>
+		     <a id="jaNext" href="/ap/gen/cus011/cus011002?lang=JA&amp;depApo=SPK&amp;arrApo=HND&amp;depDate=20240411" class="link-next next">翌日</a>
+			</div>
+			<div class="text-center mb-sm">
+				<a href="/flight-status/" class="link-anchor2 fs-sm">条件を変更する</a>
+			</div>
+		</div>
+		<div class="table-rsv hidden-sp">
+			<table id="tableID" class="table-rsv">
+				<thead>
+					<tr>
+						<th width="9%" style="background:#F7F7F7" rowspan="2">便名</th>
+						<th width="35%" style="background:#F7F7F7" colspan="3">出発</th>
+						<th width="35%" style="background:#F7F7F7" colspan="3">到着</th>
+						<th width="21%" style="background:#F7F7F7" rowspan="2">備考</th>
+					</tr>
+					<tr>
+						<th width="15%" style="background:#F7F7F7">搭乗口</th>
+						<th width="7%" style="background:#F7F7F7">定刻</th>
+						<th width="13%" style="background:#F7F7F7">状況</th>
+						<th width="7%" style="background:#F7F7F7">定刻</th>
+						<th width="13%" style="background:#F7F7F7">状況</th>
+						<th width="15%" style="background:#F7F7F7">出口</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+						<td data-th="便名: 搭乗口">
+							<span class="bt-content">ADO 12</span>
+						</td>
+						
+						<td data-th="出発: 定刻">
+							<span class="bt-content">10</span>
+							
+						</td>
+						<td data-th="出発: 状況">
+							<span class="bt-content">08:00</span>
+						</td>
+						<td data-th="出発: 定刻">
+							<span class="bt-content">07:58&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着: 状況">
+							<span class="bt-content">09:35</span>
+						</td>
+						<td data-th="到着: 出口">
+							<span class="bt-content">09:27&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 14</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">8</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">09:00</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">08:56&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">10:35</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">10:23&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 16</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">10:20</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">10:21&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">12:00</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">11:54&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 18</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">5</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">11:20</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">11:13&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">13:00</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">12:49&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 20</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">7</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">12:20</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">12:15&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">14:00</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">13:47&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 24</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">9</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">13:30</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">13:26&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">15:10</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">14:57&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 26</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">15:00</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">14:54&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">16:40</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">16:23&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 28</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">8</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">16:00</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">15:52&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">17:40</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">17:27&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 32</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">18:00</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">17:58&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">19:35</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">19:35&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 36</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">7</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">20:35</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">20:29&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">22:15</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">21:57&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 140</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">20:50</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">20:40&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">22:30</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">22:14&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">◆<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+					<tr>
+						<td data-th="便名" class="caution">
+							<span class="bt-content">ADO 38</span>
+						</td>
+						
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">3</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">21:00</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">21:08&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">22:40</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">22:30&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							<span class="bt-content">出発遅れ<br>使用機到着遅れのため出発が遅れました。</span>
+							
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 44</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">2</span>
+							
+						</td>
+						<td data-th="定刻(出発)">
+							<span class="bt-content">21:20</span>
+						</td>
+						<td data-th="出発状況">
+							<span class="bt-content">21:13&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="定刻(到着)">
+							<span class="bt-content">23:00</span>
+						</td>
+						<td data-th="到着状況">
+							<span class="bt-content">22:43&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">◆<br>(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							
+							<span class="bt-content">-</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="hidden-pc">
+			<table id="tableID" class="table-rsv bt cus011-sp">
+				<thead>
+					<tr>
+						<th width="15%" style="background:#F7F7F7">便名</th>
+						<th width="15%" style="background:#F7F7F7">搭乗口</th>
+						<th width="15%" style="background:#F7F7F7">出発</th>
+						<th width="15%" style="background:#F7F7F7">到着</th>
+						<th width="15%" style="background:#F7F7F7">出口</th>
+						<th width="15%" style="background:#F7F7F7">備考</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 12</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">10</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：08:00  状況：07:58&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：09:35  状況：09:27&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 14</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">8</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：09:00  状況：08:56&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：10:35  状況：10:23&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 16</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：10:20  状況：10:21&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：12:00  状況：11:54&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 18</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">5</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：11:20  状況：11:13&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：13:00  状況：12:49&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 20</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">7</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：12:20  状況：12:15&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：14:00  状況：13:47&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 24</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">9</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：13:30  状況：13:26&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：15:10  状況：14:57&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 26</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：15:00  状況：14:54&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：16:40  状況：16:23&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 28</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">8</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：16:00  状況：15:52&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：17:40  状況：17:27&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 32</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：18:00  状況：17:58&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：19:35  状況：19:35&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 36</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">7</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：20:35  状況：20:29&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：22:15  状況：21:57&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 140</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">6</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：20:50  状況：20:40&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：22:30  状況：22:14&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">◆(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+					<tr>
+						<td data-th="便名">
+							<span class="bt-content sp-caution">ADO 38</span>
+						</td>
+						
+						<td data-th="搭乗口">
+							<span class="bt-content">3</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：21:00  状況：21:08&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：22:40  状況：22:30&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">1・2・3(第2ターミナル)</span>
+							
+						</td>
+						<td data-th="備考">
+							
+							
+							<span class="bt-content">出発遅れ<br>使用機到着遅れのため出発が遅れました。</span>
+						</td>
+					</tr>
+					<tr>
+						
+						<td data-th="便名">
+							<span class="bt-content">ADO 44</span>					
+						</td>
+						<td data-th="搭乗口">
+							<span class="bt-content">2</span>
+												
+						</td>
+ 						<td data-th="出発">
+							<span class="bt-content">定刻：21:20  状況：21:13&nbsp;<span style="color: #336699">出発済み</span></span>
+							
+						</td>
+						<td data-th="到着">
+							<span class="bt-content">定刻：23:00  状況：22:43&nbsp;<span style="color: #336699">到着済み</span></span>
+							
+						</td>
+						<td data-th="出口">
+							<span class="bt-content">◆(第2ターミナル)</span>
+							
+						</td>
+						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		
+		<ul class="list-disk fs-xs">
+			<li>すべてのお手続きをお済ませの上、出発時刻の20分前までに保安検査場を通過し、10分前までに搭乗口にお越しください。</li>
+			<li>搭乗口は変更になる場合があります。最新情報は空港の案内掲示板でお確かめください。</li>
+			<li>発着時刻等は運航状況に応じて変わることがあります。</li>
+			<li>備考欄に「<span class="color-red">*</span>」がついているフライトにつきましては、お手数ですが <a href="https://www.airdo.jp/support/inquiry/">予約・案内センター</a>にお問い合わせください。</li>
+			<li>羽田空港の到着出口「◆」は、「4・5・6」番出口に到着いたします。</li>
+		</ul>         
+		<p class="text-left"><a href="https://www.airdo.jp/flight-status/" class="link-back">戻る</a></p>
+	</div>
+	
+	
+	
+	</form>
+	</article>
+	</div>
+	</main>
+	<footer role="contentinfo">
+		<p class="copyright">Copyright © AIRDO Co., Ltd. All rights reserved.</p>
+	</footer>
+<script type="text/javascript">
+	var arg = new Object;
+	var pair=location.search.substring(1).split('&');
+	for(var i=0;pair[i];i++) {
+	    var kv = pair[i].split('=');
+	    arg[kv[0]]=kv[1];
+	};
+	var depDateStr = $(':hidden[name="depDateYYYYMMDD"]').val();
+	var arr = (depDateStr.substr(0, 4) + '/' + depDateStr.substr(4, 2) + '/' + depDateStr.substr(6, 2)).split('/');
+	var depDate = new Date(arr[0], arr[1] - 1, arr[2]);
+	var prevDate = new Date(depDate.getFullYear(), depDate.getMonth(), depDate.getDate() - 1);
+	var nextDate = new Date(depDate.getFullYear(), depDate.getMonth(), depDate.getDate() + 1);
+    var prevDateStr = prevDate.getFullYear() + ("0"+(prevDate.getMonth() + 1)).slice(-2) + ("0"+prevDate.getDate()).slice(-2);
+    var nextDateStr = nextDate.getFullYear() + ("0"+(nextDate.getMonth() + 1)).slice(-2) + ("0"+nextDate.getDate()).slice(-2);
+	var nowDate = new Date();
+	var yesterday = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate() - 1);
+	var tomorrow = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate() + 1);
+	var baseUrl = $("meta[name='ctx']").attr("content") + "gen/cus011/cus011002?lang=" + arg.lang + "&depApo=" + arg.depApo +"&arrApo="+ arg.arrApo
+	if(yesterday > prevDate || tomorrow < depDate){
+		$('#jaPrev').hide();
+		$('#enPrev').hide();
+	} else{
+		$('#jaPrev').attr("href", baseUrl + "&depDate=" + prevDateStr);
+		$('#enPrev').attr("href", baseUrl + "&depDate=" + prevDateStr);
+	}
+	
+	if(tomorrow < nextDate){
+		$('#jaNext').hide();
+		$('#enNext').hide();
+	} else{
+		$('#jaNext').attr("href", baseUrl + "&depDate=" + nextDateStr);
+		$('#enNext').attr("href", baseUrl + "&depDate=" + nextDateStr);
+	}
+</script>
+
+
+</div><div id="slide-menu-overlay"></div>
+<script type="text/javascript" id="">var yahoo_retargeting_id="305OK5QOIB",yahoo_retargeting_label="",yahoo_retargeting_page_type="",yahoo_retargeting_items=[{item_id:"",category_id:"",price:"",quantity:""}];</script>
+<script type="text/javascript" id="" src="//b92.yahoo.co.jp/js/s_retargeting.js"></script><div style="display: none; visibility: hidden;">
+<script type="text/javascript">(function(){var a="http:"==location.protocol?"http://ac.ebis.ne.jp":"https://ac.ebis.ne.jp",b="gczrCXFw";a=a+"/ct_tag.php?argument\x3d"+b;document.write('\x3cscript type\x3d"text/javascript" src\x3d"'+a+'"\x3e\x3c/script\x3e')})();</script><script type="text/javascript" src="https://ac.ebis.ne.jp/ct_tag.php?argument=gczrCXFw"></script></div>
+<script type="text/javascript" id="">var yahoo_retargeting_id="225UPSB3H7",yahoo_retargeting_label="",yahoo_retargeting_page_type="",yahoo_retargeting_items=[{item_id:"",category_id:"",price:"",quantity:""}];</script>
+<script type="text/javascript" id="" src="https://b92.yahoo.co.jp/js/s_retargeting.js"></script><script type="text/javascript" id="">(function(d,g,h,l,e,k,c,a,b,f){a=(d[e]||(d[e]={}))[k]||(d[e][k]={});a[c]||(a[c]=function(){(a[c+"_queue"]||(a[c+"_queue"]=[])).push(arguments)},b=g.createElement(h),b.charset="utf-8",b.async=!0,b.src=l,f=g.getElementsByTagName(h)[0],f.parentNode.insertBefore(b,f))})(window,document,"script","https://cd.ladsp.com/script/pixel2.js","Smn","Logicad","pixel");Smn.Logicad.pixel({smnAdvertiserId:"00010337"});</script><script type="text/javascript" id="">(function(d,g,h,l,e,k,c,a,b,f){a=(d[e]||(d[e]={}))[k]||(d[e][k]={});a[c]||(a[c]=function(){(a[c+"_queue"]||(a[c+"_queue"]=[])).push(arguments)},b=g.createElement(h),b.charset="utf-8",b.async=!0,b.src=l,f=g.getElementsByTagName(h)[0],f.parentNode.insertBefore(b,f))})(window,document,"script","https://cd.ladsp.com/script/pixel2.js","Smn","Logicad","pixel");Smn.Logicad.pixel({smnAdvertiserId:"00010337"});
+(function(d,g,h,l,e,k,c,a,b,f){a=(d[e]||(d[e]={}))[k]||(d[e][k]={});a[c]||(a[c]=function(){(a[c+"_queue"]||(a[c+"_queue"]=[])).push(arguments)},b=g.createElement(h),b.charset="utf-8",b.async=!0,b.src=l,f=g.getElementsByTagName(h)[0],f.parentNode.insertBefore(b,f))})(window,document,"script","https://cd.ladsp.com/script/pixel2_p_delay.js","Smn","Logicad","pixel_p_delay");Smn.Logicad.pixel_p_delay({smnDelaySecondsArray:[10,30,60,90],smnAdvertiserId:"00010337"});</script>
+
+
+<script type="text/javascript" id="">(function(a,b,d){a._ltq=a._ltq||[];a._lt=a._lt||function(){a._ltq.push(arguments)};var e="https:"===location.protocol?"https://d.line-scdn.net":"http://d.line-cdn.net",c=b.createElement("script");c.async=1;c.src=d||e+"/n/line_tag/public/release/v1/lt.js";b=b.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)})(window,document);_lt("init",{customerType:"lap",tagId:"a6c4ee98-e0aa-4ad5-b284-4d35f60a286b"});_lt("send","pv",["a6c4ee98-e0aa-4ad5-b284-4d35f60a286b"]);</script>
+<noscript>
+  &lt;img height="1" width="1" style="display:none" src="https://tr.line.me/tag.gif?c_t=lap&amp;amp;t_id=a6c4ee98-e0aa-4ad5-b284-4d35f60a286b&amp;amp;e=pv&amp;amp;noscript=1"&gt;
+</noscript>
+
+<script type="text/javascript" id="" src="https://s.yimg.jp/images/listing/tool/cv/ytag.js"></script>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","270032552483833");fbq("track","PageView");</script>
+<noscript>&lt;img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=270032552483833&amp;amp;ev=PageView&amp;amp;noscript=1"&gt;</noscript>
+
+
+<script type="text/javascript" id="">window.yjDataLayer=window.yjDataLayer||[];function ytag(){yjDataLayer.push(arguments)}ytag({type:"ycl_cookie",config:{ycl_use_non_cookie_storage:!0}});</script></body></html>

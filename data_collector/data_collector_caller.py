@@ -17,6 +17,9 @@ ana_collection_list = [
     ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
     ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
 ]
+ado_collection_list = [
+    ['HND', ['SPK']],
+]
 
 def scrape_jal(date="prev", sufix = ""):
     collector = data_collector.JalScraper()
@@ -55,6 +58,18 @@ def scrape_ana(date="prev", sufix=""):
     # move file created into data folder
     move_to_data_dir(f"ana{sufix}.csv")
     
+def scrape_ado(date="prev", sufix=""):
+    collector = data_collector.AdoScraper()
+    for collection in ado_collection_list:
+        for to in collection[1]:
+            # 往路
+            collector.set_from(collection[0])
+            collector.set_to(to)
+            collector.set_date(date)
+            collector.scrape(f"ado{sufix}.csv")
+            time.sleep(3)
+    # move file created into data folder
+    move_to_data_dir(f"ado{sufix}.csv")
 
 def move_to_data_dir(filename):
     import shutil
@@ -83,6 +98,11 @@ def move_to_data_dir(filename):
         if not os.path.exists(path):
             os.makedirs(path)
         shutil.move(filename, os.path.join(path, filename))
+    elif "ado" in filename:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ado", 'analyze_target', date_str)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        shutil.move(filename, os.path.join(path, filename))
 
 import sys
 
@@ -97,16 +117,19 @@ if len(sys.argv) > 1:
         date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
     thread_jal = threading.Thread(target=scrape_jal, args=(date,date_str))
     thread_ana = threading.Thread(target=scrape_ana, args=(date,date_str))
+    thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str))
 else:
     # this will be called when no sys args placed.
     # this means that the target to get is "prev"
     date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     thread_jal = threading.Thread(target=scrape_jal, args=("prev", date_str))
     thread_ana = threading.Thread(target=scrape_ana, args=("prev", date_str))
+    thread_ado = threading.Thread(target=scrape_ado, args=("prev", date_str))
 
 thread_jal.start()
 thread_ana.start()
+thread_ado.start()
 
 thread_jal.join()
 thread_ana.join()
-
+thread_ado.join()

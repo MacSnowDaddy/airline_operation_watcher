@@ -65,7 +65,29 @@ class TestAnaScraper(unittest.TestCase):
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
         self.assertEqual(parsed_list[2].act_arr_time, "-")
 
+class TestAdoSelenium(unittest.TestCase):
+    def setUp(self):
+        pass
 
+    def test_parse_result(self):
+        print(os.path.dirname(__file__))
+        # Read the HTML content from test_jal.txt
+        with open(os.path.join(os.path.dirname(__file__), 'test_ado.txt'), 'r') as file:
+            html_content = file.read()
+        print(html_content)
+        parsed_list = AdoScraper.parse_result(html_content)
+
+        self.assertEqual(len(parsed_list), 13)
+        self.assertEqual(parsed_list[0].flight_date, "4月10日(水)")
+        self.assertEqual(parsed_list[0].dep_ap, "札幌(新千歳)")
+        self.assertEqual(parsed_list[0].arr_ap, "東京(羽田)")
+        self.assertEqual(parsed_list[0].flight_number, "ADO12")
+        self.assertEqual(parsed_list[0].dep_time, "08:00")
+        self.assertEqual(parsed_list[0].arr_time, "09:35")
+        self.assertEqual(parsed_list[0].act_dep_time, "07:58")
+        self.assertEqual(parsed_list[0].act_arr_time, "09:27")
+        csv_expected = "4月10日(水),ADO12,札幌(新千歳),東京(羽田),08:00,09:35,07:58,09:27,出発済み10,到着済み1・2・3(第2ターミナル),-"
+        self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
 
 if __name__ == "__main__":
     unittest.main()
