@@ -511,6 +511,19 @@ class AdoScraper(Scraper):
                     info=remarks))
         return parsed_flights_info
 
+
+class SkyScraper(Scraper):
+    '''スカイマークの運航情報を取得するためのクラス。
+    
+    '''
+    def __init__(self):
+        super().__init__()
+        self.url = scrap_dict["sky"]
+    
+    def scrape(self, out_file):
+        pass
+
+
 class TokScraper(Scraper):
     '''TOKIAIRの運航情報を取得するためのクラス。
     
