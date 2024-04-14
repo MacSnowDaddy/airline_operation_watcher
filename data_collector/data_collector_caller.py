@@ -21,6 +21,11 @@ ado_collection_list = [
     ['HND', ['SPK']],
 ]
 
+sky_collection_list = [
+    ['HND', ['CTS', 'FUK', 'OKA']],
+    ['CTS', ['NGO', 'FUK']],
+]
+
 def scrape_jal(date="prev", sufix = ""):
     collector = data_collector.JalScraper()
     for collection in jal_collection_list:
@@ -71,6 +76,25 @@ def scrape_ado(date="prev", sufix=""):
     # move file created into data folder
     move_to_data_dir(f"ado{sufix}.csv")
 
+def scrape_sky(date="prev", sufix=""):
+    collector = data_collector.SkyScraper()
+    for collection in sky_collection_list:
+        for to in collection[1]:
+            # 往路
+            collector.set_from(collection[0])
+            collector.set_to(to)
+            collector.set_date(date)
+            collector.scrape(f"sky{sufix}.csv")
+            time.sleep(3)
+            # 復路
+            collector.set_from(to)
+            collector.set_to(collection[0])
+            collector.set_date(date)
+            collector.scrape(f"sky{sufix}.csv")
+            time.sleep(3)
+    # move file created into data folder
+    move_to_data_dir(f"sky{sufix}.csv")
+
 def move_to_data_dir(filename):
     import shutil
     import os
@@ -103,6 +127,12 @@ def move_to_data_dir(filename):
         if not os.path.exists(path):
             os.makedirs(path)
         shutil.move(filename, os.path.join(path, filename))
+    elif "sky" in filename:
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sky", 'analyze_target', date_str)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        shutil.move(filename, os.path.join(path, filename))
+
 
 import sys
 
@@ -125,11 +155,14 @@ else:
     thread_jal = threading.Thread(target=scrape_jal, args=("prev", date_str))
     thread_ana = threading.Thread(target=scrape_ana, args=("prev", date_str))
     thread_ado = threading.Thread(target=scrape_ado, args=("prev", date_str))
+    thread_sky = threading.Thread(target=scrape_sky, args=("prev", date_str))
 
+thread_sky.start()
 thread_jal.start()
 thread_ana.start()
 thread_ado.start()
 
+thread_sky.join()
 thread_jal.join()
 thread_ana.join()
 thread_ado.join()

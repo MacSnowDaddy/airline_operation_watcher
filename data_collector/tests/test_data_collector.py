@@ -5,6 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from data_collector import JalScraper
 from data_collector import AnaScraper
 from data_collector import AdoScraper
+from data_collector import SkyScraper
 
 class TestFlightInfo(unittest.TestCase):
     def setUp(self):
@@ -89,6 +90,32 @@ class TestAdoSelenium(unittest.TestCase):
         self.assertEqual(parsed_list[0].act_arr_time, "09:27")
         csv_expected = "4月10日(水),ADO12,札幌(新千歳),東京(羽田),08:00,09:35,07:58,09:27,出発済み10,到着済み1・2・3(第2ターミナル),-"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
+
+
+class TestSkyScraper(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_parse_result(self):
+        print(os.path.dirname(__file__))
+        # Read the HTML content from test_jal.txt
+        with open(os.path.join(os.path.dirname(__file__), 'test_sky.txt'), 'r') as file:
+            html_content = file.read()
+        parsed_list = SkyScraper.parse_result(html_content)
+
+        self.assertEqual(len(parsed_list), 9)
+        self.assertEqual(parsed_list[0].flight_date, "2024年4月13日(土)")
+        self.assertEqual(parsed_list[0].dep_ap, "羽田")
+        self.assertEqual(parsed_list[0].arr_ap, "新千歳")
+        self.assertEqual(parsed_list[0].flight_number, "SKY703")
+        self.assertEqual(parsed_list[0].dep_time, "06:45")
+        self.assertEqual(parsed_list[0].arr_time, "08:20")
+        self.assertEqual(parsed_list[0].act_dep_time, "06:44")
+        self.assertEqual(parsed_list[0].act_arr_time, "08:20")
+        csv_expected = "2024年4月13日(土),SKY703,羽田,新千歳,06:45,08:20,06:44,08:20,出発済,到着済,"
+        self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
+
+
 
 if __name__ == "__main__":
     unittest.main()

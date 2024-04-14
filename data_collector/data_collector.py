@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 import ap_dict
+import re
 
 # set list of scrap
 scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
@@ -521,8 +522,145 @@ class SkyScraper(Scraper):
         self.url = scrap_dict["sky"]
     
     def scrape(self, out_file):
-        pass
+        assert self.from_ap is not None, "出発地を設定してください。"
+        assert self.to_ap is not None, "到着地を設定してください。"
+        if self.date is None:
+            self.date = "today"
+        
+        if self.date == "prev":
+            date_flg = "-1"
+        elif self.date == "today":
+            date_flg = "0"
+        elif self.date == "next":
+            date_flg = "1"
+        
+        self.url = scrap_dict["sky"]
+        self.browser.get(self.url)
 
+        # set route
+        route_selection = Select(self.browser.find_element(By.NAME, "airline"))
+        route_selection.select_by_value(str(SkyScraper.sky_root_coder(self.from_ap, self.to_ap)))
+
+        #set date
+        date_selection = Select(self.browser.find_element(By.NAME, "select_day"))
+        date_selection.select_by_value(date_flg)
+
+        #search
+        send_btn = self.browser.find_element(By.XPATH, "//input[@value='発着案内']")
+        send_btn.click()
+
+        self.browser.implicitly_wait(10)
+
+        #save as html
+        with open("sky.html", "w") as f:
+            f.write(self.browser.page_source)
+        
+        parsed_list = SkyScraper.parse_result(self.browser.page_source)
+
+        #save the result to csv
+        with open(out_file, "a") as f:
+            for flight_info in parsed_list:
+                f.write(flight_info.to_csv(header=False))
+                f.write("\n")
+        
+    @classmethod
+    def parse_result(cls, page_source) -> list:
+        '''スカイマークの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
+        
+        dataのサンプルページはtest_sky.txtを参照。
+        return: list(FlightInfo)'''
+        parsed_flights_info = []
+        soup = BeautifulSoup(page_source, "html.parser")
+        #運航日を取得する。
+        #運航日はclass="md"を持つspan elementのtextで取得できる。
+        flight_date_element = soup.find("span", class_="md")
+        if flight_date_element is not None:
+            flight_date = flight_date_element.text.replace("\n", "").replace(" ","")
+        else:
+            flight_date = "ERROR"
+        #出発地を取得する。
+        #出発地はclass="da"を持つspan elementのtextで取得できる。
+        dep_ap_element = soup.find("span", class_="da")
+        if dep_ap_element is not None:
+            dep_ap = dep_ap_element.text.replace("\n", "").replace(" ","").replace("出発地：", "")
+        else:
+            dep_ap = "ERROR"
+        #到着地を取得する。
+        #到着地はclass="aa"を持つspan elementのtextで取得できる。
+        arr_ap_element = soup.find("span", class_="aa")
+        if arr_ap_element is not None:
+            arr_ap = arr_ap_element.text.replace("\n", "").replace(" ","").replace("到着地：", "")
+        else:
+            arr_ap = "ERROR"
+        #各便の情報を取得する。
+        #各便の情報はid="infotb"を持つdiv element内にある。
+        flights_info = soup.find("div", id="infotb").find_all("tr")
+        for flight_info in flights_info:
+            #flight_infoに<td>が含まれているか確認する。
+            if flight_info.find("td") is None:
+                continue
+            #便名を取得する。
+            flight_number = flight_info.find_all("td")[0].text
+            #定刻を取得する。
+            scheduled_dep_time = flight_info.find_all("td")[2].text
+            #実時刻を取得する。
+            actual_dep_time = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[3].text)[0]
+            dep_info = flight_info.find_all("td")[3].find("span").text.replace("\n", "").replace(" ","")
+            scheduled_arr_time = flight_info.find_all("td")[5].text
+            actual_arr_time = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[6].text)[0]
+            arr_info = flight_info.find_all("td")[6].find("span").text.replace("\n", "").replace(" ","")
+            other_info = flight_info.find_all("td")[7].text.replace("\xa0", "").replace("\n", "").replace(" ","")
+
+            #状況を取得する。
+            parsed_flights_info.append(
+                Scraper.FlightInfo(
+                    flight_date,
+                    flight_number,
+                    dep_ap,
+                    arr_ap,
+                    scheduled_dep_time,
+                    scheduled_arr_time,
+                    actual_dep_time,
+                    actual_arr_time,
+                    dep_other=dep_info,
+                    arr_other=arr_info,
+                    info=other_info))
+        return parsed_flights_info
+    
+
+        
+    @classmethod
+    def sky_root_coder(cls, from_ap, to_ap):
+        '''スカイマークの運航情報を取得するためのURLを生成する。
+        
+        @param from_ap: str, 出発地の空港コード
+        @param to_ap: str, 到着地の空港コード
+        return: str, URL'''
+        if from_ap == "HND":
+            if to_ap == "CTS":
+                return 57
+            elif to_ap == "FUK":
+                return 34
+            elif to_ap == "OKA":
+                return 52
+        if from_ap == "CTS":
+            if to_ap == "HND":
+                return 58
+            elif to_ap == "FUK":
+                return 132
+            elif to_ap == "NGO":
+                return 104
+        if from_ap == "FUK":
+            if to_ap == "HND":
+                return 49
+            elif to_ap == "CTS":
+                return 131
+        if from_ap == "NGO":
+            if to_ap == "CTS":
+                return 100
+        if from_ap == "OKA":
+            if to_ap == "HND":
+                return 53
 
 class TokScraper(Scraper):
     '''TOKIAIRの運航情報を取得するためのクラス。

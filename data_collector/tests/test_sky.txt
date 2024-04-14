@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Cache-Control" content="no-cache"><meta http-equiv="Expires" content="tdu, 01 Dec 1994 16:00:00 GMT"><link rel="shortcut icon" href="https://www.skymark.co.jp/favicon.ico">
+<!-- Google Tag Manager -->
+<script async="" src="https://www.clarity.ms/s/0.7.27/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/jez8orawve?ref=gtm2"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-25MPGWEXNG&amp;l=dataLayer&amp;cx=c"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-PBX8XNZ"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PBX8XNZ');</script>
+<!-- End Google Tag Manager -->
+<title>発着案内｜発着案内・運航状況｜スカイマーク SKYMARK</title>
+<meta name="description" content="SKYMARK-スカイマーク公式ページです。スカイマークはリーズナブルな運賃で快適な空の旅をご提供いたします。">
+<meta name="keywords" content="SKY,スカイ,スカイマーク,SKYMARK,航空券,予約,国内線,羽田空港,福岡空港,神戸空港,新千歳空港,千歳空港,那覇空港,東京,福岡,博多,兵庫,神戸,札幌,北海道,那覇,沖縄,奄美大島,奄美">
+<!-- /global css -->
+<link rel="stylesheet" href="/nav/css/header_logo.css">
+<!-- /global js -->
+<script src="/nav/js/jquery-1.12.4.min.js"></script>
+<script src="/nav/js/header-footer.js"></script>
+
+<!--[if lt IE 9]>
+<script src="/nav/js/html5shiv-printshiv.js"></script>
+<script src="/nav/js/selectivizr-min.js"></script>
+<link rel="stylesheet" href="/nav/css/ie.css">
+<![endif]-->
+
+<!-- local css -->
+<link rel="stylesheet" type="text/css" href="/web_mcr/ja/css/mercury_new.css">
+<!-- /local css -->
+<!-- local js -->
+<!-- /local js -->
+<!-- print css -->
+<!-- /print css -->
+<style>
+th,td:not([class^="note"]){white-space: nowrap;}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PBX8XNZ"height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+    <!-- HEADER START -->
+    
+        <div id="header_logo_ja">	<header id="header">
+		<div id="logo"><a href="https://www.skymark.co.jp/ja/"><img src="/nav/images/logo.gif"></a></div>
+	</header></div>
+    
+    <!-- HEADER END -->
+
+    <!--Title-->
+    <div class="navTitle">
+        <h1 class="navTitleInner">発着案内</h1>
+    </div>
+    <!-- Title END -->
+
+    <div id="container">
+
+        <!-- CONTENTS START -->
+        <main>
+        <div id="main">
+            <section>
+
+                <div id="mercury" class="clearfix">
+
+                    
+                        <div id="mcrInformation">
+                            
+                            備考欄に「<span class="textred">★</span>」がついている便については、<span class="textred">運航に影響が見込まれています。<br>航空券の取扱いについては、「<a href="https://www.skymark.co.jp/ja/change/ticket/"><span class="textred">欠航遅延発生時の航空券の取扱いについて</span></a>」をご覧ください。</span>
+                        </div>
+                    
+                    
+
+                    <div id="baseinfo">
+                        <div id="mddaaa">
+                            <span class="md">
+                                
+                                
+                                
+                                2024年4月13日(土)
+                            </span>
+                            <span class="da">
+                                
+                                
+                                
+                                出発地：羽田
+                            </span>
+                            <span class="space">/</span>
+                            <span class="aa">
+                                
+                                
+                                
+                                到着地：新千歳
+                            </span>
+                        </div>
+                        <div id="infoludt">
+                            <span class="md">
+                                
+                                
+                                
+                                4月13日(土)
+                            </span>
+                            <span class="time">
+                                
+                                
+                                22時47分
+                            </span>
+                            <span class="present">
+                                
+                                現在
+                            </span>
+                        </div>
+                    </div>
+
+                    
+
+                        <div id="infotb">
+                            <table border="0" cellspacing="0" cellpadding="0" class="informationTb">
+                                <tbody><tr>
+                                    <th class="t1" rowspan="2">便名</th>
+                                    <th class="tdep" colspan="3">出発</th>
+                                    <th class="tarr" colspan="3">到着</th>
+                                    
+                                        <th class="t8" rowspan="2">備考</th>
+                                    
+                                </tr>
+                                <tr>
+                                    <th class="t2">出発空港</th>
+                                    <th class="t3">予定時刻</th>
+                                    <th class="t4">状況</th>
+                                    <th class="t5">到着空港</th>
+                                    <th class="t6">予定時刻</th>
+                                    <th class="t7">状況</th>
+                                </tr>
+
+                                
+                                
+                                    <tr>
+                                        <td>SKY703</td>
+                                        <td>羽田</td>
+                                        <td>06:45</td>
+                                        <td>
+                                            
+                                                06:44<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>08:20</td>
+                                        
+                                            <td>08:20<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY705</td>
+                                        <td>羽田</td>
+                                        <td>08:20</td>
+                                        <td>
+                                            
+                                                08:19<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>09:55</td>
+                                        
+                                            <td>09:54<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY711</td>
+                                        <td>羽田</td>
+                                        <td>11:00</td>
+                                        <td>
+                                            
+                                                11:01<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>12:40</td>
+                                        
+                                            <td>12:39<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY713</td>
+                                        <td>羽田</td>
+                                        <td>12:20</td>
+                                        <td>
+                                            
+                                                12:22<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>14:00</td>
+                                        
+                                            <td>14:04<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY717</td>
+                                        <td>羽田</td>
+                                        <td>14:05</td>
+                                        <td>
+                                            
+                                                14:04<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>15:40</td>
+                                        
+                                            <td>15:42<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY719</td>
+                                        <td>羽田</td>
+                                        <td>14:35</td>
+                                        <td>
+                                            
+                                                14:35<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>16:10</td>
+                                        
+                                            <td>16:11<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY723</td>
+                                        <td>羽田</td>
+                                        <td>16:55</td>
+                                        <td>
+                                            
+                                                16:53<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>18:35</td>
+                                        
+                                            <td>18:39<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY727</td>
+                                        <td>羽田</td>
+                                        <td>18:20</td>
+                                        <td>
+                                            
+                                                18:18<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>20:00</td>
+                                        
+                                            <td>20:19<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>SKY729</td>
+                                        <td>羽田</td>
+                                        <td>20:30</td>
+                                        <td>
+                                            
+                                                20:28<br>
+                                                
+                                                    <span class="textred">
+                                                
+                                                出発済
+                                                
+                                                    </span>
+                                                
+                                                
+	                                                
+	                                            
+                                            
+                                        </td>
+                                        <td>新千歳</td>
+                                        <td>22:05</td>
+                                        
+                                            <td>22:00<br>
+                                            
+                                                <span class="textred">
+                                            
+                                            到着済
+                                            
+                                                </span>
+                                            
+                                            </td>
+                                        
+                                        
+                                            <td class="note">&nbsp;&nbsp;</td>
+                                        
+                                    </tr>
+                                
+                            </tbody></table>
+                        </div>
+                    
+
+                    <!--外部テキスト部分--><!-- 悪天候時の航空券の取扱いについて --><!-- 予約センター番号 -->
+                    	<!-- 悪天候時の航空券の取扱いについて -->
+	<aside id="roughweather">
+		<div class="bdBlockA01">
+			<dl class="detailList01">
+				<dt class="title">関連リンク</dt>
+				<dd class="detail">
+				  <ul class="linkList01 sideBySide">
+                    <li><a href="https://www.res.skymark.co.jp/mercury/fis/flight_announce_i18n"><span>運航状況のご案内</span></a></li>
+                    <li><a href="https://www.skymark.co.jp/ja/change/ticket/rough_weather.html"><span>悪天候時の航空券の取扱について</span></a></li>
+                    <li><a href="https://www.skymark.co.jp/ja/change/ticket/delayed.html"><span>ご予約便が遅延した場合の航空券の取扱について</span></a></li>
+                    <li><a href="https://www.skymark.co.jp/ja/change/ticket/cancellation_sky.html"><span>当社都合事由による欠航時の対応について</span></a></li>
+                    <li><a href="https://www.skymark.co.jp/ja/change/ticket/diversion.html"><span>目的地空港を変更し到着した場合の対応について</span></a></li>
+				  </ul><!-- //.linkList01 .sideBySide -->
+				</dd>
+			</dl><!-- //.detailList01 -->
+		</div><!-- //.bdBlockA01 -->
+	</aside>
+
+	<!-- 予約センター番号 -->
+	<div id="Notes" class="clearfix">
+		<div class="noteTitle resCenter">予約センター</div>
+		<div class="noteText">全国共通（営業時間8:00～20:30）</div>
+		<ul class="noteUl reserveTel">
+			<li>ご予約・運航状況のご案内：<br>0570-039-283</li>
+			<li>直前予約専用：<br>0570-055-283</li>
+		</ul>
+	</div>
+
+                </div>
+            </section>
+        </div><!-- //#main -->
+        </main>
+        <!-- CONTENTS END -->
+    </div><!-- //#container -->
+
+    <!-- footer start -->
+    <div id="footer_copyright"> <footer id="footer">
+  <div id="copyright">Copyright(c)Skymark Airlines inc.</div>
+ </footer></div>
+    <!-- footer end -->
+
+
+
+
+<script type="text/javascript" id="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g+"?ref\x3dgtm2";d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","jez8orawve");</script></body></html>
