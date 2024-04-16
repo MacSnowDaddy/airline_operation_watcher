@@ -464,36 +464,36 @@
 					<tr>
 						
 						<td data-th="便名">
-							<span class="bt-content">ADO 36</span>
+							<span class="bt-content">ADO 37</span>
 						</td>
 						
 						<td data-th="搭乗口">
-							<span class="bt-content">7</span>
 							
+							<span class="bt-content">-</span>
 						</td>
 						<td data-th="定刻(出発)">
-							<span class="bt-content">20:35</span>
+							<span class="bt-content">20:15</span>
 						</td>
 						<td data-th="出発状況">
-							<span class="bt-content">20:29&nbsp;<span style="color: #336699">出発済み</span></span>
 							
+							<span class="bt-content">-</span>
 						</td>
 						<td data-th="定刻(到着)">
-							<span class="bt-content">22:15</span>
+							<span class="bt-content">21:50</span>
 						</td>
 						<td data-th="到着状況">
-							<span class="bt-content">21:57&nbsp;<span style="color: #336699">到着済み</span></span>
 							
+							<span class="bt-content">-</span>
 						</td>
 						<td data-th="出口">
-							<span class="bt-content">1・2・3<br>(第2ターミナル)</span>
 							
+							<span class="bt-content">-</span>
 						</td>
 						<td data-th="備考">
 							
 							
+							<span class="bt-content"><span style="color: #e80000">欠航</span><br>視界不良のため欠航いたします。お客様にはご迷惑をおかけいたしますことをお詫び申し上げます。<span style="color: #e80000">*</span></span>
 							
-							<span class="bt-content">-</span>
 						</td>
 					</tr>
 					<tr>

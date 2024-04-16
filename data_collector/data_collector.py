@@ -477,8 +477,12 @@ class AdoScraper(Scraper):
             actual_dep_time = flight_info.find_all("td")[3].text.split()[0]
             actual_dep_time = actual_dep_time.replace("\n", "").replace(" ","")
             #出発状況を取得する。
-            dep_info = flight_info.find_all("td")[3].text.split()[1]
-            dep_info = dep_info.replace("\n", "").replace(" ","")
+            dep_info_span = flight_info.find_all("td")[3].find_all("span")
+            if len(dep_info_span) > 1:
+                dep_info = dep_info_span[1].text
+                dep_info = dep_info.replace("\n", "").replace(" ","")
+            else:
+                dep_info = "ERROR"
             #到着定刻を取得する。
             scheduled_arr_time = flight_info.find_all("td")[4].text
             scheduled_arr_time = scheduled_arr_time.replace("\n", "").replace(" ","")
@@ -486,8 +490,12 @@ class AdoScraper(Scraper):
             actual_arr_time = flight_info.find_all("td")[5].text.split()[0]
             actual_arr_time = actual_arr_time.replace("\n", "").replace(" ","")
             #到着状況を取得する。
-            arr_info = flight_info.find_all("td")[5].text.split()[1]
-            arr_info = arr_info.replace("\n", "").replace(" ","")
+            arr_info_span = flight_info.find_all("td")[5].find_all("span")
+            if len(arr_info_span) > 1:
+                arr_info = arr_info_span[1].text
+                arr_info = arr_info.replace("\n", "").replace(" ","")
+            else:
+                arr_info = "ERROR"
             #出口を取得する。
             exit = flight_info.find_all("td")[6].text
             exit = exit.replace("\n", "").replace(" ","")
