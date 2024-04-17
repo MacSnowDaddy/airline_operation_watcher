@@ -115,6 +115,12 @@ class TestSkyScraper(unittest.TestCase):
         csv_expected = "2024年4月13日(土),SKY703,羽田,新千歳,06:45,08:20,06:44,08:20,出発済,到着済,"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
 
+        self.assertEqual(parsed_list[1].flight_number, "SKY510")
+        self.assertEqual(parsed_list[1].act_dep_time, "ERROR")
+        # dep airport and arr ariport are parsed from the header of the page.
+        # so, dep airport and arr airport below are correct.
+        csv_expected = "2024年4月13日(土),SKY510,羽田,新千歳,07:15,09:40,ERROR,ERROR,欠航,欠航,★使用する飛行機の調整がつかないため、欠航となりました。"
+        self.assertEqual(parsed_list[1].to_csv(header=False), csv_expected)
 
 
 if __name__ == "__main__":

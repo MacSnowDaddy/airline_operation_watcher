@@ -612,11 +612,27 @@ class SkyScraper(Scraper):
             #定刻を取得する。
             scheduled_dep_time = flight_info.find_all("td")[2].text
             #実時刻を取得する。
-            actual_dep_time = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[3].text)[0]
-            dep_info = flight_info.find_all("td")[3].find("span").text.replace("\n", "").replace(" ","")
+            actual_dep_time_search = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[3].text)
+            if actual_dep_time_search is not None:
+                actual_dep_time = actual_dep_time_search[0]
+            else:
+                actual_dep_time = "ERROR"
+            dep_info_span = flight_info.find_all("td")[3].find("span")
+            if dep_info_span is not None:
+                dep_info = dep_info_span.text.replace("\n", "").replace(" ","")
+            else:
+                dep_info = flight_info.find_all("td")[3].text.replace("\xa0", "").replace("\n", "").replace(" ","")
             scheduled_arr_time = flight_info.find_all("td")[5].text
-            actual_arr_time = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[6].text)[0]
-            arr_info = flight_info.find_all("td")[6].find("span").text.replace("\n", "").replace(" ","")
+            actual_arr_time_search = re.search(r"[0-9]{2}:[0-9]{2}",flight_info.find_all("td")[6].text)
+            if actual_arr_time_search is not None:
+                actual_arr_time = actual_arr_time_search[0]
+            else:
+                actual_arr_time = "ERROR"
+            arr_info_span = flight_info.find_all("td")[6].find("span")
+            if arr_info_span is not None:
+                arr_info = arr_info_span.text.replace("\n", "").replace(" ","")
+            else:
+                arr_info = flight_info.find_all("td")[6].text.replace("\xa0", "").replace("\n", "").replace(" ","")
             other_info = flight_info.find_all("td")[7].text.replace("\xa0", "").replace("\n", "").replace(" ","")
 
             #状況を取得する。

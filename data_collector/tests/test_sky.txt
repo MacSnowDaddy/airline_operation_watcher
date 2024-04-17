@@ -170,39 +170,21 @@ th,td:not([class^="note"]){white-space: nowrap;}
                                     </tr>
                                 
                                     <tr>
-                                        <td>SKY705</td>
-                                        <td>羽田</td>
-                                        <td>08:20</td>
+                                        <td>SKY510</td>
+                                        <td>那覇</td>
+                                        <td>07:15</td>
                                         <td>
                                             
-                                                08:19<br>
-                                                
-                                                    <span class="textred">
-                                                
-                                                出発済
-                                                
-                                                    </span>
-                                                
-                                                
-	                                                
-	                                            
+                                                欠航
                                             
                                         </td>
-                                        <td>新千歳</td>
-                                        <td>09:55</td>
+                                        <td>羽田</td>
+                                        <td>09:40</td>
                                         
-                                            <td>09:54<br>
-                                            
-                                                <span class="textred">
-                                            
-                                            到着済
-                                            
-                                                </span>
-                                            
-                                            </td>
+                                            <td>欠航</td>
                                         
                                         
-                                            <td class="note">&nbsp;&nbsp;</td>
+                                            <td class="note">&nbsp;<span class="textred">★</span>使用する飛行機の調整がつかないため、欠航となりました。<br></td>
                                         
                                     </tr>
                                 
