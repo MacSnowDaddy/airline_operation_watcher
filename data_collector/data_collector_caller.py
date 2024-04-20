@@ -43,6 +43,7 @@ def scrape_jal(date="prev", sufix = ""):
             collector.scrape(f"jal{sufix}.csv")
             time.sleep(3)
     move_to_data_dir(f"jal{sufix}.csv")
+    print("jal done")
 
 def scrape_ana(date="prev", sufix=""):
     collector = data_collector.AnaScraper()
@@ -62,6 +63,7 @@ def scrape_ana(date="prev", sufix=""):
             time.sleep(3)
     # move file created into data folder
     move_to_data_dir(f"ana{sufix}.csv")
+    print("ana done")
     
 def scrape_ado(date="prev", sufix=""):
     collector = data_collector.AdoScraper()
@@ -75,6 +77,7 @@ def scrape_ado(date="prev", sufix=""):
             time.sleep(3)
     # move file created into data folder
     move_to_data_dir(f"ado{sufix}.csv")
+    print("ado done")
 
 def scrape_sky(date="prev", sufix=""):
     collector = data_collector.SkyScraper()
@@ -94,6 +97,7 @@ def scrape_sky(date="prev", sufix=""):
             time.sleep(3)
     # move file created into data folder
     move_to_data_dir(f"sky{sufix}.csv")
+    print("sky done")
 
 def move_to_data_dir(filename):
     import shutil
