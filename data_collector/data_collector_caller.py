@@ -142,24 +142,20 @@ import sys
 
 if len(sys.argv) > 1:
     date = sys.argv[1]
-    date_str = ""
-    if date == "prev":
-        date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-    elif date == "today":
-        date_str = datetime.date.today().strftime('%Y%m%d')
-    elif date == "next":
-        date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
-    thread_jal = threading.Thread(target=scrape_jal, args=(date,date_str))
-    thread_ana = threading.Thread(target=scrape_ana, args=(date,date_str))
-    thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str))
 else:
-    # this will be called when no sys args placed.
-    # this means that the target to get is "prev"
+    date = "prev"
+date_str = ""
+if date == "prev":
     date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-    thread_jal = threading.Thread(target=scrape_jal, args=("prev", date_str))
-    thread_ana = threading.Thread(target=scrape_ana, args=("prev", date_str))
-    thread_ado = threading.Thread(target=scrape_ado, args=("prev", date_str))
-    thread_sky = threading.Thread(target=scrape_sky, args=("prev", date_str))
+elif date == "today":
+    date_str = datetime.date.today().strftime('%Y%m%d')
+elif date == "next":
+    date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
+
+thread_jal = threading.Thread(target=scrape_jal, args=(date,date_str))
+thread_ana = threading.Thread(target=scrape_ana, args=(date,date_str))
+thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str))
+thread_sky = threading.Thread(target=scrape_sky, args=(date,date_str))
 
 thread_sky.start()
 thread_jal.start()
