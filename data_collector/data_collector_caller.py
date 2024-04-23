@@ -76,8 +76,7 @@ def move_to_data_dir(filename:str):
     # (last day of the week is Saturday)
     date = filename[-12:-4]
     date = datetime.datetime.strptime(date, '%Y%m%d')
-    first_day_of_week = date - datetime.timedelta(days=(date.weekday()+1))
-    last_day_of_week = date + datetime.timedelta(days=(5-date.weekday()))
+    first_day_of_week, last_day_of_week = first_last_day_of_week(date)
     date_str = first_day_of_week.strftime('%Y%m%d') + "-" + last_day_of_week.strftime('%m%d')
     # move file
     if filename == "":
@@ -91,6 +90,11 @@ def move_to_data_dir(filename:str):
         else:
             return
     shutil.move(filename, os.path.join(path, filename))
+
+def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, datetime.datetime]:
+    first_day_of_week = date - datetime.timedelta(days=((date.weekday()+1)%7))
+    last_day_of_week = date + datetime.timedelta(days=((5-date.weekday())%7))
+    return first_day_of_week, last_day_of_week
 
 
 def main():
