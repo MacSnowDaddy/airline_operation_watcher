@@ -93,31 +93,36 @@ def move_to_data_dir(filename:str):
     shutil.move(filename, os.path.join(path, filename))
 
 
-import sys
+def main():
+    import sys
 
-if len(sys.argv) > 1:
-    date = sys.argv[1]
-else:
-    date = "prev"
-date_str = ""
-if date == "prev":
-    date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
-elif date == "today":
-    date_str = datetime.date.today().strftime('%Y%m%d')
-elif date == "next":
-    date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
+    if len(sys.argv) > 1:
+        date = sys.argv[1]
+    else:
+        date = "prev"
+    date_str = ""
+    if date == "prev":
+        date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
+    elif date == "today":
+        date_str = datetime.date.today().strftime('%Y%m%d')
+    elif date == "next":
+        date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-thread_jal = threading.Thread(target=scrape, args=(data_collector.JalScraper, jal_collection_list, date, date_str))
-thread_ana = threading.Thread(target=scrape, args=(data_collector.AnaScraper, ana_collection_list, date, date_str))
-thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
-thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
+    thread_jal = threading.Thread(target=scrape, args=(data_collector.JalScraper, jal_collection_list, date, date_str))
+    thread_ana = threading.Thread(target=scrape, args=(data_collector.AnaScraper, ana_collection_list, date, date_str))
+    thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
+    thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
 
-thread_sky.start()
-thread_jal.start()
-thread_ana.start()
-thread_ado.start()
+    thread_sky.start()
+    thread_jal.start()
+    thread_ana.start()
+    thread_ado.start()
 
-thread_sky.join()
-thread_jal.join()
-thread_ana.join()
-thread_ado.join()
+    thread_sky.join()
+    thread_jal.join()
+    thread_ana.join()
+    thread_ado.join()
+
+
+if __name__ == "__main__":
+    main()
