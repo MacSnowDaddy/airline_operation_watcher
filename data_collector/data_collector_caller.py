@@ -26,44 +26,24 @@ sky_collection_list = [
     ['CTS', ['NGO', 'FUK']],
 ]
 
-def scrape_jal(date="prev", sufix = ""):
-    collector = data_collector.JalScraper()
-    for collection in jal_collection_list:
+def scrape(class_, list, date="prev", sufix=""):
+    collector = class_()
+    for collection in list:
         for to in collection[1]:
             # 往路
             collector.set_from(collection[0])
             collector.set_to(to)
             collector.set_date(date)
-            collector.scrape(f"jal{sufix}.csv")
+            collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             time.sleep(3)
             # 復路
             collector.set_from(to)
             collector.set_to(collection[0])
             collector.set_date(date)
-            collector.scrape(f"jal{sufix}.csv")
+            collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             time.sleep(3)
-    move_to_data_dir(f"jal{sufix}.csv")
-    print("jal done")
-
-def scrape_ana(date="prev", sufix=""):
-    collector = data_collector.AnaScraper()
-    for collection in ana_collection_list:
-        for to in collection[1]:
-            # 往路
-            collector.set_from(collection[0])
-            collector.set_to(to)
-            collector.set_date(date)
-            collector.scrape(f"ana{sufix}.csv")
-            time.sleep(3)
-            # 復路
-            collector.set_from(to)
-            collector.set_to(collection[0])
-            collector.set_date(date)
-            collector.scrape(f"ana{sufix}.csv")
-            time.sleep(3)
-    # move file created into data folder
-    move_to_data_dir(f"ana{sufix}.csv")
-    print("ana done")
+    move_to_data_dir(f"{collector.file_name_header()}{sufix}.csv")
+    print(f"{collector.file_name_header()} done")
     
 def scrape_ado(date="prev", sufix=""):
     collector = data_collector.AdoScraper()
@@ -79,27 +59,13 @@ def scrape_ado(date="prev", sufix=""):
     move_to_data_dir(f"ado{sufix}.csv")
     print("ado done")
 
-def scrape_sky(date="prev", sufix=""):
-    collector = data_collector.SkyScraper()
-    for collection in sky_collection_list:
-        for to in collection[1]:
-            # 往路
-            collector.set_from(collection[0])
-            collector.set_to(to)
-            collector.set_date(date)
-            collector.scrape(f"sky{sufix}.csv")
-            time.sleep(3)
-            # 復路
-            collector.set_from(to)
-            collector.set_to(collection[0])
-            collector.set_date(date)
-            collector.scrape(f"sky{sufix}.csv")
-            time.sleep(3)
-    # move file created into data folder
-    move_to_data_dir(f"sky{sufix}.csv")
-    print("sky done")
+def move_to_data_dir(filename:str):
+    '''move file to data directory.
 
-def move_to_data_dir(filename):
+    Args:
+        filename (str): file name to move. file name should be like "xxxyyyymmdd.csv".
+        xxx is the airline's icao code.
+    '''
     import shutil
     import os
     # define dir name to move
@@ -116,26 +82,15 @@ def move_to_data_dir(filename):
     # move file
     if filename == "":
         return
-    elif "ana" in filename:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ana", 'analyze_target', date_str)
-        if not os.path.exists(path):
+    icaocode = filename[:3]
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), icaocode, 'analyze_target', date_str)
+    if not os.path.exists(path):
+        confirm = input("Do you want to create a new directory? Press Enter to create.")
+        if confirm == "":
             os.makedirs(path)
-        shutil.move(filename, os.path.join(path, filename))
-    elif "jal" in filename:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "jal", 'analyze_target', date_str)
-        if not os.path.exists(path):
-            os.makedirs(path)
-        shutil.move(filename, os.path.join(path, filename))
-    elif "ado" in filename:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "ado", 'analyze_target', date_str)
-        if not os.path.exists(path):
-            os.makedirs(path)
-        shutil.move(filename, os.path.join(path, filename))
-    elif "sky" in filename:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "sky", 'analyze_target', date_str)
-        if not os.path.exists(path):
-            os.makedirs(path)
-        shutil.move(filename, os.path.join(path, filename))
+        else:
+            return
+    shutil.move(filename, os.path.join(path, filename))
 
 
 import sys
@@ -152,10 +107,10 @@ elif date == "today":
 elif date == "next":
     date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-thread_jal = threading.Thread(target=scrape_jal, args=(date,date_str))
-thread_ana = threading.Thread(target=scrape_ana, args=(date,date_str))
-thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str))
-thread_sky = threading.Thread(target=scrape_sky, args=(date,date_str))
+thread_jal = threading.Thread(target=scrape, args=(data_collector.JalScraper, jal_collection_list, date, date_str))
+thread_ana = threading.Thread(target=scrape, args=(data_collector.AnaScraper, ana_collection_list, date, date_str))
+thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
+thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
 
 thread_sky.start()
 thread_jal.start()

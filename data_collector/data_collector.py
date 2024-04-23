@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
 import ap_dict
 import re
+from abc import abstractmethod
 
 # set list of scrap
 scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
@@ -39,6 +40,10 @@ class Scraper(object):
     def set_date(self, date:any):
         self.date = date
     
+    @abstractmethod
+    def file_name_header() -> str:
+        pass
+
     def scrape(self, out_file):
         pass
 
@@ -113,6 +118,9 @@ class JalScraper(Scraper):
             for flight_info in parsed_list:
                 f.write(flight_info.to_csv(header=False))
                 f.write("\n")
+    
+    def file_name_header(self) -> str:
+        return "jal"
     
     @classmethod
     def parse_result(cls, page_source) -> list:
@@ -252,6 +260,8 @@ class AnaScraper(Scraper):
                 f.write(flight_info.to_csv(header=False))
                 f.write("\n")
 
+    def file_name_header(self) -> str:
+        return "ana"
     
     @classmethod
     def parse_result(cls, page_source) -> list:
@@ -428,6 +438,9 @@ class AdoScraper(Scraper):
             for flight_info in parsed_list:
                 f.write(flight_info.to_csv(header=False))
                 f.write("\n")
+    
+    def file_name_header(self) -> str:
+        return "ado"
         
     @classmethod
     def parse_result(cls, page_source) -> list:
@@ -570,6 +583,9 @@ class SkyScraper(Scraper):
             for flight_info in parsed_list:
                 f.write(flight_info.to_csv(header=False))
                 f.write("\n")
+    
+    def file_name_header(self) -> str:
+        return "sky"
         
     @classmethod
     def parse_result(cls, page_source) -> list:
@@ -694,6 +710,9 @@ class TokScraper(Scraper):
         super().__init__()
         self.url = scrap_dict["tok"]
     
+    def file_name_header() -> str:
+        return "tok"
+
     def scrape(self, out_file):
         pass
 
