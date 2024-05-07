@@ -4,7 +4,7 @@ import numpy as np
 
 
 
-def make_ana_dataframe(files):
+def make_dataframe(files):
     '''Create a dataframe from the list of files which dose not have header line.
 
     after calling this function, you'll get a dataframe which has the following columns.
