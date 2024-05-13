@@ -83,12 +83,7 @@ def move_to_data_dir(filename:str):
         return
     icaocode = filename[:3]
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), icaocode, 'analyze_target', date_str)
-    if not os.path.exists(path):
-        confirm = input("Do you want to create a new directory? Press Enter to create.")
-        if confirm == "":
-            os.makedirs(path)
-        else:
-            return
+    os.makedirs(path)
     shutil.move(filename, os.path.join(path, filename))
 
 def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, datetime.datetime]:
