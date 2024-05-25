@@ -264,7 +264,7 @@ class AnaScraper(Scraper):
         return "ana"
     
     @classmethod
-    def parse_result(cls, page_source) -> list:
+    def parse_result(cls, page_source) -> list[Scraper.FlightInfo]:
         '''ANAの運航案内のページの結果から、各便の定刻、実際の出発時刻、到着時刻を取得する。
         
         dataのサンプルページはtest_ana.txtを参照。
