@@ -107,6 +107,19 @@ class TestAdoSelenium(unittest.TestCase):
         csv_expected = "4月10日(水),ADO12,札幌(新千歳),東京(羽田),08:00,09:35,07:58,09:27,出発済み10,到着済み1・2・3(第2ターミナル),-"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
 
+    def test_inject_year(self):
+        print(os.path.dirname(__file__))
+        # Read the HTML content from test_jal.txt
+        with open(os.path.join(os.path.dirname(__file__), 'test_ado.txt'), 'r') as file:
+            html_content = file.read()
+        parsed_list = AdoScraper.parse_result(html_content)
+        scraper = AdoScraper()
+        scraper.set_date("prev")
+        scraper.date = data_collector.date_formatter(scraper.date, "%Y%m%d")
+        parsed_list = scraper.inject_year(parsed_list)
+
+        yesterday = datetime.datetime.today() - datetime.timedelta(days=1)
+        self.assertEqual(parsed_list[0].flight_date, f"{yesterday.year}年4月10日(水)")
 
 class TestSkyScraper(unittest.TestCase):
     def setUp(self):

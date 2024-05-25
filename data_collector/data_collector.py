@@ -430,6 +430,8 @@ class AdoScraper(Scraper):
         
         parsed_list = AdoScraper.parse_result(self.browser.page_source)
 
+        self.inject_year(parsed_list)
+
         with open(out_file, "a") as f:
             for flight_info in parsed_list:
                 f.write(flight_info.to_csv(header=False))
@@ -439,6 +441,7 @@ class AdoScraper(Scraper):
         inverse_btn = self.browser.find_element(By.ID, "cus011002Form").find_element(By.TAG_NAME, "a").click()
         self.browser.implicitly_wait(10)
         parsed_list = AdoScraper.parse_result(self.browser.page_source)
+        self.inject_year(parsed_list)
         
         with open(out_file, "a") as f:
             for flight_info in parsed_list:
@@ -447,6 +450,11 @@ class AdoScraper(Scraper):
     
     def file_name_header(self) -> str:
         return "ado"
+
+    def inject_year(self, parsed_list:list[Scraper.FlightInfo]) -> list[Scraper.FlightInfo]:
+        for flight_info in parsed_list:
+            flight_info.flight_date = self.date[0:4] + "年" + flight_info.flight_date
+        return parsed_list
         
     @classmethod
     def parse_result(cls, page_source) -> list:
