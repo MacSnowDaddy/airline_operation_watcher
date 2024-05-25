@@ -6,6 +6,8 @@ from data_collector import JalScraper
 from data_collector import AnaScraper
 from data_collector import AdoScraper
 from data_collector import SkyScraper
+import data_collector
+import datetime
 
 class TestFlightInfo(unittest.TestCase):
     def setUp(self):
@@ -66,6 +68,20 @@ class TestAnaScraper(unittest.TestCase):
         csv_expected = "2月15日,ANA1851,大阪(伊丹),青森,09:00,10:45,09:01,10:38,出発済み搭乗口13,到着済み,-,-,Q84"
         self.assertEqual(parsed_list[0].to_csv(header=False), csv_expected)
         self.assertEqual(parsed_list[2].act_arr_time, "-")
+    
+    def test_inject_year(self):
+        print(os.path.dirname(__file__))
+        # Read the HTML content from test_jal.txt
+        with open(os.path.join(os.path.dirname(__file__), 'test_ana.txt'), 'r') as file:
+            html_content = file.read()
+        parsed_list = AnaScraper.parse_result(html_content)
+        scraper = AnaScraper()
+        scraper.set_date("prev")
+        scraper.date = data_collector.date_formatter(scraper.date, "%Y%m%d")
+        parsed_list = scraper.inject_year(parsed_list)
+
+        yesterday = datetime.datetime.today() - datetime.timedelta(days=1)
+        self.assertEqual(parsed_list[0].flight_date, f"{yesterday.year}年2月15日")
 
 class TestAdoSelenium(unittest.TestCase):
     def setUp(self):
