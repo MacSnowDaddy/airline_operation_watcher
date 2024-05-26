@@ -37,9 +37,9 @@ def make_dataframe(files):
     return df
 
 
-def edit_date(df, year="2024"):
+def edit_date(df):
     # add date column
-    df['date'] = df['date'].str.replace('月', '/').str.replace('日', '').str.replace('^', f'{year}/',regex=True)
+    df['date'] = df['date'].str.replace('年', '/').str.replace('月', '/').str.replace('日', '')
     df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d')
     return df
 
