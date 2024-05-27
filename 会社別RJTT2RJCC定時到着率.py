@@ -6,6 +6,7 @@ import glob
 import ana_analyze
 import jal_analyze
 import sky_analyze
+import ado_analyze
 import ap_dict
 import types
 import seaborn as sns
@@ -50,12 +51,12 @@ def main(date:datetime.date):
     ana_df = make_df('ana',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     jal_df = make_df('jal',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     sky_df = make_df('sky',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
-    # ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
+    ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     airline_list = ["ana", "jal", "sky"]
     print(date)
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), 'HND', 'CTS')
-        # print_on_schedule_arrival_rate('ado', df, 'HND', 'CTS')
+        print_on_schedule_arrival_rate('ado', df, 'HND', 'CTS')
 
 if __name__ == "__main__":
     yesterday:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
