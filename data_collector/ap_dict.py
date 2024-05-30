@@ -138,6 +138,11 @@ ap_dict_sky = {
     "NGO" : "中部",
 }
 
+ap_dict_ado = {
+    "HND" : "東京(羽田)",
+    "CTS" : "札幌(新千歳)",
+}
+
 def decode(ap_code, company = "jal"):
     '''空港コードを日本語に変換する。'''
     if company == "jal":
@@ -146,6 +151,8 @@ def decode(ap_code, company = "jal"):
         return ap_dict_ana[ap_code]
     elif company == "sky":
         return ap_dict_sky[ap_code]
+    elif company == "ado":
+        return ap_dict_ado[ap_code]
 
 def encode(ap_name, company = "jal"):
     '''空港名を空港コードに変換する。'''
@@ -159,6 +166,10 @@ def encode(ap_name, company = "jal"):
                 return key
     elif company == "sky":
         for key, value in ap_dict_sky.items():
+            if value == ap_name:
+                return key
+    elif company == "ado":
+        for key, value in ap_dict_ado.items():
             if value == ap_name:
                 return key
     return None
