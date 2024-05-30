@@ -40,6 +40,9 @@ def make_dataframe(files):
 def edit_date(df):
     # add date column
     df['date'] = df['date'].str.replace('年', '/').str.replace('月', '/').str.replace('日', '')
+    if(df['date'].str.contains('nan')).any():
+        print(df[df['date'].str.contains('nan')])
+        df.drop(df[df['date'].str.contains('nan')].index, inplace=True)
     df['date'] = pd.to_datetime(df['date'], format='%Y/%m/%d')
     return df
 
