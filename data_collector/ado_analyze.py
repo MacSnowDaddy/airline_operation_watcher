@@ -40,8 +40,8 @@ def _add_delay_column(df):
     # add delay column
     # delete the rows which have "-" value in actual_dep and actual_arr
     df = df
-    df = df[~(df['actual_dep'].astype(str).str.contains("--"))]
-    df = df[~(df['actual_arr'].astype(str).str.contains("--"))]
+    df = df[~(df['actual_dep'].astype(str).str.contains("-"))]
+    df = df[~(df['actual_arr'].astype(str).str.contains("-"))]
     df = df.drop(df[df['name'].isna()].index)
     # convert the type of actual_dep and actual_arr to datetime
     # if the time is grater than 24:00, it will be converted to the next day.
