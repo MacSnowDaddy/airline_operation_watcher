@@ -89,7 +89,7 @@ def add_delay_column(df):
 def add_ac_type_column(df):
     # put the volume of each type of aircraft
     df_type = pd.read_csv('/Users/hironoyutaka/統計学/aviation_analyze/セクター繁忙度モデル/data_collector/ana/type_and_volume.csv', header=None)
-    df_type.columns = ['type_of_aircraft', 'number_of_seat']
+    df_type.columns = ['type_of_aircraft', 'number_of_seat', 'category']
 
     df = pd.merge(df, df_type, on='type_of_aircraft', how='left')
     return df
