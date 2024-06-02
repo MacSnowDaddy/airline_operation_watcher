@@ -58,5 +58,13 @@ def main(date:datetime.date):
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), 'HND', 'CTS')
 
 if __name__ == "__main__":
-    yesterday:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
-    main(yesterday)
+    # read std args.
+    # if std args is not passed, use yesterday as default.
+    if len(sys.argv) == 4:
+        year = sys.argv[1]
+        month = sys.argv[2]
+        day = sys.argv[3]
+        target_date = datetime.date(int(year), int(month), int(day))
+    else:
+        target_date:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
+    main(target_date)
