@@ -39,8 +39,8 @@ def print_on_schedule_arrival_rate(airline:str, df:pd.DataFrame, dep_ap:str='*',
     if dest_ap != "*":
         df = df[(df['to']   == ap_dict.decode(dest_ap, airline))]
     print(f'{airline} {dep_ap} -> {dest_ap} number of flight : ', len(df))
-    print(f'{airline} {dep_ap} -> {dest_ap} number of on schedule arrival : ', len(df[df['arr_delay'] <= 14]))
-    print(f'{airline} {dep_ap} -> {dest_ap} の定時到着率は', on_schedule_arrival_rate(df))
+    print(f'    {dep_ap} -> {dest_ap} number of on schedule arrival : ', len(df[df['arr_delay'] <= 14]))
+    print(f'    {dep_ap} -> {dest_ap} の定時到着率は', on_schedule_arrival_rate(df))
     return df
 
 def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
