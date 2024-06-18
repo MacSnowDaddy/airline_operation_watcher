@@ -48,6 +48,9 @@ def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
 
 
 def main(date:datetime.date, dep_ap:str = "HND", dest_ap:str = "CTS"):
+    ana_analyzer = ana_analyze.Ana_analyzer(year=date.year, month=date.month, day=date.day)
+    ana_analyzer.include_codeshare(False)
+    ana_df = ana_analyzer.get_df()
     jal_df = make_df('jal',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     sky_df = make_df('sky',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
