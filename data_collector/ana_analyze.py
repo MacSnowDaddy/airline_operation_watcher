@@ -29,7 +29,7 @@ def make_dataframe(files):
     arr_delay : delay time of arrival in minutes
     number_of_seat : number of seats of the aircraft
     '''
-    df = pd.concat([pd.read_csv(f, header=None) for f in files], ignore_index=True)
+    df = pd.concat([pd.read_csv(f, header=None, na_filter=False) for f in files], ignore_index=True)
     df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other', 'info_detail', 'type_of_aircraft']
     df = edit_date(df)
     df = add_delay_column(df)

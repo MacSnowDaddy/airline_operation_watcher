@@ -23,7 +23,7 @@ def make_dataframe(files):
     dep_delay : delay time of departure in minutes
     arr_delay : delay time of arrival in minutes
     '''
-    df = pd.concat([pd.read_csv(f, header=None) for f in files], ignore_index=True)
+    df = pd.concat([pd.read_csv(f, header=None, na_filter=False) for f in files], ignore_index=True)
     df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other']
     df = _edit_date(df)
     df = _add_delay_column(df)
