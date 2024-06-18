@@ -47,15 +47,14 @@ def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
     return df.groupby('date').apply(on_schedule_arrival_rate)
 
 
-def main(date:datetime.date):
-    ana_df = make_df('ana',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
+def main(date:datetime.date, dep_ap:str = "HND", dest_ap:str = "CTS"):
     jal_df = make_df('jal',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     sky_df = make_df('sky',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     airline_list = ["ana", "jal", "sky", "ado"]
     print(date)
     for airline in airline_list:
-        print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), 'HND', 'CTS')
+        print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
 
 if __name__ == "__main__":
     # read std args.
@@ -65,6 +64,15 @@ if __name__ == "__main__":
         month = sys.argv[2]
         day = sys.argv[3]
         target_date = datetime.date(int(year), int(month), int(day))
+        dep_ap = "HND"
+        dest_ap = "CTS"
+    elif len(sys.argv) == 6:
+        year = sys.argv[1]
+        month = sys.argv[2]
+        day = sys.argv[3]
+        target_date = datetime.date(int(year), int(month), int(day))
+        dep_ap = sys.argv[4]
+        dest_ap = sys.argv[5]
     else:
         target_date:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
-    main(target_date)
+    main(target_date, dep_ap, dest_ap)
