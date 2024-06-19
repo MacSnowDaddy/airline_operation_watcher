@@ -610,7 +610,7 @@ $(function() {
       </tr>
       
     <tr class="fs_dateilRow">
-        <td class="" rowspan="1"><span class="Titles">ANA 1851<br></span></td>
+        <td class="" rowspan="1"><span class="Titles">ANA 1851<br><a href="https://www.ana.co.jp/fli/jp/meta/hd.html" target="_blank" data-scclick="fs_dom_other_txt_" class="js-scclick-binded"><img alt="ADO運航" src="https://www.ana.co.jp/fli/jp/image/code_share_hd.gif" border="0"><span class="mw1904_blank"><img src="/fs/image/icon_blank_blu.png" alt="新しいウィンドウで開く。外部サイトの場合はアクセシビリティガイドラインに対応していない可能性があります。"></span></a></span></td>
         <td class=""><span class="Airplane"><a href="https://www.ana.co.jp/fli/jp/meta/q84.html" target="_blank" data-scclick="fs_dom_other_txt_Q84" class="js-scclick-binded">Q84<span class="mw1904_blank"><img src="/fs/image/icon_blank_blu.png" alt="新しいウィンドウで開く。外部サイトの場合はアクセシビリティガイドラインに対応していない可能性があります。"></span></a></span></td>
         <td class=""><span class="SkdDepTime">09:00</span><br><span class="DepAirport"></span></td>
         <td class=""><span class="BordingGate">13</span></td>
