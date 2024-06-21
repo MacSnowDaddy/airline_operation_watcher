@@ -30,12 +30,17 @@ def scrape(class_, list, date="prev", sufix=""):
     collector = class_()
     for collection in list:
         for to in collection[1]:
+            #jalの場合は路線ごとにインスタンスを作り直す
+            if class_ == data_collector.JalScraper:
+                collector = class_()
             # 往路
             collector.set_from(collection[0])
             collector.set_to(to)
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             time.sleep(3)
+            if class_ == data_collector.JalScraper:
+                collector = class_()
             # 復路
             collector.set_from(to)
             collector.set_to(collection[0])

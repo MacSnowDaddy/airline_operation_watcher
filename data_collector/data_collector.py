@@ -1,4 +1,6 @@
 from bs4 import BeautifulSoup
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
@@ -106,6 +108,14 @@ class JalScraper(Scraper):
             date_flg = "2"
         url = f'{self.url}?FsBtn=route&DATEFLG={date_flg}&DPORT={self.from_ap}&APORT={self.to_ap}&DATEFLG_temp=1&DATEFLG_temp='
         self.browser.get(url)
+        self.browser.implicitly_wait(20)
+
+        # this is fake object to wait until the page is loaded
+        try:
+            element = self.browser.find_element(By.XPATH, '//*[@id="JS_FSDetailArea"]/tbody/tr[1]')
+        except:
+            print(f"timeout jal {self.from_ap} to {self.to_ap} on {self.date}")
+            
 
         # save as html
         with open("jal.html", "w") as f:
