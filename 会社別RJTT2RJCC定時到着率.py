@@ -38,9 +38,7 @@ def print_on_schedule_arrival_rate(airline:str, df:pd.DataFrame, dep_ap:str='*',
         df = df[(df['from'] == ap_dict.decode(dep_ap,  airline))]
     if dest_ap != "*":
         df = df[(df['to']   == ap_dict.decode(dest_ap, airline))]
-    print(f'{airline} {dep_ap} -> {dest_ap} number of flight : ', len(df))
-    print(f'    {dep_ap} -> {dest_ap} number of on schedule arrival : ', len(df[df['arr_delay'] <= 14]))
-    print(f'    {dep_ap} -> {dest_ap} の定時到着率は', on_schedule_arrival_rate(df))
+    print(f'{airline.upper()} {on_schedule_arrival_rate(df)*100:.1f}% ({len(df[df["arr_delay"] <= 14])}/{len(df)})')
     return df
 
 def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
@@ -55,9 +53,11 @@ def main(date:datetime.date, dep_ap:str = "HND", dest_ap:str = "CTS"):
     sky_df = make_df('sky',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
     airline_list = ["ana", "jal", "sky", "ado"]
-    print(date)
+    print(date.strftime('%m月%d日 ') + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
+    print('各社の定時到着*率（欠航は除く)')
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
+    print("*定時到着:時刻表から14分以内の遅れで到着\n#エアライン #ANA #JAL #SKY #ADO #定時運航")
 
 if __name__ == "__main__":
     # read std args.
