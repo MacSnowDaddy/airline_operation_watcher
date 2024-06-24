@@ -1,5 +1,44 @@
 import pandas as pd
 
+class Jal_analyzer(object):
+    '''This class is used to analyze the data of JAL.'''
+    
+    def __init__(self, year, month, day):
+        '''Initialize the class with the date of the data you want to analyze.
+        
+        @param year: year of the data you want to analyze. accept "*" as a wildcard.
+        @param month: month of the data you want to analyze. accept "*" as a wildcard.
+        @param day: day of the data you want to analyze. accept "*" as a wildcard.
+        '''
+        import os
+        import glob
+        pattern = os.path.join(os.path.dirname(__file__), f'jal/analyze_target/')
+        if type(year) == int:
+            year = "{:04d}".format(year)
+        else:
+            year = "[0-9][0-9][0-9][0-9]"
+        if type(month) == int:
+            month = "{:02d}".format(month)
+        else:
+            month = "[0-9][0-9]"
+        if type(day) == int:
+            day = "{:02d}".format(day)
+        else:
+            day = "[0-9][0-9]"
+        pattern += f'**/jal{year}{month}{day}.csv'
+        files = glob.glob(pattern, recursive=True)
+        self.df = make_dataframe(files)
+    
+    def include_codeshare(self, include=True):
+        '''Include the code share flights in the data.Jal_reader is 
+        not able to distinguish the code share flights from the regular flights.'''
+        pass
+
+    def get_df(self):
+        '''Return the dataframe which is created by make_dataframe function.'''
+        return self.df
+
+
 def make_dataframe(files):
     '''Create a dataframe from the list of files which dose not have header line.
     

@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import datetime
 
 
-'''完成品としては、日毎の定時到着率をlinechartで表現する。'''
+'''完成品としては、日毎時間毎の定時到着率をlinechartで表現する。'''
 
 def make_df(airline:str, year:str, month:str, date:str='*') -> pd.DataFrame:
     pattern = os.path.join(os.path.dirname(__file__), f'data_collector/{airline}/analyze_target/')
@@ -39,6 +39,9 @@ def print_on_schedule_arrival_rate(airline:str, df:pd.DataFrame, dep_ap:str='*',
     if dest_ap != "*":
         df = df[(df['to']   == ap_dict.decode(dest_ap, airline))]
     print(f'{airline.upper()} {on_schedule_arrival_rate(df)*100:.1f}% ({len(df[df["arr_delay"] <= 14])}/{len(df)})')
+    # df['hour'] = df['schedule_arr'].str.split(':').str[0]
+    # print(df.groupby('hour')['arr_delay'].describe())
+    # print(f'\t')
     return df
 
 def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
@@ -49,9 +52,15 @@ def main(date:datetime.date, dep_ap:str = "HND", dest_ap:str = "CTS"):
     ana_analyzer = ana_analyze.Ana_analyzer(year=date.year, month=date.month, day=date.day)
     ana_analyzer.include_codeshare(False)
     ana_df = ana_analyzer.get_df()
-    jal_df = make_df('jal',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
-    sky_df = make_df('sky',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
-    ado_df = make_df('ado',date.year, "{:02d}".format(date.month), "{:02d}".format(date.day))
+    jal_analyzer = jal_analyze.Jal_analyzer(year=date.year, month=date.month, day=date.day)
+    jal_analyzer.include_codeshare(False)
+    jal_df = jal_analyzer.get_df()
+    sky_analyzer = sky_analyze.Sky_analyzer(year=date.year, month=date.month, day=date.day)
+    sky_analyzer.include_codeshare(False)
+    sky_df = sky_analyzer.get_df()
+    ado_analyzer = ado_analyze.Ado_analyzer(year=date.year, month=date.month, day=date.day)
+    ado_analyzer.include_codeshare(False)
+    ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
     print(date.strftime('%m月%d日 ') + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
     print('各社の定時到着*率（欠航は除く)')
