@@ -48,21 +48,42 @@ def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
     return df.groupby('date').apply(on_schedule_arrival_rate)
 
 
-def main(date:datetime.date, dep_ap:str = "HND", dest_ap:str = "CTS"):
-    ana_analyzer = ana_analyze.Ana_analyzer(year=date.year, month=date.month, day=date.day)
+def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
+    '''the result of this function is make a format of tweet.
+    
+    @param year: year of the data you want to analyze. accept "*" as a wildcard.
+    @param month: month of the data you want to analyze. accept "*" as a wildcard.
+    @param day: day of the data you want to analyze. accept "*" as a wildcard.'''
+    # year, month, and day are passed as str type.
+    # they are passed as int if they can be converted to int.
+    # else, they are passed as str.
+    try:
+        year = int(year)
+    except ValueError:
+            year = year
+    try:
+        month = int(month)
+    except ValueError:
+            month = month
+    try:
+        day = int(day)
+    except ValueError:
+        day = day
+
+    ana_analyzer = ana_analyze.Ana_analyzer(year=year, month=month, day=day)
     ana_analyzer.include_codeshare(False)
     ana_df = ana_analyzer.get_df()
-    jal_analyzer = jal_analyze.Jal_analyzer(year=date.year, month=date.month, day=date.day)
+    jal_analyzer = jal_analyze.Jal_analyzer(year=year, month=month, day=day)
     jal_analyzer.include_codeshare(False)
     jal_df = jal_analyzer.get_df()
-    sky_analyzer = sky_analyze.Sky_analyzer(year=date.year, month=date.month, day=date.day)
+    sky_analyzer = sky_analyze.Sky_analyzer(year=year, month=month, day=day)
     sky_analyzer.include_codeshare(False)
     sky_df = sky_analyzer.get_df()
-    ado_analyzer = ado_analyze.Ado_analyzer(year=date.year, month=date.month, day=date.day)
+    ado_analyzer = ado_analyze.Ado_analyzer(year=year, month=month, day=day)
     ado_analyzer.include_codeshare(False)
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
-    print(date.strftime('%m月%d日 ') + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
+    print(f'{month}月{day}日 ' + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
     print('各社の定時到着*率（欠航は除く)')
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
@@ -75,16 +96,19 @@ if __name__ == "__main__":
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
-        target_date = datetime.date(int(year), int(month), int(day))
         dep_ap = "HND"
         dest_ap = "CTS"
     elif len(sys.argv) == 6:
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
-        target_date = datetime.date(int(year), int(month), int(day))
         dep_ap = sys.argv[4]
         dest_ap = sys.argv[5]
     else:
         target_date:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
-    main(target_date, dep_ap, dest_ap)
+        year = target_date.year
+        month = target_date.month
+        day = target_date.day
+        dep_ap = "HND"
+        dest_ap = "CTS"
+    main(year, month, day, dep_ap, dest_ap)
