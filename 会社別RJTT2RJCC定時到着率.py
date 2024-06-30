@@ -88,11 +88,10 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
     ado_analyzer.include_codeshare(False)
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
-    print(f'{month}月{day}日 ' + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
-    print('各社の定時到着*率（欠航は除く)')
+    print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + ap_dict.decode(dep_ap) + dep_ap + '=>' + ap_dict.decode(dest_ap) + dest_ap)
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
-    print("*定時到着:時刻表から14分以内の遅れで到着\n#エアライン #ANA #JAL #SKY #ADO #定時運航")
+    print("*定時到着:14分以内の遅れで到着")
 
 if __name__ == "__main__":
     # read std args.
