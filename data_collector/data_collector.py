@@ -382,10 +382,13 @@ class AnaScraper(Scraper):
                 other = other_element.text
                 # add code share info if exists
                 # code share info is in the flight_number_element
-                # if the flight_number_element has <img> tag, it means that the flight is code share flight
-                # get alt attribute of <img> tag to know the code share company
-                if flight_number_element.find("img") is not None:
-                    other = other + " " + flight_number_element.find("img")["alt"]
+                # if the flight_number_element has <a> tag, it means that the flight is code share flight
+                # get <img> tag's alt attribute in the <a> tag
+
+                if flight_number_element.find("a") is not None:
+                    code_share_info = flight_number_element.find("a").find("img").get("alt")
+                    other = other + " " + code_share_info
+
             else:
                 other = "ERROR"
             parsed_flights_info.append(
