@@ -15,7 +15,7 @@ class Ana_analyzer(object):
         '''
         import os
         import glob
-        pattern = os.path.join(os.path.dirname(__file__), f'ana/analyze_target/')
+        pattern = find_analyze_target_dir()
         if type(year) == int:
             year = "{:04d}".format(year)
         else:
@@ -39,6 +39,15 @@ class Ana_analyzer(object):
     def get_df(self):
         '''Return the dataframe which is created by make_dataframe function.'''
         return self.df
+
+
+def find_analyze_target_dir():
+    '''just return dir string who has analyze_target files.
+    
+    this function is made to make test easier.
+    '''
+    import os
+    return os.path.join(os.path.dirname(__file__), f'ana/analyze_target/')
 
 def make_dataframe(files):
     '''Create a dataframe from the list of files which dose not have header line.
@@ -124,11 +133,20 @@ def add_delay_column(df):
 
 def add_ac_type_column(df):
     # put the volume of each type of aircraft
-    df_type = pd.read_csv('/Users/hironoyutaka/統計学/aviation_analyze/セクター繁忙度モデル/data_collector/ana/type_and_volume.csv', header=None)
+    import os
+    df_type = pd.read_csv(find_type_and_volume_csv(), header=None)
     df_type.columns = ['type_of_aircraft', 'number_of_seat', 'category']
 
     df = pd.merge(df, df_type, on='type_of_aircraft', how='left')
     return df
+
+def find_type_and_volume_csv():
+    '''just return dir string who has type_and_volume.csv.
+    
+    this function is made to make test easier.
+    '''
+    import os
+    return os.path.join(os.path.dirname(__file__), f'ana/type_and_volume.csv')
 
 
 def analyze_by_seat_cat(df):
@@ -177,10 +195,17 @@ def word_analyze(df, date):
 
     fpath = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
     wordcloud = WordCloud(width=800, height=400, background_color='white', font_path=fpath).generate_from_frequencies(pairs_dict)
-    wordcloud.to_file('/Users/hironoyutaka/統計学/aviation_analyze/セクター繁忙度モデル/data_collector/ana/wordcloud.png')
+    wordcloud.to_file(file_name_of_wordcloud())
     plt.imshow(wordcloud, interpolation='bilinear')
     plt.axis('off')
     plt.show()
+
+def file_name_of_wordcloud():
+    '''Return the file name of the wordcloud image. Code will replace the file if the file already exists.
+    
+    This function is made to make test easier.'''
+    import os
+    return os.path.join(os.path.dirname(__file__), f'ana/wordcloud.png')
 
 
 
