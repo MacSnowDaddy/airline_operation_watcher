@@ -32,8 +32,8 @@ class Ana_analyzer(object):
         files = glob.glob(pattern, recursive=True)
         self.df = make_dataframe(files)
     
-    def include_codeshare(self, include=True):
-        '''Include the code share flights in the data.'''
+    def drop_codeshare(self):
+        '''Drop the code share flights in the data.'''
         self.df = self.df[~(self.df['info_detail'].str.contains('ADO運航', regex=True))]
     
     def get_df(self):

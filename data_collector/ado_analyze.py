@@ -29,7 +29,7 @@ class Ado_analyzer(object):
         files = glob.glob(pattern, recursive=True)
         self.df = make_dataframe(files)
     
-    def include_codeshare(self, include=True):
+    def drop_codeshare(self):
         '''Include the code share flights in the data.
         Ado_reader is not able to distinguish the code share flights from the regular flights.'''
         pass

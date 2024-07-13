@@ -76,16 +76,16 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
         day = day
 
     ana_analyzer = ana_analyze.Ana_analyzer(year=year, month=month, day=day)
-    ana_analyzer.include_codeshare(False)
+    ana_analyzer.drop_codeshare()
     ana_df = ana_analyzer.get_df()
     jal_analyzer = jal_analyze.Jal_analyzer(year=year, month=month, day=day)
-    jal_analyzer.include_codeshare(False)
+    jal_analyzer.drop_codeshare()
     jal_df = jal_analyzer.get_df()
     sky_analyzer = sky_analyze.Sky_analyzer(year=year, month=month, day=day)
-    sky_analyzer.include_codeshare(False)
+    sky_analyzer.drop_codeshare()
     sky_df = sky_analyzer.get_df()
     ado_analyzer = ado_analyze.Ado_analyzer(year=year, month=month, day=day)
-    ado_analyzer.include_codeshare(False)
+    ado_analyzer.drop_codeshare()
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
     print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + ap_dict.decode(dep_ap, "sky") + dep_ap + '=>' + ap_dict.decode(dest_ap, "sky") + dest_ap)

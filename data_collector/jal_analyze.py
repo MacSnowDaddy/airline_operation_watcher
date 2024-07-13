@@ -29,8 +29,8 @@ class Jal_analyzer(object):
         files = glob.glob(pattern, recursive=True)
         self.df = make_dataframe(files)
     
-    def include_codeshare(self, include=True):
-        '''Include the code share flights in the data.Jal_reader is 
+    def drop_codeshare(self):
+        '''Drop the code share flights in the data.Jal_reader is 
         not able to distinguish the code share flights from the regular flights.'''
         pass
 
