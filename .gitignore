@@ -1,0 +1,18 @@
+# ignore contents in the venv directory
+venv
+
+#ignore pyc files
+*.pyc
+
+# ignore data in data_collector
+*.csv
+*.html
+
+# ignore all png files
+*.png
+
+# ignore all .DS_Store files
+.DS_Store
+
+# manage at different git.
+.vscode/settings.json
