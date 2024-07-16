@@ -78,7 +78,7 @@ def make_dataframe(files):
     df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other', 'info_detail', 'type_of_aircraft']
     df = edit_date(df)
     df = add_delay_column(df)
-    df = add_ac_type_column(df)
+    # df = add_ac_type_column(df)
     return df
 
 
