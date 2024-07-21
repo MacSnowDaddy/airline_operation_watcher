@@ -34,6 +34,9 @@ def print_on_schedule_arrival_rate(airline:str, df:pd.DataFrame, dep_ap:str='*',
     @param dep_ap: (optional)departure airport IATA code
     @param dest_ap: (optional)destination airport IATA code
     '''
+    if len(df) == 0:
+        print(f'{airline.upper()} {dep_ap}=>{dest_ap}のデータはありません')
+        return
     if dep_ap != "*":
         df = df[(df['from'] == ap_dict.decode(dep_ap,  airline))]
     if dest_ap != "*":
