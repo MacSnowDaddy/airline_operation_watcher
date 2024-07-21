@@ -52,6 +52,8 @@ def find_analyze_target_dir():
 def make_dataframe(files):
     '''Create a dataframe from the list of files which dose not have header line.
 
+    @return: a dataframe which is created from the list of files.
+        This function will return empty dataframe if the list of files is empty.
     after calling this function, you'll get a dataframe which has the following columns.
     date : date of the flight, format is 'YYYY/MM/DD'
     name : name of the flight, e.g. 'ANA1234'
@@ -74,6 +76,8 @@ def make_dataframe(files):
     arr_delay : delay time of arrival in minutes
     number_of_seat : number of seats of the aircraft
     '''
+    if len(files) == 0:
+        return pd.DataFrame()
     df = pd.concat([pd.read_csv(f, header=None, na_filter=False) for f in files], ignore_index=True)
     df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other', 'info_detail', 'type_of_aircraft']
     df = edit_date(df)
