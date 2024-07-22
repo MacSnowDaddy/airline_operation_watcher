@@ -27,7 +27,9 @@ sky_collection_list = [
     ['CTS', ['NGO', 'FUK']],
 ]
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 
 def scrape(class_, list, date="prev", sufix=""):
     collector = class_()
