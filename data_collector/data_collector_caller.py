@@ -1,4 +1,5 @@
 import logging
+import boto3
 import data_collector
 import time
 import threading
@@ -62,6 +63,7 @@ def scrape(class_, list, date="prev", sufix=""):
                 time.sleep(1)
             else:
                 time.sleep(3)
+    save_to_s3(f"{collector.file_name_header()}{sufix}.csv")
     move_to_data_dir(f"{collector.file_name_header()}{sufix}.csv")
     logging.info(f"{collector.file_name_header()} done")
     
@@ -76,8 +78,20 @@ def scrape_ado(date="prev", sufix=""):
             collector.scrape(f"ado{sufix}.csv")
             time.sleep(3)
     # move file created into data folder
+    save_to_s3(f"ado{sufix}.csv")
     move_to_data_dir(f"ado{sufix}.csv")
     logging.info("ado done")
+
+def save_to_s3(filename:str):
+    s3_client = boto3.client('s3')
+    bucket_name = "airline-operation-watcher"
+    try:
+        s3_client.upload_file(filename, bucket_name, filename)
+    except boto3.exceptions.S3UploadFailedError as e:
+        logging.error(f"Upload failed: {e}")
+        return False
+    logging.info(f"{filename} uploaded to s3")
+    return True
 
 def move_to_data_dir(filename:str):
     '''move file to data directory.
