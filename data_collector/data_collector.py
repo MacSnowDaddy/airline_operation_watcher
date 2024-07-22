@@ -1,3 +1,4 @@
+import logging
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -16,6 +17,10 @@ scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "sky" : "https://www.res.skymark.co.jp/mercury/fis/flight_announce_i18n",
               "tok" : "https://tokiair.com",
               }
+
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 
 class Scraper(object):
     """Scrapeするための抽象クラス。実装は各航空会社ごとに行う。"""
@@ -114,7 +119,7 @@ class JalScraper(Scraper):
         try:
             element = self.browser.find_element(By.XPATH, '//*[@id="JS_FSDetailArea"]/tbody/tr[1]')
         except:
-            print(f"timeout jal {self.from_ap} to {self.to_ap} on {self.date}")
+            logging.error(f"timeout jal {self.from_ap} to {self.to_ap} on {self.date}")
             
 
         # save as html

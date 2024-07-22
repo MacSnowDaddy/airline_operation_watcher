@@ -1,3 +1,4 @@
+import logging
 import data_collector
 import time
 import threading
@@ -26,6 +27,8 @@ sky_collection_list = [
     ['CTS', ['NGO', 'FUK']],
 ]
 
+logging.basicConfig(level=logging.INFO)
+
 def scrape(class_, list, date="prev", sufix=""):
     collector = class_()
     for collection in list:
@@ -39,7 +42,7 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            print(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logging.info(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:
@@ -52,13 +55,13 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            print(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logging.info(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:
                 time.sleep(3)
     move_to_data_dir(f"{collector.file_name_header()}{sufix}.csv")
-    print(f"{collector.file_name_header()} done")
+    logging.info(f"{collector.file_name_header()} done")
     
 def scrape_ado(date="prev", sufix=""):
     collector = data_collector.AdoScraper()
@@ -72,7 +75,7 @@ def scrape_ado(date="prev", sufix=""):
             time.sleep(3)
     # move file created into data folder
     move_to_data_dir(f"ado{sufix}.csv")
-    print("ado done")
+    logging.info("ado done")
 
 def move_to_data_dir(filename:str):
     '''move file to data directory.

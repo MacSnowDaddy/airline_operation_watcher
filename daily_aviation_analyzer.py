@@ -1,8 +1,14 @@
 import datetime
+import logging
 import 会社別RJTT2RJCC定時到着率
 import data_collector_caller
 
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s %(levelname)s %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+
 def main():
+    logging.info("start daily aviation analyzer.main().")
     start_time = datetime.datetime.now()
 
     data_collector_caller.main()
@@ -13,7 +19,8 @@ def main():
 
     end_time = datetime.datetime.now()
     duration = end_time - start_time
-    print(f"duration: {duration}sec.")
+    logging.info(f"duration: {duration}sec.")
+    logging.info("end daily aviation analyzer.main().")
     
 if __name__ == "__main__":
     main()
