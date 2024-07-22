@@ -18,7 +18,7 @@ scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "tok" : "https://tokiair.com",
               }
 
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 

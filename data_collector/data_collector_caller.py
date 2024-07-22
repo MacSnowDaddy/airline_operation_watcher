@@ -44,7 +44,7 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            logging.info(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logging.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:
@@ -57,7 +57,7 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            logging.info(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logging.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:

@@ -3,7 +3,7 @@ import logging
 import 会社別RJTT2RJCC定時到着率
 import data_collector_caller
 
-logging.basicConfig(level=logging.INFO,
+logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
                     datefmt='%Y-%m-%d %H:%M:%S')
 
@@ -19,7 +19,7 @@ def main():
 
     end_time = datetime.datetime.now()
     duration = end_time - start_time
-    logging.info(f"duration: {duration}sec.")
+    logging.debug(f"duration: {duration}sec.")
     logging.info("end daily aviation analyzer.main().")
     
 if __name__ == "__main__":
