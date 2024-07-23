@@ -2,7 +2,7 @@ import os
 import datetime
 import logging
 import 会社別RJTT2RJCC定時到着率
-import data_collector_caller
+from data_collector import data_collector_caller
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',

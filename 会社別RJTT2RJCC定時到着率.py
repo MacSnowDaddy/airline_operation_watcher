@@ -3,11 +3,11 @@ import os
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), './data_collector/'))
 import glob
-import ana_analyze
-import jal_analyze
-import sky_analyze
-import ado_analyze
-import ap_dict
+from data_collector import ana_analyze
+from data_collector import jal_analyze
+from data_collector import sky_analyze
+from data_collector import ado_analyze
+from data_collector import ap_dict
 import types
 import seaborn as sns
 import matplotlib.pyplot as plt
