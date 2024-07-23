@@ -147,6 +147,7 @@ def main():
     thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
     thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
 
+    logging.info("start scraping")
     thread_sky.start()
     thread_jal.start()
     thread_ana.start()
@@ -156,6 +157,7 @@ def main():
     thread_jal.join()
     thread_ana.join()
     thread_ado.join()
+    logging.info("all done")
 
 
 if __name__ == "__main__":
