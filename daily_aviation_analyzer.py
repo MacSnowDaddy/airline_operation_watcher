@@ -1,3 +1,4 @@
+import os
 import datetime
 import logging
 import 会社別RJTT2RJCC定時到着率
@@ -22,4 +23,8 @@ def main():
     logging.info("end daily aviation analyzer.main().")
     
 if __name__ == "__main__":
+    # I want to see logging only from my script.
+    selenium_logger = logging.getLogger('selenium')
+    null_handler = logging.FileHandler(os.devnull)
+    selenium_logger.addHandler(null_handler)
     main()
