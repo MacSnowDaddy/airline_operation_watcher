@@ -35,7 +35,6 @@ class Scraper(object):
         self.options.add_argument(
             f'user-agent=mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/77.0.3865.120 safari/537.36')
         self.browser = webdriver.Chrome(options=self.options)
-        self.browser.minimize_window()
         self.url = ""
 
     def set_from(self, from_ap):
