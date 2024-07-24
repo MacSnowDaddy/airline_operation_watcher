@@ -7,6 +7,7 @@ venv
 # ignore data in data_collector
 *.csv
 *.html
+!data_collector/tests/**/*.csv
 
 # ignore all png files
 *.png
