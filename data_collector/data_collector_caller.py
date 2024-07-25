@@ -2,7 +2,6 @@ import logging
 import boto3
 import data_collector
 import time
-import threading
 import datetime
 
 jal_collection_list = [
@@ -127,7 +126,7 @@ def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, d
     return first_day_of_week, last_day_of_week
 
 
-def main():
+def main(operator:str):
     import sys
 
     if len(sys.argv) > 1:
@@ -142,23 +141,26 @@ def main():
     elif date == "next":
         date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-    thread_jal = threading.Thread(target=scrape, args=(data_collector.JalScraper, jal_collection_list, date, date_str))
-    thread_ana = threading.Thread(target=scrape, args=(data_collector.AnaScraper, ana_collection_list, date, date_str))
-    thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
-    thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
-
-    logging.info("start scraping")
-    thread_sky.start()
-    thread_jal.start()
-    thread_ana.start()
-    thread_ado.start()
-
-    thread_sky.join()
-    thread_jal.join()
-    thread_ana.join()
-    thread_ado.join()
-    logging.info("all done")
+    if operator == "jal":
+        logging.info("jal scraping start.")
+        scrape(data_collector.JalScraper, jal_collection_list, date, date_str)
+        logging.info("jal scraping finished.")
+    elif operator == "ana":
+        logging.info("ana scraping start.")
+        scrape(data_collector.AnaScraper, ana_collection_list, date, date_str)
+        logging.info("ana scraping finished.")
+    elif operator == "sky":
+        logging.info("sky scraping start.")
+        scrape(data_collector.SkyScraper, sky_collection_list, date, date_str)
+        logging.info("sky scraping finished.")
+    elif operator == "ado":
+        logging.info("ado scraping start.")
+        scrape_ado(date, date_str)
+        logging.info("ado scraping finished.")
 
 
 if __name__ == "__main__":
-    main()
+    main("jal")
+    main("ana")
+    main("sky")
+    main("ado")
