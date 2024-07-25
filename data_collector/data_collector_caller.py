@@ -1,3 +1,5 @@
+import os
+import sys
 import logging
 import boto3
 import data_collector
@@ -127,6 +129,10 @@ def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, d
 
 
 def main(operator:str):
+    # I want to see logging only from my script.
+    selenium_logger = logging.getLogger('selenium')
+    null_handler = logging.FileHandler(os.devnull)
+    selenium_logger.addHandler(null_handler)
     import sys
 
     if len(sys.argv) > 1:
@@ -160,7 +166,11 @@ def main(operator:str):
 
 
 if __name__ == "__main__":
-    main("jal")
-    main("ana")
-    main("sky")
-    main("ado")
+    if len(sys.argv) > 1:
+        for operator in sys.argv[1:]:
+            main(operator)
+    else:
+        main("jal")
+        main("ana")
+        main("sky")
+        main("ado")
