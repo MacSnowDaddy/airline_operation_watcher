@@ -128,18 +128,13 @@ def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, d
     return first_day_of_week, last_day_of_week
 
 
-def main(operator:str):
+def main(operator:str, date:str="prev"):
     # I want to see logging only from my script.
     selenium_logger = logging.getLogger('selenium')
     null_handler = logging.FileHandler(os.devnull)
     selenium_logger.addHandler(null_handler)
     import sys
 
-    if len(sys.argv) > 1:
-        date = sys.argv[1]
-    else:
-        date = "prev"
-    date_str = ""
     if date == "prev":
         date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     elif date == "today":
@@ -166,11 +161,16 @@ def main(operator:str):
 
 
 if __name__ == "__main__":
+    '''usage: python data_collector_caller.py [operator1] [operator2] ... [date]
+
+    example: python data_collector_caller.py jal ana sky prev
+    operator: jal, ana, sky, ado
+    date: prev, today, next
+    at least one operator should be passed.
+    date is mandatory.
+    '''
     if len(sys.argv) > 1:
-        for operator in sys.argv[1:]:
-            main(operator)
+        for operator in sys.argv[1:-1]:
+            main(operator, date=sys.argv[-1])
     else:
-        main("jal")
-        main("ana")
-        main("sky")
-        main("ado")
+        print("operator is not passed.\nusage: python data_collector_caller.py [operator1] [operator2] ... [date]")
