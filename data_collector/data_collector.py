@@ -1,4 +1,5 @@
 import logging
+import os
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,8 +35,11 @@ class Scraper(object):
         self.options.add_argument("--homedir=/tmp")
         self.options.add_argument(
             f'user-agent=mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/77.0.3865.120 safari/537.36')
-        self.browser = webdriver.Chrome(options=self.options)
-        self.browser.minimize_window()
+        env = os.getenv("ENV", "local")
+        if env == "ec2":
+            self.browser = webdriver.Chrome()
+        else:
+            self.browser = webdriver.Chrome(options=self.options)
         self.url = ""
 
     def set_from(self, from_ap):
@@ -247,7 +251,18 @@ class AnaScraper(Scraper):
     https://www.ana.co.jp/fs/dom/jp/result.html?mode=1&depAirportSelect=ITM&txtDepAirport=%E5%A4%A7%E9%98%AA%28%E4%BC%8A%E4%B8%B9%29&arrAirportSelect=AOJ&txtArrAirport=%E9%9D%92%E6%A3%AE&requestDate=20240215
     '''
     def __init__(self):
-        super().__init__()
+        # launch AnaScraper as headless mode.
+        self.options = webdriver.ChromeOptions()
+        self.options.add_argument("--single-process")
+        self.options.add_argument("--ignore-certificate-errors")
+        self.options.add_argument("--no-sandbox")
+        self.options.add_argument("--homedir=/tmp")
+        self.options.add_argument("--headless")
+        self.options.add_argument(
+            f'user-agent=mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/77.0.3865.120 safari/537.36')
+        self.browser = webdriver.Chrome(options=self.options)
+        self.url = ""
+        
         self.url = scrap_dict["ana"]
     
     def scrape(self, out_file):

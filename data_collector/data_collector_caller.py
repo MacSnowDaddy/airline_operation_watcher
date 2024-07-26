@@ -1,32 +1,49 @@
+import os
+import sys
 import logging
 import boto3
 from . import data_collector
 import time
-import threading
 import datetime
 
-jal_collection_list = [
-    ['NRT', ['CTS', 'NGO', 'ITM']],
-    ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ', 'OKA']],
-    ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
-    ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
-]
-ana_collection_list = [
-    ['NRT', ['SPK', 'NGO', 'ITM']],
-    ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX', 'OKA']],
-    ['NGO', ['SPK', 'AXT']],
-    ['KIX', ['SPK']],
-    ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
-    ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
-]
-ado_collection_list = [
-    ['HND', ['SPK']],
-]
+target = os.getenv('TARGET', 'production')
+if target == 'production':
+    jal_collection_list = [
+        ['NRT', ['CTS', 'NGO', 'ITM']],
+        ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ', 'OKA']],
+        ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
+        ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
+    ]
+    ana_collection_list = [
+        ['NRT', ['SPK', 'NGO', 'ITM']],
+        ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX', 'OKA']],
+        ['NGO', ['SPK', 'AXT']],
+        ['KIX', ['SPK']],
+        ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
+        ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
+    ]
+    ado_collection_list = [
+        ['HND', ['SPK']],
+    ]
 
-sky_collection_list = [
-    ['HND', ['CTS', 'FUK', 'OKA']],
-    ['CTS', ['NGO', 'FUK']],
-]
+    sky_collection_list = [
+        ['HND', ['CTS', 'FUK', 'OKA']],
+        ['CTS', ['NGO', 'FUK']],
+    ]
+elif target == 'test':
+    jal_collection_list = [
+        ['HND', ['ITM', 'CTS',]],
+    ]
+    ana_collection_list = [
+        ['HND', ['SPK', 'FUK',]],
+    ]
+    ado_collection_list = [
+        ['HND', ['SPK']],
+    ]
+    sky_collection_list = [
+        ['HND', ['CTS', 'FUK',]],
+    ]
+
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
@@ -83,10 +100,14 @@ def scrape_ado(date="prev", sufix=""):
     logging.info("ado done")
 
 def save_to_s3(filename:str):
+    if target == 'test':
+        up_filename = "test_" + filename
+    else:
+        up_filename = filename
     s3_client = boto3.client('s3')
     bucket_name = "airline-operation-watcher"
     try:
-        s3_client.upload_file(filename, bucket_name, filename)
+        s3_client.upload_file(filename, bucket_name, up_filename)
     except boto3.exceptions.S3UploadFailedError as e:
         logging.error(f"Upload failed: {e}")
         return False
@@ -119,7 +140,7 @@ def move_to_data_dir(filename:str):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), icaocode, 'analyze_target', date_str)
     if not os.path.exists(path):
         os.makedirs(path)
-    shutil.move(filename, os.path.join(path, filename))
+    shutil.move(filename, os.path.join(path, f'test_{filename}'))
 
 def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, datetime.datetime]:
     first_day_of_week = date - datetime.timedelta(days=((date.weekday()+1)%7))
@@ -127,14 +148,13 @@ def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, d
     return first_day_of_week, last_day_of_week
 
 
-def main():
+def main(operator:str, date:str="prev"):
+    # I want to see logging only from my script.
+    selenium_logger = logging.getLogger('selenium')
+    null_handler = logging.FileHandler(os.devnull)
+    selenium_logger.addHandler(null_handler)
     import sys
 
-    if len(sys.argv) > 1:
-        date = sys.argv[1]
-    else:
-        date = "prev"
-    date_str = ""
     if date == "prev":
         date_str = (datetime.date.today() - datetime.timedelta(days=1)).strftime('%Y%m%d')
     elif date == "today":
@@ -142,23 +162,35 @@ def main():
     elif date == "next":
         date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-    thread_jal = threading.Thread(target=scrape, args=(data_collector.JalScraper, jal_collection_list, date, date_str))
-    thread_ana = threading.Thread(target=scrape, args=(data_collector.AnaScraper, ana_collection_list, date, date_str))
-    thread_ado = threading.Thread(target=scrape_ado, args=(date,date_str)) # adoは往路のみ呼べば復路も取得できる
-    thread_sky = threading.Thread(target=scrape, args=(data_collector.SkyScraper, sky_collection_list, date, date_str))
-
-    logging.info("start scraping")
-    thread_sky.start()
-    thread_jal.start()
-    thread_ana.start()
-    thread_ado.start()
-
-    thread_sky.join()
-    thread_jal.join()
-    thread_ana.join()
-    thread_ado.join()
-    logging.info("all done")
+    if operator == "jal":
+        logging.info("jal scraping start.")
+        scrape(data_collector.JalScraper, jal_collection_list, date, date_str)
+        logging.info("jal scraping finished.")
+    elif operator == "ana":
+        logging.info("ana scraping start.")
+        scrape(data_collector.AnaScraper, ana_collection_list, date, date_str)
+        logging.info("ana scraping finished.")
+    elif operator == "sky":
+        logging.info("sky scraping start.")
+        scrape(data_collector.SkyScraper, sky_collection_list, date, date_str)
+        logging.info("sky scraping finished.")
+    elif operator == "ado":
+        logging.info("ado scraping start.")
+        scrape_ado(date, date_str)
+        logging.info("ado scraping finished.")
 
 
 if __name__ == "__main__":
-    main()
+    '''usage: python data_collector_caller.py [operator1] [operator2] ... [date]
+
+    example: python data_collector_caller.py jal ana sky prev
+    operator: jal, ana, sky, ado
+    date: prev, today, next
+    at least one operator should be passed.
+    date is mandatory.
+    '''
+    if len(sys.argv) > 1:
+        for operator in sys.argv[1:-1]:
+            main(operator, date=sys.argv[-1])
+    else:
+        print("operator is not passed.\nusage: python data_collector_caller.py [operator1] [operator2] ... [date]")
