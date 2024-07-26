@@ -6,28 +6,44 @@ import data_collector
 import time
 import datetime
 
-jal_collection_list = [
-    ['NRT', ['CTS', 'NGO', 'ITM']],
-    ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ', 'OKA']],
-    ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
-    ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
-]
-ana_collection_list = [
-    ['NRT', ['SPK', 'NGO', 'ITM']],
-    ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX', 'OKA']],
-    ['NGO', ['SPK', 'AXT']],
-    ['KIX', ['SPK']],
-    ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
-    ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
-]
-ado_collection_list = [
-    ['HND', ['SPK']],
-]
+target = os.getenv('TARGET', 'production')
+if target == 'production':
+    jal_collection_list = [
+        ['NRT', ['CTS', 'NGO', 'ITM']],
+        ['HND', ['ITM', 'CTS', 'FUK', 'AOJ', 'MMB', 'AKJ', 'KUH', 'OBO', 'HKD', 'MSJ', 'AXT', 'KMQ', 'OKA']],
+        ['CTS', ['MMB', 'AOJ', 'HNA', 'SDJ', 'KIJ', 'NGO']],
+        ['OKD', ['RIS', 'MMB', 'KUH', 'HKD', 'MSJ', 'AXT']]
+    ]
+    ana_collection_list = [
+        ['NRT', ['SPK', 'NGO', 'ITM']],
+        ['HND', ['SPK', 'FUK', 'WKJ', 'KUH', 'HKD', 'AXT', 'TOY', 'KMQ', 'KIX', 'OKA']],
+        ['NGO', ['SPK', 'AXT']],
+        ['KIX', ['SPK']],
+        ['ITM', ['SPK', 'HKD', 'AOJ', 'AXT']],
+        ['SPK', ['WKJ', 'MMB', 'KUH', 'HKD', 'AOJ', 'AXT', 'SDJ', 'KIJ', 'TOY', 'KMQ', 'HIJ', 'FUK']]
+    ]
+    ado_collection_list = [
+        ['HND', ['SPK']],
+    ]
 
-sky_collection_list = [
-    ['HND', ['CTS', 'FUK', 'OKA']],
-    ['CTS', ['NGO', 'FUK']],
-]
+    sky_collection_list = [
+        ['HND', ['CTS', 'FUK', 'OKA']],
+        ['CTS', ['NGO', 'FUK']],
+    ]
+elif target == 'test':
+    jal_collection_list = [
+        ['HND', ['ITM', 'CTS',]],
+    ]
+    ana_collection_list = [
+        ['HND', ['SPK', 'FUK',]],
+    ]
+    ado_collection_list = [
+        ['HND', ['SPK']],
+    ]
+    sky_collection_list = [
+        ['HND', ['CTS', 'FUK',]],
+    ]
+
 
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(levelname)s %(message)s',
@@ -84,10 +100,14 @@ def scrape_ado(date="prev", sufix=""):
     logging.info("ado done")
 
 def save_to_s3(filename:str):
+    if target == 'test':
+        up_filename = "test_" + filename
+    else:
+        up_filename = filename
     s3_client = boto3.client('s3')
     bucket_name = "airline-operation-watcher"
     try:
-        s3_client.upload_file(filename, bucket_name, filename)
+        s3_client.upload_file(filename, bucket_name, up_filename)
     except boto3.exceptions.S3UploadFailedError as e:
         logging.error(f"Upload failed: {e}")
         return False
@@ -120,7 +140,7 @@ def move_to_data_dir(filename:str):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), icaocode, 'analyze_target', date_str)
     if not os.path.exists(path):
         os.makedirs(path)
-    shutil.move(filename, os.path.join(path, filename))
+    shutil.move(filename, os.path.join(path, f'test_{filename}'))
 
 def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, datetime.datetime]:
     first_day_of_week = date - datetime.timedelta(days=((date.weekday()+1)%7))

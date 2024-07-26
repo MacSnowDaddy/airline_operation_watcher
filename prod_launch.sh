@@ -1,3 +1,4 @@
+export TARGET="production"
 export ENV="ec2"
 Xvfb :99 -screen 0 1280x720x16 &
 export DISPLAY=:99
