@@ -80,6 +80,8 @@ def _add_delay_column(df):
     # add delay column
     # delete the rows which have "-" value in actual_dep and actual_arr
     df = df
+    df = df[~(df['schedule_dep'].astype(str).str.contains("--"))]
+    df = df[~(df['schedule_dep'].astype(str).str.contains("ERROR"))]
     df = df[~(df['actual_dep'].astype(str).str.contains("--"))]
     df = df[~(df['actual_dep'].astype(str).str.contains("ERROR"))]
     df = df[~(df['actual_dep'].astype(str).str.contains("再就航"))]

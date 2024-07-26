@@ -1,7 +1,6 @@
 import pandas as pd
 import os
 import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), './data_collector/'))
 import glob
 from data_collector import ana_analyze
 from data_collector import jal_analyze
