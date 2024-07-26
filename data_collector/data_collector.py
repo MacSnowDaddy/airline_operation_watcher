@@ -1,4 +1,5 @@
 import logging
+import os
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -34,7 +35,11 @@ class Scraper(object):
         self.options.add_argument("--homedir=/tmp")
         self.options.add_argument(
             f'user-agent=mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/77.0.3865.120 safari/537.36')
-        self.browser = webdriver.Chrome(options=self.options)
+        env = os.getenv("ENV", "local")
+        if env == "ec2":
+            self.browser = webdriver.Chrome()
+        else:
+            self.browser = webdriver.Chrome(options=self.options)
         self.url = ""
 
     def set_from(self, from_ap):
