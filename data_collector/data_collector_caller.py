@@ -2,7 +2,7 @@ import os
 import sys
 import logging
 import boto3
-import data_collector
+from . import data_collector
 import time
 import datetime
 

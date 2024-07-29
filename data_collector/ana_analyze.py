@@ -153,63 +153,63 @@ def find_type_and_volume_csv():
     return os.path.join(os.path.dirname(__file__), f'ana/type_and_volume.csv')
 
 
-def analyze_by_seat_cat(df):
-    import seaborn as sns
-    # volumeを[0, 100, 200, 300, 400, 500]に分割し、delayをそれぞれのvolumeに分けてヒストグラムを作成する
-    df['num_seat_bin'] = pd.cut(df['number_of_seat'], [0, 100, 200, 300, 400, 500])
+# def analyze_by_seat_cat(df):
+#     import seaborn as sns
+#     # volumeを[0, 100, 200, 300, 400, 500]に分割し、delayをそれぞれのvolumeに分けてヒストグラムを作成する
+#     df['num_seat_bin'] = pd.cut(df['number_of_seat'], [0, 100, 200, 300, 400, 500])
 
-    # %%
-    desc = df.groupby('num_seat_bin')['dep_delay'].describe()
-    print(desc)
+#     # %%
+#     desc = df.groupby('num_seat_bin')['dep_delay'].describe()
+#     print(desc)
 
-    # %%
-    violin_plot = sns.violinplot(data=df[df['dep_delay'] < 200], x=df['num_seat_bin'], y=df['dep_delay'])
-    violin_plot.set_ylabel('departure delay [min]')
-    violin_plot.set_xlabel('number of seat')
-
-
-def analyze_by_date(df):
-    import seaborn as sns
-    print(df.groupby('date').describe()[['dep_delay']])
-    print(df.groupby('date').describe()[['arr_delay']])
-    df.groupby('date').describe()[['dep_delay']][('dep_delay', 'count')].mean()
-
-    sns.violinplot(data=df.sort_values(by="date"), x='date', y='dep_delay')
+#     # %%
+#     violin_plot = sns.violinplot(data=df[df['dep_delay'] < 200], x=df['num_seat_bin'], y=df['dep_delay'])
+#     violin_plot.set_ylabel('departure delay [min]')
+#     violin_plot.set_xlabel('number of seat')
 
 
-def word_analyze(df, date):
-    import seaborn as sns
-    # info_detailに含まれる名詞と動詞の数をjanomeを使ってカウントする。
-    from janome.analyzer import Analyzer
-    from janome.tokenfilter import POSKeepFilter, TokenCountFilter, WordKeepFilter, WordStopFilter
-    from matplotlib import pyplot as plt
+# def analyze_by_date(df):
+#     import seaborn as sns
+#     print(df.groupby('date').describe()[['dep_delay']])
+#     print(df.groupby('date').describe()[['arr_delay']])
+#     df.groupby('date').describe()[['dep_delay']][('dep_delay', 'count')].mean()
 
-    token_filters = [POSKeepFilter(['名詞', '動詞']),
-                    WordStopFilter(['-']),
-                    TokenCountFilter(att='base_form'),]
-    analyzer = Analyzer(token_filters=token_filters)
+#     sns.violinplot(data=df.sort_values(by="date"), x='date', y='dep_delay')
 
-    reason = ' '.join(df[df['date'] == date]['info_detail'])
 
-    pairs = analyzer.analyze(reason)
-    pairs_dict = dict(pairs)
-    print(sorted(pairs_dict.items(), key=lambda x: x[1], reverse=True))
+# def word_analyze(df, date):
+#     import seaborn as sns
+#     # info_detailに含まれる名詞と動詞の数をjanomeを使ってカウントする。
+#     from janome.analyzer import Analyzer
+#     from janome.tokenfilter import POSKeepFilter, TokenCountFilter, WordKeepFilter, WordStopFilter
+#     from matplotlib import pyplot as plt
 
-    from wordcloud import WordCloud
+#     token_filters = [POSKeepFilter(['名詞', '動詞']),
+#                     WordStopFilter(['-']),
+#                     TokenCountFilter(att='base_form'),]
+#     analyzer = Analyzer(token_filters=token_filters)
 
-    fpath = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
-    wordcloud = WordCloud(width=800, height=400, background_color='white', font_path=fpath).generate_from_frequencies(pairs_dict)
-    wordcloud.to_file(file_name_of_wordcloud())
-    plt.imshow(wordcloud, interpolation='bilinear')
-    plt.axis('off')
-    plt.show()
+#     reason = ' '.join(df[df['date'] == date]['info_detail'])
 
-def file_name_of_wordcloud():
-    '''Return the file name of the wordcloud image. Code will replace the file if the file already exists.
+#     pairs = analyzer.analyze(reason)
+#     pairs_dict = dict(pairs)
+#     print(sorted(pairs_dict.items(), key=lambda x: x[1], reverse=True))
+
+#     from wordcloud import WordCloud
+
+#     fpath = "/System/Library/Fonts/ヒラギノ明朝 ProN.ttc"
+#     wordcloud = WordCloud(width=800, height=400, background_color='white', font_path=fpath).generate_from_frequencies(pairs_dict)
+#     wordcloud.to_file(file_name_of_wordcloud())
+#     plt.imshow(wordcloud, interpolation='bilinear')
+#     plt.axis('off')
+#     plt.show()
+
+# def file_name_of_wordcloud():
+#     '''Return the file name of the wordcloud image. Code will replace the file if the file already exists.
     
-    This function is made to make test easier.'''
-    import os
-    return os.path.join(os.path.dirname(__file__), f'ana/wordcloud.png')
+#     This function is made to make test easier.'''
+#     import os
+#     return os.path.join(os.path.dirname(__file__), f'ana/wordcloud.png')
 
 
 

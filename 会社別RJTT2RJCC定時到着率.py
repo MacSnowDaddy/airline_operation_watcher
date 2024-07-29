@@ -8,8 +8,6 @@ from data_collector import sky_analyze
 from data_collector import ado_analyze
 from data_collector import ap_dict
 import types
-import seaborn as sns
-import matplotlib.pyplot as plt
 import datetime
 
 
