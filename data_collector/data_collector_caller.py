@@ -140,7 +140,11 @@ def move_to_data_dir(filename:str):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), icaocode, 'analyze_target', date_str)
     if not os.path.exists(path):
         os.makedirs(path)
-    shutil.move(filename, os.path.join(path, f'test_{filename}'))
+    if target == 'test':
+        shutil.move(filename, os.path.join(path, f'test_{filename}'))
+    else:
+        shutil.move(filename, os.path.join(path, f'{filename}'))
+        
 
 def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, datetime.datetime]:
     first_day_of_week = date - datetime.timedelta(days=((date.weekday()+1)%7))
