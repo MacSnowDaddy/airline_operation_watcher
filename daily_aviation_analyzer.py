@@ -1,16 +1,20 @@
 import os
 import datetime
-import logging
+from logging import getLogger, StreamHandler, Formatter, DEBUG
 import threading
 import 会社別RJTT2RJCC定時到着率
 from data_collector import data_collector_caller
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S')
+logger = getLogger(__name__)
+handler = StreamHandler()
+handler.setLevel(DEBUG)
+handler.setFormatter(Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
+logger.setLevel(DEBUG)
+logger.addHandler(handler)
+logger.propagate = False
 
 def main():
-    logging.info("start daily aviation analyzer.main().")
+    logger.info("start daily aviation analyzer.main().")
     start_time = datetime.datetime.now()
 
     thread_jal = threading.Thread(target=data_collector_caller.main, args=("jal",))
@@ -34,12 +38,8 @@ def main():
 
     end_time = datetime.datetime.now()
     duration = end_time - start_time
-    logging.debug(f"duration: {duration}sec.")
-    logging.info("end daily aviation analyzer.main().")
+    logger.debug(f"duration: {duration}sec.")
+    logger.info("end daily aviation analyzer.main().")
     
 if __name__ == "__main__":
-    # I want to see logging only from my script.
-    selenium_logger = logging.getLogger('selenium')
-    null_handler = logging.FileHandler(os.devnull)
-    selenium_logger.addHandler(null_handler)
     main()

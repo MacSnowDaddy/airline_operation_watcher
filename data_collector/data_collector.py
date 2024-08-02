@@ -1,4 +1,4 @@
-import logging
+from logging import getLogger, StreamHandler, Formatter, DEBUG
 import os
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,6 +10,14 @@ from . import ap_dict
 import re
 from abc import abstractmethod
 
+logger = getLogger(__name__)
+handler = StreamHandler()
+handler.setLevel(DEBUG)
+handler.setFormatter(Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
+logger.setLevel(DEBUG)
+logger.addHandler(handler)
+logger.propagate = False
+
 # set list of scrap
 scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "ana" : "https://www.ana.co.jp/fs/dom/jp/",
@@ -19,9 +27,6 @@ scrap_dict = {"jal" : "https://www.jal.co.jp/flight-status/dom/",
               "tok" : "https://tokiair.com",
               }
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S')
 
 class Scraper(object):
     """Scrapeするための抽象クラス。実装は各航空会社ごとに行う。"""
@@ -123,7 +128,7 @@ class JalScraper(Scraper):
         try:
             element = self.browser.find_element(By.XPATH, '//*[@id="JS_FSDetailArea"]/tbody/tr[1]')
         except:
-            logging.error(f"timeout jal {self.from_ap} to {self.to_ap} on {self.date}")
+            logger.error(f"timeout jal {self.from_ap} to {self.to_ap} on {self.date}")
             
 
         # save as html

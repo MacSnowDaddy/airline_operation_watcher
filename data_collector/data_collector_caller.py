@@ -1,10 +1,18 @@
 import os
 import sys
-import logging
+from logging import getLogger, StreamHandler, Formatter, DEBUG
 import boto3
 from . import data_collector
 import time
 import datetime
+
+logger = getLogger(__name__)
+handler = StreamHandler()
+handler.setLevel(DEBUG)
+handler.setFormatter(Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
+logger.setLevel(DEBUG)
+logger.addHandler(handler)
+logger.propagate = False
 
 target = os.getenv('TARGET', 'production')
 if target == 'production':
@@ -45,10 +53,6 @@ elif target == 'test':
     ]
 
 
-logging.basicConfig(level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S')
-
 def scrape(class_, list, date="prev", sufix=""):
     collector = class_()
     for collection in list:
@@ -62,7 +66,7 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            logging.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logger.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:
@@ -75,14 +79,14 @@ def scrape(class_, list, date="prev", sufix=""):
             collector.set_date(date)
             collector.scrape(f"{collector.file_name_header()}{sufix}.csv")
             # print progress
-            logging.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
+            logger.debug(f"{collector.file_name_header()} {collection[0]} -> {to} done")
             if class_ == data_collector.JalScraper:
                 time.sleep(1)
             else:
                 time.sleep(3)
     save_to_s3(f"{collector.file_name_header()}{sufix}.csv")
     move_to_data_dir(f"{collector.file_name_header()}{sufix}.csv")
-    logging.info(f"{collector.file_name_header()} done")
+    logger.info(f"{collector.file_name_header()} done")
     
 def scrape_ado(date="prev", sufix=""):
     collector = data_collector.AdoScraper()
@@ -97,7 +101,7 @@ def scrape_ado(date="prev", sufix=""):
     # move file created into data folder
     save_to_s3(f"ado{sufix}.csv")
     move_to_data_dir(f"ado{sufix}.csv")
-    logging.info("ado done")
+    logger.info("ado done")
 
 def save_to_s3(filename:str):
     if target == 'test':
@@ -109,9 +113,9 @@ def save_to_s3(filename:str):
     try:
         s3_client.upload_file(filename, bucket_name, up_filename)
     except boto3.exceptions.S3UploadFailedError as e:
-        logging.error(f"Upload failed: {e}")
+        logger.error(f"Upload failed: {e}")
         return False
-    logging.info(f"{filename} uploaded to s3")
+    logger.info(f"{filename} uploaded to s3")
     return True
 
 def move_to_data_dir(filename:str):
@@ -153,10 +157,6 @@ def first_last_day_of_week(date:datetime.datetime) -> tuple[datetime.datetime, d
 
 
 def main(operator:str, date:str="prev"):
-    # I want to see logging only from my script.
-    selenium_logger = logging.getLogger('selenium')
-    null_handler = logging.FileHandler(os.devnull)
-    selenium_logger.addHandler(null_handler)
     import sys
 
     if date == "prev":
@@ -167,21 +167,21 @@ def main(operator:str, date:str="prev"):
         date_str = (datetime.date.today() + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
     if operator == "jal":
-        logging.info("jal scraping start.")
+        logger.info("jal scraping start.")
         scrape(data_collector.JalScraper, jal_collection_list, date, date_str)
-        logging.info("jal scraping finished.")
+        logger.info("jal scraping finished.")
     elif operator == "ana":
-        logging.info("ana scraping start.")
+        logger.info("ana scraping start.")
         scrape(data_collector.AnaScraper, ana_collection_list, date, date_str)
-        logging.info("ana scraping finished.")
+        logger.info("ana scraping finished.")
     elif operator == "sky":
-        logging.info("sky scraping start.")
+        logger.info("sky scraping start.")
         scrape(data_collector.SkyScraper, sky_collection_list, date, date_str)
-        logging.info("sky scraping finished.")
+        logger.info("sky scraping finished.")
     elif operator == "ado":
-        logging.info("ado scraping start.")
+        logger.info("ado scraping start.")
         scrape_ado(date, date_str)
-        logging.info("ado scraping finished.")
+        logger.info("ado scraping finished.")
 
 
 if __name__ == "__main__":
