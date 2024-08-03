@@ -1,4 +1,4 @@
-from logging import getLogger, StreamHandler, Formatter, DEBUG
+from logging import getLogger, StreamHandler, FileHandler, Formatter, DEBUG
 import os
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import WebDriverWait
@@ -11,7 +11,10 @@ import re
 from abc import abstractmethod
 
 logger = getLogger(__name__)
-handler = StreamHandler()
+if os.getenv('ENV') == 'ec2':
+    handler = FileHandler(f'/var/log/daily_aviation_analyzer.log')
+else:
+    handler = StreamHandler()
 handler.setLevel(DEBUG)
 handler.setFormatter(Formatter('%(asctime)s %(levelname)s %(message)s', datefmt='%Y-%m-%d %H:%M:%S'))
 logger.setLevel(DEBUG)
