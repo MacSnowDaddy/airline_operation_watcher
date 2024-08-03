@@ -7,7 +7,7 @@ from data_collector import data_collector_caller
 
 logger = getLogger(__name__)
 if os.getenv('ENV') == 'ec2':
-    handler = FileHandler(f'/var/log/daily_aviation_analyzer.log')
+    handler = FileHandler(f'~/daily_aviation_analyzer.log')
 else:
     handler = StreamHandler()
 handler.setLevel(DEBUG)

@@ -8,7 +8,7 @@ import datetime
 
 logger = getLogger(__name__)
 if os.getenv('ENV') == 'ec2':
-    handler = FileHandler(f'/var/log/daily_aviation_analyzer.log')
+    handler = FileHandler(f'~/daily_aviation_analyzer.log')
 else:
     handler = StreamHandler()
 handler = StreamHandler()
