@@ -45,4 +45,6 @@ def main():
     logger.info("end daily aviation analyzer.main().")
     
 if __name__ == "__main__":
+    with open(os.path.join(os.path.dirname(__file__), 'daily_aviation_analyzer.log'), mode='a') as f:
+        f.write(f'{datetime.datetime.now()}daily_aviation_analyzer.py is called.\n')
     main()
