@@ -2,7 +2,7 @@ import os
 import sys
 from logging import getLogger, StreamHandler, FileHandler, Formatter, DEBUG
 import boto3
-from . import data_collector
+import data_collector
 import time
 import datetime
 
