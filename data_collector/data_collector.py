@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-from . import ap_dict
+import ap_dict
 import re
 from abc import abstractmethod
 
