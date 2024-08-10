@@ -17,3 +17,6 @@ venv
 
 # manage at different git.
 .vscode/settings.json
+
+# config sh file for instance-ids
+config.sh
