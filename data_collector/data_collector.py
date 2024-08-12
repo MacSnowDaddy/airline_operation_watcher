@@ -6,13 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.by import By
-from . import ap_dict
+import ap_dict
 import re
 from abc import abstractmethod
 
 logger = getLogger(__name__)
 if os.getenv('ENV') == 'ec2':
-    handler = FileHandler(f'~/daily_aviation_analyzer.log')
+    handler = FileHandler(os.path.join(os.path.dirname(__file__), 'daily_aviation_analyzer.log'))
 else:
     handler = StreamHandler()
 handler.setLevel(DEBUG)

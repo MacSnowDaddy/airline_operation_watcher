@@ -88,7 +88,7 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
     ado_analyzer.drop_codeshare()
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
-    print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + ap_dict.decode(dep_ap, "sky") + dep_ap + '=>' + ap_dict.decode(dest_ap, "sky") + dest_ap)
+    print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + ap_dict.decode(dep_ap, "sky") + " #" +dep_ap + ' =>' + ap_dict.decode(dest_ap, "sky") + " #" + dest_ap)
 
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
@@ -97,18 +97,25 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
 if __name__ == "__main__":
     # read std args.
     # if std args is not passed, use yesterday as default.
+    # if you specify dep_ap and dest_ap, you can get the ontime arrival rate of the specified route.
+    # else you can get the ontime arrival rate of the route between HND and CTS and CTS and HND.
     if len(sys.argv) == 4:
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
         dep_ap = "HND"
         dest_ap = "CTS"
+        main(year, month, day, dep_ap, dest_ap)
+        dep_ap = "CTS"
+        dest_ap = "HND"
+        main(year, month, day, dep_ap, dest_ap)
     elif len(sys.argv) == 6:
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
         dep_ap = sys.argv[4]
         dest_ap = sys.argv[5]
+        main(year, month, day, dep_ap, dest_ap)
     else:
         target_date:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
         year = target_date.year
@@ -116,4 +123,8 @@ if __name__ == "__main__":
         day = target_date.day
         dep_ap = "HND"
         dest_ap = "CTS"
-    main(year, month, day, dep_ap, dest_ap)
+        main(year, month, day, dep_ap, dest_ap)
+        dep_ap = "CTS"
+        dest_ap = "HND"
+        main(year, month, day, dep_ap, dest_ap)
+    print("#定時運航 #ANA #JAL #SKY #ADO")

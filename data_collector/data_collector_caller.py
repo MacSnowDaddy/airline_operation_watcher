@@ -2,13 +2,13 @@ import os
 import sys
 from logging import getLogger, StreamHandler, FileHandler, Formatter, DEBUG
 import boto3
-from . import data_collector
+import data_collector
 import time
 import datetime
 
 logger = getLogger(__name__)
 if os.getenv('ENV') == 'ec2':
-    handler = FileHandler(f'~/daily_aviation_analyzer.log')
+    handler = FileHandler(os.path.join(os.path.dirname(__file__), 'daily_aviation_analyzer.log'))
 else:
     handler = StreamHandler()
 handler = StreamHandler()
