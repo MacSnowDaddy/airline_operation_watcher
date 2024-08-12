@@ -97,18 +97,25 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
 if __name__ == "__main__":
     # read std args.
     # if std args is not passed, use yesterday as default.
+    # if you specify dep_ap and dest_ap, you can get the ontime arrival rate of the specified route.
+    # else you can get the ontime arrival rate of the route between HND and CTS and CTS and HND.
     if len(sys.argv) == 4:
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
         dep_ap = "HND"
         dest_ap = "CTS"
+        main(year, month, day, dep_ap, dest_ap)
+        dep_ap = "CTS"
+        dest_ap = "HND"
+        main(year, month, day, dep_ap, dest_ap)
     elif len(sys.argv) == 6:
         year = sys.argv[1]
         month = sys.argv[2]
         day = sys.argv[3]
         dep_ap = sys.argv[4]
         dest_ap = sys.argv[5]
+        main(year, month, day, dep_ap, dest_ap)
     else:
         target_date:datetime.date = datetime.date.today() - datetime.timedelta(days=1)
         year = target_date.year
@@ -116,4 +123,7 @@ if __name__ == "__main__":
         day = target_date.day
         dep_ap = "HND"
         dest_ap = "CTS"
-    main(year, month, day, dep_ap, dest_ap)
+        main(year, month, day, dep_ap, dest_ap)
+        dep_ap = "CTS"
+        dest_ap = "HND"
+        main(year, month, day, dep_ap, dest_ap)
