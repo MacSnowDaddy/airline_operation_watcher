@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch, call
 import os
 import shutil
 import datetime
@@ -6,7 +7,50 @@ import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 from data_collector_caller import move_to_data_dir
 from data_collector_caller import first_last_day_of_week
+from data_collector_caller import scrape
 
+
+class TestScrape(unittest.TestCase):
+    def setUp(self):
+        class mock_jal_scraper:
+            def __init__(self):
+                pass
+            
+            def set_from(self, from_airport):
+                pass
+
+            def set_to(self, to_airport):
+                pass
+
+            def set_date(self, date):
+                pass
+
+            def file_name_header(self):
+                return 'jal'
+
+            def scrape(self, file_name):
+                pass
+
+        self.mock_jal_scraper = mock_jal_scraper
+
+    def tearDown(self) -> None:
+        pass
+
+    @patch('data_collector_caller.save_to_s3')
+    @patch('data_collector_caller.move_to_data_dir')
+    @patch('data_collector_caller.logger')
+    def test_scrape_logger(self, mock_logger, mock_move_to_data_dir, mock_save_to_s3):
+        mock_move_to_data_dir.return_value = None
+        mock_save_to_s3.return_value = None
+        scrape(self.mock_jal_scraper, [['HND', ['CTS', 'FUK']]])
+        expected_calls = [
+            call.debug("jal HND -> CTS done"),
+            call.debug("jal CTS -> HND done"),
+            call.debug("jal HND -> FUK done"),
+            call.debug("jal FUK -> HND done"),
+            call.info("jal done")
+        ]
+        mock_logger.assert_has_calls(expected_calls, any_order=False)
 
 class TestFirstAndLastDayOfWeek(unittest.TestCase):
     def setUp(self):
