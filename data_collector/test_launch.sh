@@ -22,11 +22,11 @@ wait $PID_ADO
 source ~/airline-ops/airline_operation_watcher/data_collector/config.sh
 
 #publish the result
-/home/ec2-user/.pyenv/shims/python3 /home/ec2-user/airline-ops/airline_operation_watcher/会社別RJTT2RJCC定時到着率.py | /home/ec2-user/.pyenv/shims/python3 ~/airline-ops/airline_operation_watcher/data_collector/sns_publish_ontime_arr_rate.py
+/home/ec2-user/.pyenv/shims/python3 /home/ec2-user/airline-ops/airline_operation_watcher/会社別RJTT2RJCC定時到着率.py | /home/ec2-user/.pyenv/shims/python3 ~/airline-ops/airline_operation_watcher/data_collector/sns_publish_ontime_arr_rate.py >> /home/ec2-user/test_launch.log 2>&1
 
 if [ -z "$INSTANCE_ID" ]; then
   echo "Error: INSTANCE_ID is not set."
   exit 1
 fi
 
-aws ec2 stop-instances --instance-ids $INSTANCE_ID
+aws ec2 stop-instances --instance-ids $INSTANCE_ID >> /home/ec2-user/test_launch.log 2>&1
