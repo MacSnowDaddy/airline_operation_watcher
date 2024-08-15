@@ -19,12 +19,12 @@ wait $PID_JAL
 wait $PID_SKY
 wait $PID_ADO
 
-source ~/airline-ops/airline_operation_watcher/data_collector/config.sh
+SNS_TOPIC_ARN=$1
 
 #publish the result
-/home/ec2-user/.pyenv/shims/python3 /home/ec2-user/airline-ops/airline_operation_watcher/会社別RJTT2RJCC定時到着率.py | /home/ec2-user/.pyenv/shims/python3 ~/airline-ops/airline_operation_watcher/data_collector/sns_publish_ontime_arr_rate.py >> /home/ec2-user/production_launch.log 2>&1
+/home/ec2-user/.pyenv/shims/python3 /home/ec2-user/airline-ops/airline_operation_watcher/会社別RJTT2RJCC定時到着率.py | /home/ec2-user/.pyenv/shims/python3 ~/airline-ops/airline_operation_watcher/data_collector/sns_publish_ontime_arr_rate.py $SNS_TOPIC_ARN >> /home/ec2-user/production_launch.log 2>&1
 
-
+INSTANCE_ID=$2
 
 # Ensure the INSTANCE_ID environment variable is set
 if [ -z "$INSTANCE_ID" ]; then
