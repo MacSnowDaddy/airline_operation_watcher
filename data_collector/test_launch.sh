@@ -1,3 +1,4 @@
+echo "" > /home/ec2-user/test_launch.log
 export TARGET="test"
 export ENV="ec2"
 Xvfb :99 -screen 0 1280x720x16 &
@@ -27,7 +28,7 @@ SNS_TOPIC_ARN=$1
 INSTANCE_ID=$2
 
 if [ -z "$INSTANCE_ID" ]; then
-  echo "Error: INSTANCE_ID is not set."
+  echo "Error: INSTANCE_ID is not set." >> /home/ec2-user/test_launch.log 2>&1
   exit 1
 fi
 

@@ -1,3 +1,4 @@
+echo "" > /home/ec2-user/production_launch.log
 export TARGET="production"
 export ENV="ec2"
 Xvfb :99 -screen 0 1280x720x16 &
@@ -28,7 +29,7 @@ INSTANCE_ID=$2
 
 # Ensure the INSTANCE_ID environment variable is set
 if [ -z "$INSTANCE_ID" ]; then
-  echo "Error: INSTANCE_ID is not set."
+  echo "Error: INSTANCE_ID is not set." >> /home/ec2-user/production_launch.log 2>&1
   exit 1
 fi
 
