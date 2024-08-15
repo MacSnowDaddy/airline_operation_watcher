@@ -2,7 +2,6 @@ import boto3
 import os
 import sys
 
-SNS_TOPIC_ARN = os.environ['SNS_TOPIC_ARN']
 
 def publish_ontime_arr_rate(ontime_arr_rate:str):
     sns_client = boto3.client('sns')
@@ -12,5 +11,6 @@ def publish_ontime_arr_rate(ontime_arr_rate:str):
     )
 
 if __name__ == '__main__':
+    SNS_TOPIC_ARN = sys.argv[1]
     ontime_arr_rate_str = sys.stdin.read().strip()
     publish_ontime_arr_rate(ontime_arr_rate_str)
