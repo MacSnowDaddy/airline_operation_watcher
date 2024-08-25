@@ -35,6 +35,9 @@ class Ana_analyzer(object):
     def drop_codeshare(self):
         '''Drop the code share flights in the data.'''
         self.df = self.df[~(self.df['info_detail'].str.contains('ADO運航', regex=True))]
+        self.df = self.df[~(self.df['info_detail'].str.contains('SFJ運航', regex=True))]
+        self.df = self.df[~(self.df['info_detail'].str.contains('SNA運航', regex=True))]
+        self.df = self.df[~(self.df['info_detail'].str.contains('ORC運航', regex=True))]
     
     def get_df(self):
         '''Return the dataframe which is created by make_dataframe function.'''

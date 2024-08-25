@@ -32,12 +32,12 @@ class TestAnaAnalyzer(unittest.TestCase):
         # Test the drop_codeshare method
         self.analyzer.drop_codeshare()
         df = self.analyzer.df
-        self.assertEqual(len(df), 98)
+        self.assertEqual(len(df), 83)
 
         # numbers of line will not change even if you call drop_codeshare method twice.
         self.analyzer.drop_codeshare()
         df = self.analyzer.df
-        self.assertEqual(len(df), 98)
+        self.assertEqual(len(df), 83)
 
     def test_get_df(self):
         # Test the get_df method
