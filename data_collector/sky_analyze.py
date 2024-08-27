@@ -3,32 +3,12 @@ import pandas as pd
 class Sky_analyzer(object):
     '''This class is used to analyze the data of SKY.'''
     
-    def __init__(self, year, month, day):
-        '''Initialize the class with the date of the data you want to analyze.
+    def __init__(self, files:list):
+        '''Initialize the class with the files of the data you want to analyze.
         
-        @param year: year of the data you want to analyze. accept "*" as a wildcard.
-        @param month: month of the data you want to analyze. accept "*" as a wildcard.
-        @param day: day of the data you want to analyze. accept "*" as a wildcard.
         '''
-        import os
-        import glob
-        pattern = os.path.join(os.path.dirname(__file__), f'sky/analyze_target/')
-        if type(year) == int:
-            year = "{:04d}".format(year)
-        else:
-            year = "[0-9][0-9][0-9][0-9]"
-        if type(month) == int:
-            month = "{:02d}".format(month)
-        else:
-            month = "[0-9][0-9]"
-        if type(day) == int:
-            day = "{:02d}".format(day)
-        else:
-            day = "[0-9][0-9]"
-        pattern += f'**/sky{year}{month}{day}.csv'
-        files = glob.glob(pattern, recursive=True)
         self.df = make_dataframe(files)
-    
+
     def drop_codeshare(self):
         '''Include the code share flights in the data.
         Sky_reader is not able to distinguish the code share flights from the regular flights.'''
