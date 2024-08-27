@@ -10,13 +10,9 @@ from ana_analyze import Ana_analyzer
 
 class TestAnaAnalyzer(unittest.TestCase):
 
-    @patch('ana_analyze.find_analyze_target_dir')
-    @patch('glob.glob')
-    def setUp(self, mock_glob, mock_find_analyze_target_dir):
+    def setUp(self):
         self.sample_csv = 'sample_ana20991231.csv'
-        mock_find_analyze_target_dir.return_value = os.path.join(os.path.dirname(__file__))
-        mock_glob.return_value = [os.path.join(os.path.dirname(__file__), self.sample_csv)]
-        self.analyzer = Ana_analyzer(2022, 1, 1)
+        pass
 
     def tearDown(self):
         # Add any necessary cleanup code here
@@ -24,46 +20,48 @@ class TestAnaAnalyzer(unittest.TestCase):
 
     def test_init(self):
         # Test the __init__ method
-        df = self.analyzer.df
+        analyzer = Ana_analyzer([os.path.join(os.path.dirname(__file__), f'./{self.sample_csv}')])
+
+        df = analyzer.df
+
         self.assertIsNotNone(df)
         self.assertEqual(len(df), 130)
+    
+    def test_init_with_empty_files_will_makes_len0_df(self):
+        analyzer = Ana_analyzer([])
+
+        df = analyzer.df
+
+        self.assertIsNotNone(df)
+        self.assertEqual(len(df), 0)
 
     def test_drop_codeshare(self):
         # Test the drop_codeshare method
-        self.analyzer.drop_codeshare()
-        df = self.analyzer.df
+        analyzer = Ana_analyzer([os.path.join(os.path.dirname(__file__), f'./{self.sample_csv}')])
+
+        analyzer.drop_codeshare()
+
+        df = analyzer.df
         self.assertEqual(len(df), 83)
+    
+    def test_drop_codeshare_does_not_change_when_called_twice(self):
+        # Test the drop_codeshare method
+        analyzer = Ana_analyzer([os.path.join(os.path.dirname(__file__), f'./{self.sample_csv}')])
 
-        # numbers of line will not change even if you call drop_codeshare method twice.
-        self.analyzer.drop_codeshare()
-        df = self.analyzer.df
+        analyzer.drop_codeshare()
+        analyzer.drop_codeshare()
+
+        df = analyzer.df
         self.assertEqual(len(df), 83)
-
-    def test_get_df(self):
-        # Test the get_df method
-        df = self.analyzer.get_df()
-        self.assertIsNotNone(df)
-        self.assertEqual(len(df), 130)
-        self.assertEqual(df.columns.tolist(), self.analyzer.df.columns.tolist())
-
-    def test_make_dataframe(self):
-        # Test the make_dataframe function
-        files = [os.path.join(os.path.dirname(__file__), self.sample_csv)]
-        df = ana_analyze.make_dataframe(files)
-        self.assertIsNotNone(df)
-
-        # return empty dataframe if files is empty.
-        files = []
-        df = ana_analyze.make_dataframe(files)
-        self.assertIsNotNone(df)
-        self.assertEqual(len(df), 0)
 
     def test_edit_date(self):
         # Test the edit_date function
         df = pd.DataFrame({'date': ['2022年01月01日', '2022年01月02日', '2022年01月03日']})
-        df = ana_analyze.edit_date(df)
         expected_df = pd.DataFrame({'date': ['2022/01/01', '2022/01/02', '2022/01/03']})
         expected_df['date'] = pd.to_datetime(expected_df['date'])
+
+        df = ana_analyze.edit_date(df)
+
         self.assertEqual(df['date'].tolist(), expected_df['date'].tolist())
 
     def test_add_delay_column(self):

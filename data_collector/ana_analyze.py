@@ -6,30 +6,10 @@ import numpy as np
 class Ana_analyzer(object):
     '''This class is used to analyze the data of ANA.'''
     
-    def __init__(self, year, month, day):
-        '''Initialize the class with the date of the data you want to analyze.
+    def __init__(self, files:list):
+        '''Initialize the class with the files of the data you want to analyze.
         
-        @param year: year of the data you want to analyze. accept "*" as a wildcard.
-        @param month: month of the data you want to analyze. accept "*" as a wildcard.
-        @param day: day of the data you want to analyze. accept "*" as a wildcard.
         '''
-        import os
-        import glob
-        pattern = find_analyze_target_dir()
-        if type(year) == int:
-            year = "{:04d}".format(year)
-        else:
-            year = "[0-9][0-9][0-9][0-9]"
-        if type(month) == int:
-            month = "{:02d}".format(month)
-        else:
-            month = "[0-9][0-9]"
-        if type(day) == int:
-            day = "{:02d}".format(day)
-        else:
-            day = "[0-9][0-9]"
-        pattern += f'**/ana{year}{month}{day}.csv'
-        files = glob.glob(pattern, recursive=True)
         self.df = make_dataframe(files)
     
     def drop_codeshare(self):

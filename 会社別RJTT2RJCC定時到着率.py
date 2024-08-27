@@ -7,6 +7,7 @@ from data_collector import jal_analyze
 from data_collector import sky_analyze
 from data_collector import ado_analyze
 from data_collector import ap_dict
+from data_collector import conditional_file_finder
 import types
 import datetime
 
@@ -56,35 +57,31 @@ def daily_on_schedule_arrival_rate(df:pd.DataFrame) -> pd.DataFrame:
 def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
     '''the result of this function is make a format of tweet.
     
-    @param year: year of the data you want to analyze. accept "*" as a wildcard.
-    @param month: month of the data you want to analyze. accept "*" as a wildcard.
-    @param day: day of the data you want to analyze. accept "*" as a wildcard.'''
-    # year, month, and day are passed as str type.
-    # they are passed as int if they can be converted to int.
-    # else, they are passed as str.
-    try:
-        year = int(year)
-    except ValueError:
-            year = year
-    try:
-        month = int(month)
-    except ValueError:
-            month = month
-    try:
-        day = int(day)
-    except ValueError:
-        day = day
+    @param year: year of the data you want to analyze. accept regex.
+    @param month: month of the data you want to analyze. accept regex.
+    @param day: day of the data you want to analyze. accept regex.'''
 
-    ana_analyzer = ana_analyze.Ana_analyzer(year=year, month=month, day=day)
+    _conditional_file_finder = conditional_file_finder.ConditionalFileFinder()
+    _condition = conditional_file_finder.FileFindCondition(year, month, day)
+
+    #ana
+    files = _conditional_file_finder.pick_files_from_with(glob.glob("**/ana/analyze_target/**", recursive=True), _condition)
+    ana_analyzer = ana_analyze.Ana_analyzer(files)
     ana_analyzer.drop_codeshare()
     ana_df = ana_analyzer.get_df()
-    jal_analyzer = jal_analyze.Jal_analyzer(year=year, month=month, day=day)
+    #jal
+    files = _conditional_file_finder.pick_files_from_with(glob.glob("**/jal/analyze_target/**", recursive=True), _condition)
+    jal_analyzer = jal_analyze.Jal_analyzer(files)
     jal_analyzer.drop_codeshare()
     jal_df = jal_analyzer.get_df()
-    sky_analyzer = sky_analyze.Sky_analyzer(year=year, month=month, day=day)
+    #sky
+    files = _conditional_file_finder.pick_files_from_with(glob.glob("**/sky/analyze_target/**", recursive=True), _condition)
+    sky_analyzer = sky_analyze.Sky_analyzer(files)
     sky_analyzer.drop_codeshare()
     sky_df = sky_analyzer.get_df()
-    ado_analyzer = ado_analyze.Ado_analyzer(year=year, month=month, day=day)
+    #ado
+    files = _conditional_file_finder.pick_files_from_with(glob.glob("**/ado/analyze_target/**", recursive=True), _condition)
+    ado_analyzer = ado_analyze.Ado_analyzer(files)
     ado_analyzer.drop_codeshare()
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
