@@ -36,12 +36,14 @@ class TestScrape(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    @patch('time.sleep')
     @patch('data_collector_caller.save_to_s3')
     @patch('data_collector_caller.move_to_data_dir')
     @patch('data_collector_caller.logger')
-    def test_scrape_logger(self, mock_logger, mock_move_to_data_dir, mock_save_to_s3):
+    def test_scrape_logger(self, mock_logger, mock_move_to_data_dir, mock_save_to_s3, mock_sleep):
         mock_move_to_data_dir.return_value = None
         mock_save_to_s3.return_value = None
+        mock_sleep.return_value = None
         scrape(self.mock_jal_scraper, [['HND', ['CTS', 'FUK']]])
         expected_calls = [
             call.debug("jal HND -> CTS done"),
