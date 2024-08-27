@@ -145,14 +145,17 @@ ap_dict_ado = {
 
 def decode(ap_code, company = "jal"):
     '''空港コードを日本語に変換する。'''
-    if company == "jal":
-        return ap_dict_jal[ap_code]
-    elif company == "ana":
-        return ap_dict_ana[ap_code]
-    elif company == "sky":
-        return ap_dict_sky[ap_code]
-    elif company == "ado":
-        return ap_dict_ado[ap_code]
+    try:
+        if company == "jal":
+            return ap_dict_jal[ap_code]
+        elif company == "ana":
+            return ap_dict_ana[ap_code]
+        elif company == "sky":
+            return ap_dict_sky[ap_code]
+        elif company == "ado":
+            return ap_dict_ado[ap_code]
+    except KeyError:
+        return None
 
 def encode(ap_name, company = "jal"):
     '''空港名を空港コードに変換する。'''

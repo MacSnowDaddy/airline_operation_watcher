@@ -88,7 +88,9 @@ def main(year, month, day, dep_ap:str = "HND", dest_ap:str = "CTS"):
     ado_analyzer.drop_codeshare()
     ado_df = ado_analyzer.get_df()
     airline_list = ["ana", "jal", "sky", "ado"]
-    print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + ap_dict.decode(dep_ap, "sky") + " #" +dep_ap + ' =>' + ap_dict.decode(dest_ap, "sky") + " #" + dest_ap)
+    dep_ap_janapese = ap_dict.decode(dep_ap, "sky") if ap_dict.decode(dep_ap, "sky") else dep_ap
+    dest_ap_janapese = ap_dict.decode(dest_ap, "sky") if ap_dict.decode(dest_ap, "sky") else dest_ap
+    print(f'{month}月{day}日 各社の定時到着*率（欠航は除く)\n' + dep_ap_janapese + " #" +dep_ap + ' =>' + dest_ap_janapese + " #" + dest_ap)
 
     for airline in airline_list:
         print_on_schedule_arrival_rate(airline, eval(f'{airline}_df'), dep_ap, dest_ap)
