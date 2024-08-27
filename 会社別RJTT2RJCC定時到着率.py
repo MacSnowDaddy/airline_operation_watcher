@@ -39,7 +39,10 @@ def print_on_schedule_arrival_rate(airline:str, df:pd.DataFrame, dep_ap:str='*',
         df = df[(df['from'] == ap_dict.decode(dep_ap,  airline))]
     if dest_ap != "*":
         df = df[(df['to']   == ap_dict.decode(dest_ap, airline))]
-    print(f'{airline.upper()} {on_schedule_arrival_rate(df)*100:.1f}% {len(df[df["arr_delay"] <= 14])}/{len(df)}')
+    try:
+        print(f'{airline.upper()} {on_schedule_arrival_rate(df)*100:.1f}% {len(df[df["arr_delay"] <= 14])}/{len(df)}')
+    except ZeroDivisionError:
+        print(f'{airline.upper()} {dep_ap}=>{dest_ap}のデータはありません')
     df['hour'] = df['schedule_arr'].str.split(':').str[0]
     group_hour = df.groupby('hour')['arr_delay'].describe()
     group_hour.index = group_hour.index.astype(int)
