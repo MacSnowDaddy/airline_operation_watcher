@@ -72,26 +72,19 @@ def _add_delay_column(df):
     # jal page describes the time beyond 24:00 as "0:00" or "1:00" etc.
     def make_time_with_date(row):
         try:
-            if int(row['actual_dep'].split(':')[0]) >= 24:
-                row['act_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_dep'].split(':')[0]) - 24) + ':' + row['actual_dep'].split(':')[1]
+            if int(row['actual_dep'].split(':')[0]) < int(row['schedule_dep'].split(':')[0]) - 1: # assume that schedule flight will not depart 1hour earlyer than its schedule.
+                row['act_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_dep'].split(':')[0])) + ':' + row['actual_dep'].split(':')[1]
             else:
                 row['act_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_dep']
-            if int(row['actual_dep'].split(':')[0]) > int(row['actual_arr'].split(':')[0]):
+            if int(row['actual_arr'].split(':')[0]) < int(row['schedule_arr'].split(':')[0]) - 1: # assume that schedule flight will not arrive 1hour earlyer than its schedule.
                 row['act_arr_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_arr'].split(':')[0])) + ':' + row['actual_arr'].split(':')[1]
             else:
                 row['act_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_arr']
             
-            if int(row['schedule_dep'].split(':')[0]) >= 24:
-                row['sch_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['schedule_dep'].split(':')[0]) - 24) + ':' + row['schedule_dep'].split(':')[1]
-            else:
-                row['sch_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_dep']
+            row['sch_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_dep']
             
-            if int(row['schedule_arr'].split(':')[0]) >= 24:
-                row['sch_arr_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['schedule_arr'].split(':')[0]) - 24) + ':' + row['schedule_arr'].split(':')[1]
-            else:
-                row['sch_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_arr']
+            row['sch_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_arr']
         except:
-            print(row)
             raise
         return row
 
