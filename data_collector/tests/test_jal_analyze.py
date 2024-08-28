@@ -8,7 +8,7 @@ import jal_analyze
 from jal_analyze import Jal_analyzer
 
 
-class TestAnaAnalyzer(unittest.TestCase):
+class TestJalAnalyzer(unittest.TestCase):
 
     def setUp(self):
         self.sample_csv = 'sample_jal20991231.csv'
