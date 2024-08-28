@@ -1,4 +1,5 @@
 import unittest
+import datetime
 import sys, os
 from unittest.mock import patch
 #import parent directory
@@ -70,12 +71,60 @@ class TestAnaAnalyzer(unittest.TestCase):
         df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other', 'info_detail', 'type_of_aircraft']
         df = ana_analyze.edit_date(df)
         df = ana_analyze.add_delay_column(df)
+        self.assertEqual(df[df['name'] == 'ANA055']['dep_delay'].values[0], -5)
+        self.assertEqual(df[df['name'] == 'ANA055']['arr_delay'].values[0], -10)
         self.assertEqual(df[df['name'] == 'ANA065']['dep_delay'].values[0], 15)
         self.assertEqual(df[df['name'] == 'ANA065']['arr_delay'].values[0], 25)
         self.assertEqual(df[df['name'] == 'ANA4743']['dep_delay'].values[0], 240)
         self.assertEqual(df[df['name'] == 'ANA4743']['arr_delay'].values[0], 240)
-      
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_beyond_24h(self):
+        # Act
+        actual = ana_analyze.time_deltaer("23:55", "24:05")
+        expected = datetime.timedelta(minutes=10)
 
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_earlier_24h(self):
+        # Act
+        actual = ana_analyze.time_deltaer("23:50", "23:55")
+        expected = datetime.timedelta(minutes=5)
+
+        # Assert
+        self.assertEqual(actual,expected )
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_later_24h(self):
+        # Act
+        actual = ana_analyze.time_deltaer("24:05", "24:10")
+        expected = datetime.timedelta(minutes=5)
+
+        # Assert
+        self.assertEqual(actual, expected)
+
+    def test_time_deltaer_returns_correct_delta_with_two_time_beyond_24h_inverse(self):
+        # Act
+        actual = ana_analyze.time_deltaer("24:05", "23:55")
+        expected = datetime.timedelta(minutes=-10)
+
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_earlier_24h_inverse(self):
+        # Act
+        actual = ana_analyze.time_deltaer("23:55", "23:50")
+        expected = datetime.timedelta(minutes=-5)
+
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_later_24h_inverse(self):
+        # Act
+        actual = ana_analyze.time_deltaer("24:10", "24:05")
+        expected = datetime.timedelta(minutes=-5)
+
+        # Assert
+        self.assertEqual(actual, expected)
     # def test_add_ac_type_column(self):
     #     # Test the add_ac_type_column function
     #     # Add your test code here

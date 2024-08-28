@@ -1,4 +1,5 @@
 # %%
+import datetime
 import pandas as pd
 import numpy as np
 
@@ -87,34 +88,33 @@ def add_delay_column(df):
     df = df[df['actual_arr'] != '-']
     df = df.drop(df[df['name'].isna()].index)
     # convert the type of actual_dep and actual_arr to datetime
-    # if the time is grater than 24:00, it will be converted to the next day.
-    def make_time_with_date(row):
-        if int(row['actual_dep'].split(':')[0]) >= 24:
-            row['act_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_dep'].split(':')[0]) - 24) + ':' + row['actual_dep'].split(':')[1]
-        else:
-            row['act_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_dep']
-        if int(row['actual_arr'].split(':')[0]) >= 24:
-            row['act_arr_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_arr'].split(':')[0]) - 24) + ':' + row['actual_arr'].split(':')[1]
-        else:
-            row['act_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_arr']
-        
-        if int(row['schedule_dep'].split(':')[0]) >= 24:
-            row['sch_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['schedule_dep'].split(':')[0]) - 24) + ':' + row['schedule_dep'].split(':')[1]
-        else:
-            row['sch_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_dep']
-        
-        if int(row['schedule_arr'].split(':')[0]) >= 24:
-            row['sch_arr_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['schedule_arr'].split(':')[0]) - 24) + ':' + row['schedule_arr'].split(':')[1]
-        else:
-            row['sch_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_arr']
-        return row
 
-    df = df.apply(make_time_with_date, axis=1)
     # calculate delay time in minites
-    df['dep_delay'] = (pd.to_datetime(df['act_dep_time_with_date']) - pd.to_datetime(df['sch_dep_time_with_date'])).dt.total_seconds() / 60
-    df['arr_delay'] = (pd.to_datetime(df['act_arr_time_with_date']) - pd.to_datetime(df['sch_arr_time_with_date'])).dt.total_seconds() / 60
+    df['dep_delay'] = df.apply((lambda row: time_deltaer(row['schedule_dep'], row['actual_dep']).total_seconds() / 60), axis=1)
+    df['arr_delay'] = df.apply((lambda row: time_deltaer(row['schedule_arr'], row['actual_arr']).total_seconds() / 60), axis=1)
 
     return df
+
+def time_deltaer(origin:str, actual:str) -> datetime.timedelta:
+    '''Return timedelta object which is the time of delay.
+    
+    @param origin: scheduled time, format is 'HH:MM'
+    @param actual: actual time, format is 'HH:MM'
+    '''
+    origin_time_hour, origin_time_minute = map(int, origin.split(":"))
+    actual_time_hour, actual_time_minute = map(int, actual.split(":"))
+    if origin_time_hour >= 24:
+        origin_time_hour -= 24
+        origin_datetime = datetime.datetime(2022, 1, 2, origin_time_hour, origin_time_minute)
+    else:
+        origin_datetime = datetime.datetime(2022, 1, 1, origin_time_hour, origin_time_minute)
+    if actual_time_hour >= 24:
+        actual_time_hour -= 24
+        actual_datetime = datetime.datetime(2022, 1, 2, actual_time_hour, actual_time_minute)
+    else:
+        actual_datetime = datetime.datetime(2022, 1, 1, actual_time_hour, actual_time_minute)
+
+    return actual_datetime - origin_datetime
 
 
 

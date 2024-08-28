@@ -1,3 +1,4 @@
+import datetime
 import unittest
 import sys, os
 from unittest.mock import patch
@@ -70,6 +71,56 @@ class TestAdoAnalyzer(unittest.TestCase):
         df.columns = ['date', 'name', 'from', 'to', 'schedule_dep', 'schedule_arr', 'actual_dep', 'actual_arr', 'dep_info', 'arr_info', 'info_other']
         df = ado_analyze._edit_date(df)
         df = ado_analyze._add_delay_column(df)
+        self.assertEqual(df[df['name'] == 'ADO28']['dep_delay'].values[0], -5)
+        self.assertEqual(df[df['name'] == 'ADO28']['arr_delay'].values[0], -10)
         self.assertEqual(df[df['name'] == 'ADO36']['dep_delay'].values[0], 17)
         self.assertEqual(df[df['name'] == 'ADO36']['arr_delay'].values[0], 8)
+
+    def test_time_deltaer_returns_correct_delta_with_two_time_beyond_24h(self):
+        # Act
+        actual = ado_analyze.time_deltaer("23:55", "24:05")
+        expected = datetime.timedelta(minutes=10)
+
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_earlier_24h(self):
+        # Act
+        actual = ado_analyze.time_deltaer("23:50", "23:55")
+        expected = datetime.timedelta(minutes=5)
+
+        # Assert
+        self.assertEqual(actual,expected )
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_later_24h(self):
+        # Act
+        actual = ado_analyze.time_deltaer("24:05", "24:10")
+        expected = datetime.timedelta(minutes=5)
+
+        # Assert
+        self.assertEqual(actual, expected)
+
+    def test_time_deltaer_returns_correct_delta_with_two_time_beyond_24h_inverse(self):
+        # Act
+        actual = ado_analyze.time_deltaer("24:05", "23:55")
+        expected = datetime.timedelta(minutes=-10)
+
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_earlier_24h_inverse(self):
+        # Act
+        actual = ado_analyze.time_deltaer("23:55", "23:50")
+        expected = datetime.timedelta(minutes=-5)
+
+        # Assert
+        self.assertEqual(actual, expected)
+    
+    def test_time_deltaer_returns_correct_delta_with_two_time_later_24h_inverse(self):
+        # Act
+        actual = ado_analyze.time_deltaer("24:10", "24:05")
+        expected = datetime.timedelta(minutes=-5)
+
+        # Assert
+        self.assertEqual(actual, expected)
     
