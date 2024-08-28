@@ -74,5 +74,33 @@ class TestAnaAnalyzer(unittest.TestCase):
         self.assertEqual(df[df['name'] == 'JAL525']['arr_delay'].values[0], 82)
         self.assertEqual(df[df['name'] == 'JAL527']['dep_delay'].values[0], 268)
         self.assertEqual(df[df['name'] == 'JAL527']['arr_delay'].values[0], 270)
+        self.assertEqual(df[df['name'] == 'JAL529']['dep_delay'].values[0], 300)
+        self.assertEqual(df[df['name'] == 'JAL529']['arr_delay'].values[0], 240)
+      
+
+    # def test_add_ac_type_column(self):
+    #     # Test the add_ac_type_column function
+    #     # Add your test code here
+
+    # def test_find_type_and_volume_csv(self):
+    #     # Test the find_type_and_volume_csv function
+    #     # Add your test code here
+
+    # def test_analyze_by_seat_cat(self):
+    #     # Test the analyze_by_seat_cat function
+    #     # Add your test code here
+
+    # def test_analyze_by_date(self):
+    #     # Test the analyze_by_date function
+    #     # Add your test code here
+
+    # def test_word_analyze(self):
+    #     # Test the word_analyze function
+    #     # Add your test code here
+
+    # def test_file_name_of_wordcloud(self):
+    #     # Test the file_name_of_wordcloud function
+    #     # Add your test code here
+
 if __name__ == '__main__':
     unittest.main()
