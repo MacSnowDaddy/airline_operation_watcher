@@ -1,3 +1,4 @@
+import datetime
 import pandas as pd
 
 class Jal_analyzer(object):
@@ -70,29 +71,31 @@ def _add_delay_column(df):
     df = df.drop(df[df['name'].isna()].index)
     # convert the type of actual_dep and actual_arr to datetime
     # jal page describes the time beyond 24:00 as "0:00" or "1:00" etc.
-    def make_time_with_date(row):
-        try:
-            if int(row['actual_dep'].split(':')[0]) < int(row['schedule_dep'].split(':')[0]) - 1: # assume that schedule flight will not depart 1hour earlyer than its schedule.
-                row['act_dep_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_dep'].split(':')[0])) + ':' + row['actual_dep'].split(':')[1]
-            else:
-                row['act_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_dep']
-            if int(row['actual_arr'].split(':')[0]) < int(row['schedule_arr'].split(':')[0]) - 1: # assume that schedule flight will not arrive 1hour earlyer than its schedule.
-                row['act_arr_time_with_date'] = (row['date'] + pd.Timedelta(days=1)).strftime('%Y-%m-%d') + ' ' + str(int(row['actual_arr'].split(':')[0])) + ':' + row['actual_arr'].split(':')[1]
-            else:
-                row['act_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['actual_arr']
-            
-            row['sch_dep_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_dep']
-            
-            row['sch_arr_time_with_date'] = row['date'].strftime('%Y-%m-%d') + ' ' + row['schedule_arr']
-        except:
-            raise
-        return row
 
-    df = df.apply(make_time_with_date, axis=1)
     # calculate delay time in minites
-    df['dep_delay'] = (pd.to_datetime(df['act_dep_time_with_date']) - pd.to_datetime(df['sch_dep_time_with_date'])).dt.total_seconds() / 60
-    df['arr_delay'] = (pd.to_datetime(df['act_arr_time_with_date']) - pd.to_datetime(df['sch_arr_time_with_date'])).dt.total_seconds() / 60
+    df['dep_delay'] = df.apply(lambda row: time_deltaer(row['schedule_dep'], row['actual_dep']).total_seconds() / 60, axis=1)
+    df['arr_delay'] = df.apply(lambda row: time_deltaer(row['schedule_arr'], row['actual_arr']).total_seconds() / 60, axis=1)
 
     return df
 
+def time_deltaer(origin:str, actual:str) -> datetime.timedelta:
+    '''Calculate the time difference between origin and actual.
+    
+    @param origin: scheduled time, format is 'HH:MM'
+    @param actual: actual time, format is 'HH:MM'
+    @return: timedelta object which is the time of delay.
+    '''
+    origin_datetime = datetime.datetime.strptime(origin, '%H:%M')
+    actual_datetime = datetime.datetime.strptime(actual, '%H:%M')
+    # assume that the acutual time is not 1hour earlier than the scheduled time.
+    time_delta = actual_datetime - origin_datetime
+    if time_delta.total_seconds() < -3600:
+        actual_datetime += datetime.timedelta(days=1)
+        time_delta = actual_datetime - origin_datetime
+    elif time_delta.total_seconds() > 23 * 3600: 
+        # in case departing earlier than scheduled time and
+        # the scheduled time is beyond 24:00
+        actual_datetime -= datetime.timedelta(days=1)
+        time_delta = actual_datetime - origin_datetime
+    return time_delta
 
