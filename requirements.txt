@@ -15,7 +15,7 @@ et-xmlfile==1.1.0
 exceptiongroup==1.2.0
 executing==2.0.1
 fonttools==4.47.0
-h11==0.14.0
+h11>=0.16.0
 html5lib==1.1
 idna==3.6
 ipykernel==6.29.0
